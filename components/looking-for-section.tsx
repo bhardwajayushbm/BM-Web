@@ -92,7 +92,7 @@ export function LookingForSection() {
   };
 
   return (
-    <section ref={ref} className="py-20 bg-gray-100 relative p-24">
+    <section ref={ref} className="py-20 bg-gray-100 relative">
       <div className="container mx-auto px-6 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -100,7 +100,7 @@ export function LookingForSection() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900">Are you looking for?</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900">Are you looking for?</h2>
         </motion.div>
 
         <div className="relative">

@@ -127,7 +127,7 @@ export  function ClientTesti() {
         </Swiper>
       </div>
 
-      {/* Swiper custom styles */}
+     
       <style jsx global>{`
         .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
         .swiper-pagination-horizontal.swiper-pagination-bullets

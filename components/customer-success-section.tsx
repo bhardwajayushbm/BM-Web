@@ -25,19 +25,19 @@ function CaseStudyCard({ title, description, delay, offsetY }: CaseStudyCardProp
     >
       <div className="overflow-hidden group cursor-pointer hover:shadow-2xl transition-all duration-500 rounded-3xl">
         <div className="relative h-[420px] overflow-hidden">
-          {/* Gradient overlay */}
+        
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10" />
 
-          {/* 👇 Local image directly from /public */}
+        
           <Image
-            src="/pic_5.png" // 👈 no import needed
+            src="/pic_5.png"
             alt={title}
             fill
             className="object-cover group-hover:scale-110 transition-transform duration-700"
             priority
           />
 
-          {/* Card content */}
+   
           <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
             <h3 className="text-3xl font-bold text-white mb-3 leading-tight">{title}</h3>
             <p className="text-gray-200 text-base mb-6 leading-relaxed">{description}</p>
@@ -61,7 +61,7 @@ export function CustomerSuccessSection() {
   return (
     <section ref={ref} className="py-20 bg-white p-10">
       <div className="container mx-auto px-6 max-w-7xl">
-        {/* Heading Section */}
+        
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -81,7 +81,7 @@ export function CustomerSuccessSection() {
           </p>
         </motion.div>
 
-        {/* Case Studies Button */}
+        
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
@@ -93,7 +93,7 @@ export function CustomerSuccessSection() {
           </button>
         </motion.div>
 
-        {/* Staircase Layout Cards */}
+       
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 p-12">
           <CaseStudyCard
             title="Sony Interactive Entertainment"

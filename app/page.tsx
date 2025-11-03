@@ -14,10 +14,10 @@ import Jumpstart_ from '@/components/JumpStart_';
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <Nav />
+     
 
       <Hero_ />
-      <Jumpstart_ />
+   
       <MetricsSection />
       <CustomerSuccessSection />
       <LookingForSection />

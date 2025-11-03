@@ -18,7 +18,7 @@ export default function Hero_() {
   const videoOpacity = Math.min(1, scrollY / 300);
  
   return (
-    <section className="relative flex items-center justify-center h-screen text-center overflow-hidden bg-white">
+    <section className="relative flex items-center justify-center h-screen text-center overflow-hidden bg-white mt-28">
       <video
         autoPlay
         loop
@@ -31,7 +31,7 @@ export default function Hero_() {
       </video>
 
       <div className="absolute inset-0 pointer-events-none transition-opacity duration-700 ease-out"
-           style={{ backgroundColor: "#9562EB", opacity: 0.45 }} />
+           style={{ backgroundColor: "#ae9ecaff", opacity: 0.45 }} />
  
       <div className="absolute inset-0 bg-white transition-opacity duration-700 ease-out"
            style={{ opacity: 1 - videoOpacity }} />
@@ -51,13 +51,13 @@ export default function Hero_() {
           transform: `translateY(${contentTranslateY}px)`,
         }}
       >
-        <h1 className="text-3xl md:text-5xl font-extrabold mb-4 leading-tight text-black">
+        <h1 className="text-5xl md:text-5xl font-extrabold mb-4 leading-tight text-black">
           Jumpstart Your{" "}
-          <span className="text-black">ServiceNow</span> <br />
+          <span className="text-black">servicen<span className="text-green-500">o</span>w</span> <br />
           Journey with <span className="text-black">BANGMETRIC</span>
         </h1>
  
-        <h2 className="text-xl md:text-2xl font-semibold mb-3 text-black">
+        <h2 className="text-2xl md:text-2xl font-semibold mb-3 text-black">
           ServiceNow Jumpstart Offerings
         </h2>
  
