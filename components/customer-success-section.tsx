@@ -13,41 +13,47 @@ interface CaseStudyCardProps {
 
 function CaseStudyCard({ title, description, delay, offsetY }: CaseStudyCardProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 60 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay }}
-      className={`${offsetY}`}
+      initial={{ opacity: 0, y: 60, scale: 0.9 }}
+      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+      transition={{ duration: 0.7, delay }}
+      className={`${offsetY} flex justify-center`}
     >
-      <div className="overflow-hidden group cursor-pointer hover:shadow-2xl transition-all duration-500 rounded-3xl">
-        <div className="relative h-[420px] overflow-hidden">
-        
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-10" />
+      <div className="group relative w-[340px] sm:w-[360px] md:w-[380px] h-[280px] md:h-[300px] rounded-[10px] overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
+        <Image
+          src="/pic_5.png"
+          alt={title}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-700"
+          priority
+        />
+        <div className="absolute inset-0 bg-[#000000]/[0.36]" />
 
-        
-          <Image
-            src="/pic_5.png"
-            alt={title}
-            fill
-            className="object-cover group-hover:scale-110 transition-transform duration-700"
-            priority
-          />
+        <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
+          <h3 className="text-[18px] md:text-[20px] font-semibold text-white leading-tight mb-2">
+            {title}
+          </h3>
+          <p className="text-sm md:text-[15px] text-gray-200 mb-4">
+            {description}
+          </p>
 
-   
-          <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
-            <h3 className="text-3xl font-bold text-white mb-3 leading-tight">{title}</h3>
-            <p className="text-gray-200 text-base mb-6 leading-relaxed">{description}</p>
-            <button className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white px-8 py-3 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.5, delay: delay + 0.3 }}
+          >
+            <button
+              className="w-[110px] sm:w-[120px] md:w-[131px] h-[28px] sm:h-[30px] bg-[#7E3AF2] hover:bg-[#6D2EEB] text-white 
+              font-[Poppins] font-normal text-[16px] sm:text-[18px] md:text-[20px] leading-[100%] 
+              text-center rounded-md transition-all duration-300"
+            >
               Read More
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
             </button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </motion.div>
@@ -56,45 +62,65 @@ function CaseStudyCard({ title, description, delay, offsetY }: CaseStudyCardProp
 
 export function CustomerSuccessSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2,
+      },
+    },
+  };
 
   return (
-    <section ref={ref} className="py-20 bg-white p-10">
-      <div className="container mx-auto px-6 max-w-7xl">
-        
+    <section ref={ref} className="py-16 sm:py-20 bg-white overflow-hidden">
+      <div className="container mx-auto max-w-7xl px-6 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-12 sm:mb-16 text-center md:text-left"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+          <h2 className="font-[Helvetica] font-bold text-[32px] sm:text-[40px] md:text-[50px] leading-[45px] sm:leading-[55px] md:leading-[65px] text-black mb-6">
             Customer Success in Action
           </h2>
-          <p className="text-xl text-gray-700 max-w-3xl leading-relaxed">
+
+          <p className="font-[Helvetica] font-normal text-[16px] sm:text-[18px] md:text-[20px] leading-[150%] text-black max-w-3xl mx-auto md:mx-0">
             Discover how leading organizations across industries are transforming with our{' '}
-            <span className="text-green-600 font-semibold">ServiceNow</span> expertise.
+            <span className="font-[Helvetica] font-bold text-[#62CE30]">
+              ServiceNow
+            </span>{' '}
+            expertise.
           </p>
-          <p className="text-lg text-gray-600 mt-3 max-w-3xl leading-relaxed">
+          <p className="font-[Helvetica] font-normal text-[16px] sm:text-[18px] md:text-[20px] leading-[150%] text-black max-w-3xl mx-auto md:mx-0">
             From optimizing workflows to elevating digital experiences, our client stories reflect
             real-world impact, proven results, and lasting value.
           </p>
         </motion.div>
-
-        
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.8 }}
-          className="mb-12"
+          className="flex justify-center md:justify-start mb-12"
         >
-          <button className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white px-10 py-4 rounded-2xl text-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+          <button
+            className="w-[131px] h-[30px] bg-[#7E3AF2] hover:bg-[#6D2EEB] text-white 
+            font-[Poppins] font-normal text-[20px] leading-[100%]
+            text-center rounded-md transition-all duration-300"
+          >
             Case Studies
           </button>
         </motion.div>
 
-       
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 p-12">
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center md:[direction:rtl]"
+        >
           <CaseStudyCard
             title="Sony Interactive Entertainment"
             description="Sony Interactive Entertainment Streamlines HR with ServiceNow HRSD"
@@ -105,15 +131,15 @@ export function CustomerSuccessSection() {
             title="Sony Interactive Entertainment"
             description="Sony Interactive Entertainment Streamlines HR with ServiceNow HRSD"
             delay={0.4}
-            offsetY="md:mt-16"
+            offsetY="md:mt-8"
           />
           <CaseStudyCard
             title="Sony Interactive Entertainment"
             description="Sony Interactive Entertainment Streamlines HR with ServiceNow HRSD"
             delay={0.6}
-            offsetY="md:mt-32"
+            offsetY="md:mt-16"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -12,7 +12,7 @@ interface ServiceCardProps {
 
 function ServiceCard({ title, imageUrl, delay }: ServiceCardProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
     <motion.div
@@ -21,28 +21,30 @@ function ServiceCard({ title, imageUrl, delay }: ServiceCardProps) {
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay }}
       className="group cursor-pointer flex-shrink-0"
-      style={{ width: '320px' }}
+      style={{ width: '277px', height: '367px' }} // fixed height & width
     >
-      <div className="relative overflow-hidden rounded-3xl h-[500px] shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
-       
+      <div className="relative w-full h-full overflow-hidden rounded-[10px] shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
+        {/* Background Image */}
         <div className="absolute inset-0">
           <Image
             src={imageUrl}
             alt={title}
             fill
             className="object-cover group-hover:scale-110 transition-transform duration-700"
+            sizes="277px"
+            priority
           />
         </div>
-        
-     
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-[1]" />
-        
-     
+
+        {/* Gradient Overlay from black to transparent */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/50 to-[#666666]/0 z-[1]" />
+
+        {/* Subtle purple hover overlay */}
         <div className="absolute inset-0 bg-purple-600/0 group-hover:bg-purple-600/20 transition-all duration-500 z-[2]" />
-        
-   
-        <div className="absolute bottom-0 left-0 right-0 p-8 z-10">
-          <h3 className="text-2xl font-semibold text-white leading-tight group-hover:text-purple-200 transition-colors duration-300">
+
+        {/* Title */}
+        <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
+          <h3 className="text-[18px] md:text-[20px] font-semibold text-white leading-tight group-hover:text-purple-200 transition-colors duration-300">
             {title}
           </h3>
         </div>
@@ -54,31 +56,32 @@ function ServiceCard({ title, imageUrl, delay }: ServiceCardProps) {
 export function LookingForSection() {
   const ref = useRef(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
 
   const cards = [
-    { title: "Digital Transformation Partner", imageUrl: "/pic_1.png" },
-    { title: "Elevate Your Customer Experience", imageUrl: "/pic_2.png" },
-    { title: "Innovative and Tailored Workflows", imageUrl: "/pic_3.png" },
-    { title: "Generative AI solutions", imageUrl: "/pic_4.png" },
-    { title: "Cloud Infrastructure Solutions", imageUrl: "/pic_1.png" },
-    { title: "Data Analytics & Insights", imageUrl: "/pic_2.png" },
-    { title: "Cybersecurity Services", imageUrl: "/pic_3.png" },
-    { title: "Mobile App Development", imageUrl: "/pic_4.png" },
+    { title: 'Digital Transformation Partner', imageUrl: '/pic_1.png' },
+    { title: 'Elevate Your Customer Experience', imageUrl: '/pic_2.png' },
+    { title: 'Innovative and Tailored Workflows', imageUrl: '/pic_3.png' },
+    { title: 'Generative AI Solutions', imageUrl: '/pic_4.png' },
+    { title: 'Cloud Infrastructure Solutions', imageUrl: '/pic_1.png' },
+    { title: 'Data Analytics & Insights', imageUrl: '/pic_2.png' },
+    { title: 'Cybersecurity Services', imageUrl: '/pic_3.png' },
+    { title: 'Mobile App Development', imageUrl: '/pic_4.png' },
   ];
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
-      const scrollAmount = 350;
-      const newScrollLeft = direction === 'left' 
-        ? scrollContainerRef.current.scrollLeft - scrollAmount
-        : scrollContainerRef.current.scrollLeft + scrollAmount;
-      
+      const scrollAmount = 300;
+      const newScrollLeft =
+        direction === 'left'
+          ? scrollContainerRef.current.scrollLeft - scrollAmount
+          : scrollContainerRef.current.scrollLeft + scrollAmount;
+
       scrollContainerRef.current.scrollTo({
         left: newScrollLeft,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     }
   };
@@ -94,21 +97,24 @@ export function LookingForSection() {
   return (
     <section ref={ref} className="py-20 bg-gray-100 relative">
       <div className="container mx-auto px-6 max-w-7xl">
+        {/* Section Title */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900">Are you looking for?</h2>
+          <h2 className="font-[Helvetica] font-bold text-[32px] sm:text-[40px] md:text-[50px] leading-[45px] sm:leading-[55px] md:leading-[65px] text-black mb-6">
+            Are you looking for?
+          </h2>
         </motion.div>
 
+        {/* Scrollable Cards Section */}
         <div className="relative">
-      
-          <div 
+          <div
             ref={scrollContainerRef}
             onScroll={handleScroll}
-            className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth pb-4"
+            className="flex gap-6 overflow-x-auto overflow-y-hidden scrollbar-hide scroll-smooth pb-4"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {cards.map((card, index) => (
@@ -121,13 +127,19 @@ export function LookingForSection() {
             ))}
           </div>
 
+          {/* Scroll Buttons */}
           {canScrollLeft && (
             <button
               onClick={() => scroll('left')}
               className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-all z-10"
               aria-label="Scroll left"
             >
-              <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg
+                className="w-6 h-6 text-gray-700"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
@@ -139,17 +151,33 @@ export function LookingForSection() {
               className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-all z-10"
               aria-label="Scroll right"
             >
-              <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg
+                className="w-6 h-6 text-gray-700"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
           )}
         </div>
-        <div className="mt-8">
-          <button className="bg-gradient-to-r from-purple-600 to-purple-500 text-white px-8 py-4 rounded-2xl text-lg font-semibold hover:from-purple-700 hover:to-purple-600 transition-all shadow-lg hover:shadow-xl">
+
+        {/* Case Studies Button */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.5, delay: 0.8 }}
+          className="flex justify-center md:justify-start mb-10 sm:mb-12"
+        >
+          <button
+            className="w-[120px] sm:w-[125px] md:w-[131px] h-[30px] bg-[#7E3AF2] hover:bg-[#6D2EEB] text-white 
+            font-[Poppins] font-normal text-[16px] sm:text-[18px] md:text-[20px] leading-[100%]
+            text-center rounded-md transition-all duration-300"
+          >
             Case Studies
           </button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

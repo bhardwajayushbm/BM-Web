@@ -64,10 +64,9 @@ export  function ClientTesti() {
     <section className="py-24 h-screen">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
-          <span className="text-4xl text-black font-medium block mb-10">
+          <h2 className="font-[Helvetica] font-bold text-[32px] sm:text-[40px] md:text-[50px] leading-[45px] sm:leading-[55px] md:leading-[65px] text-black mb-6">
             Client Testimonials
-          </span>
-          
+          </h2>
           <h2 className="text-2xl font-bold text-gray-900">
             What our happy users say!
           </h2>

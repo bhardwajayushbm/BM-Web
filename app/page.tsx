@@ -6,6 +6,8 @@ import { CustomerSuccessSection } from '@/components/customer-success-section';
 import { LookingForSection } from '@/components/looking-for-section';
 import { MarqueeSection } from '@/components/marquee-section';
 import { Getintouch } from '@/components/Getintouch';
+import {Sponsors} from '@/components/Sponsors';
+import {Event} from '@/components/Event';
 import { TestimonialsSection } from '@/components/testimonials-section';
 import { Footer } from '@/components/footer';
 import Nav from '@/components/nav';
@@ -24,7 +26,9 @@ export default function Home() {
       <MarqueeSection />
 
       <ClientTesti />
+      <Event/>
       <Getintouch />
+      <Sponsors/>
       <Footer />
     </main>
   );

@@ -6,61 +6,76 @@ import Image from 'next/image';
 
 export function Getintouch() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section 
-      ref={ref} 
-      className="relative py-20 p-10 overflow-hidden"
-      style={{ backgroundColor: '#d8cdff' }}
+    <section
+      ref={ref}
+      className="relative flex flex-col items-center text-center py-20 px-6 bg-white overflow-hidden"
     >
-      <div className="container mx-auto px-6 max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
-              Get in Touch Today!
-            </h2>
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed max-w-xl">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white px-10 py-4 rounded-xl text-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              Book a Free Consultation Session
-            </motion.button>
-          </motion.div>
+      {/* --- Heading Section --- */}
+      <motion.div
+        initial={{ opacity: 0, y: -30 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6 }}
+        className="max-w-3xl mx-auto"
+      >
+        <h2 className="font-[Helvetica] font-bold text-[32px] sm:text-[40px] md:text-[50px] leading-[45px] sm:leading-[55px] md:leading-[65px] text-black mb-6">
+          Get In Touch Today!
+        </h2>
 
-         
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative flex justify-center lg:justify-end"
-          >
-           
-            <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] bg-purple-300 rounded-full opacity-40 blur-3xl"></div>
-            
-            
-            <div className="relative z-10">
-              <Image 
-                src="/girl.png" 
-                alt="Professional consultant" 
-                width={500} 
-                height={600}
-                className="w-full h-auto object-cover"
-              />
-            </div>
-          </motion.div>
+        <p className="text-gray-600 text-base sm:text-lg mb-6 leading-relaxed">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. <br />
+          Lorem Ipsum has been the industry's standard dummy text ever since the
+          1500s.
+        </p>
+
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.97 }}
+          className="bg-[#9562EB] hover:bg-[#8449E6] text-white 
+          font-[Helvetica] font-normal text-[22px] leading-[55px]
+          w-[365px] h-[46px] rounded-[5px] transition-all duration-300 shadow-md"
+        >
+          Book a Free Consultation Session
+        </motion.button>
+      </motion.div>
+
+      {/* --- Laptop Image Section --- */}
+      <motion.div
+        initial={{ opacity: 0, y: 100, scale: 0.8 }}
+        animate={
+          isInView
+            ? { opacity: 1, y: 0, scale: 1 }
+            : { opacity: 0, y: 100, scale: 0.8 }
+        }
+        transition={{
+          duration: 1,
+          delay: 0.3,
+          ease: [0.25, 0.1, 0.25, 1],
+        }}
+        className="relative mt-16 flex justify-center w-full"
+      >
+        <div className="relative z-10 w-full max-w-[1441px] h-[804px]">
+          <Image
+            src="/laptop.png"
+            alt="Laptop mockup"
+            width={1441}
+            height={804}
+            className="w-full h-full object-contain mx-auto drop-shadow-2xl"
+            priority
+          />
         </div>
-      </div>
+
+        {/* Glow Effect */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.7 }}
+          animate={isInView ? { opacity: 0.4, scale: 1 } : {}}
+          transition={{ duration: 1.2, delay: 0.6 }}
+          className="absolute bottom-0 w-[70%] h-10 bg-purple-500/30 blur-3xl rounded-full"
+        />
+      </motion.div>
     </section>
   );
 }
