@@ -13,7 +13,6 @@ export function Getintouch() {
       ref={ref}
       className="relative flex flex-col items-center text-center py-20 px-6 bg-white overflow-hidden"
     >
-      {/* --- Heading Section --- */}
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -42,7 +41,6 @@ export function Getintouch() {
         </motion.button>
       </motion.div>
 
-      {/* --- Laptop Image Section --- */}
       <motion.div
         initial={{ opacity: 0, y: 100, scale: 0.8 }}
         animate={
@@ -68,7 +66,6 @@ export function Getintouch() {
           />
         </div>
 
-        {/* Glow Effect */}
         <motion.div
           initial={{ opacity: 0, scale: 0.7 }}
           animate={isInView ? { opacity: 0.4, scale: 1 } : {}}

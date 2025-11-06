@@ -21,10 +21,9 @@ function ServiceCard({ title, imageUrl, delay }: ServiceCardProps) {
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay }}
       className="group cursor-pointer flex-shrink-0"
-      style={{ width: '277px', height: '367px' }} // fixed height & width
+      style={{ width: '277px', height: '367px' }} 
     >
       <div className="relative w-full h-full overflow-hidden rounded-[10px] shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
-        {/* Background Image */}
         <div className="absolute inset-0">
           <Image
             src={imageUrl}
@@ -36,13 +35,12 @@ function ServiceCard({ title, imageUrl, delay }: ServiceCardProps) {
           />
         </div>
 
-        {/* Gradient Overlay from black to transparent */}
+        
         <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/50 to-[#666666]/0 z-[1]" />
 
-        {/* Subtle purple hover overlay */}
+   
         <div className="absolute inset-0 bg-purple-600/0 group-hover:bg-purple-600/20 transition-all duration-500 z-[2]" />
 
-        {/* Title */}
         <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
           <h3 className="text-[18px] md:text-[20px] font-semibold text-white leading-tight group-hover:text-purple-200 transition-colors duration-300">
             {title}
@@ -175,7 +173,7 @@ export function LookingForSection() {
             font-[Poppins] font-normal text-[16px] sm:text-[18px] md:text-[20px] leading-[100%]
             text-center rounded-md transition-all duration-300"
           >
-            Case Studies
+            Learn More
           </button>
         </motion.div>
       </div>

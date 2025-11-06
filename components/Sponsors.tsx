@@ -8,7 +8,6 @@ export function Sponsors() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  // Animation variant for staggered image entry
   const imageVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: (i: number) => ({
@@ -23,7 +22,6 @@ export function Sponsors() {
       ref={ref}
       className="relative w-full min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Full Background Image */}
       <Image
         src="/BG.png"
         alt="Background"
@@ -32,9 +30,7 @@ export function Sponsors() {
         className="object-cover object-center"
       />
 
-      {/* Content */}
       <div className="container mx-auto px-6 max-w-7xl relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Left Text Section */}
         <motion.div
           initial={{ opacity: 0, x: -80 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -50,7 +46,6 @@ export function Sponsors() {
           </p>
         </motion.div>
 
-        {/* Right Logos Section */}
         <div className="relative flex justify-center lg:justify-end">
           <div className="grid grid-cols-2 gap-8 pr-10"> 
             {["/ISO.png", "/QC.png", "/SP.png", "/MSM.png"].map((src, i) => (

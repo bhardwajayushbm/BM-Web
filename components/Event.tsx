@@ -22,7 +22,6 @@ export function Event() {
       ref={ref}
       className="relative w-full min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background Image with White Gradient Overlay */}
       <div className="absolute inset-0">
         <Image
           src="/Walpaper.png"
@@ -31,13 +30,10 @@ export function Event() {
           priority
           className="object-cover object-center opacity-80"
         />
-        {/* White gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#ffffffcc] via-[#ffffff99] to-transparent"></div>
       </div>
 
-      {/* Content */}
       <div className="container mx-auto px-6 max-w-7xl relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Left Text Section */}
         <motion.div
           initial={{ opacity: 0, x: -80 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -62,7 +58,6 @@ export function Event() {
           </motion.button>
         </motion.div>
 
-        {/* Right Event Image Section */}
         <div className="relative flex justify-center lg:justify-end items-center">
           <motion.div
             custom={0}
