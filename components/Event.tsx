@@ -51,11 +51,13 @@ export function Event() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
             className="bg-[#9562EB] hover:bg-[#8449E6] text-white 
-            font-[Helvetica] font-normal text-[22px] leading-[55px]
-            w-[365px] h-[46px] rounded-[5px] transition-all duration-300 shadow-md"
+  font-[Helvetica] font-normal text-[22px] leading-[55px]
+  w-[200px] h-[46px] rounded-[5px] transition-all duration-300 shadow-md
+  flex items-center justify-center"
           >
             Read More
           </motion.button>
+
         </motion.div>
 
         <div className="relative flex justify-center lg:justify-end items-center">

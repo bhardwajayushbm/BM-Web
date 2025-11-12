@@ -35,10 +35,12 @@ export function Getintouch() {
           whileTap={{ scale: 0.97 }}
           className="bg-[#9562EB] hover:bg-[#8449E6] text-white 
           font-[Helvetica] font-normal text-[22px] leading-[55px]
-          w-[365px] h-[46px] rounded-[5px] transition-all duration-300 shadow-md"
+          w-[365px] h-[46px] rounded-[5px] transition-all duration-300 shadow-md 
+          flex items-center justify-center mx-auto"
         >
           Book a Free Consultation Session
         </motion.button>
+
       </motion.div>
 
       <motion.div

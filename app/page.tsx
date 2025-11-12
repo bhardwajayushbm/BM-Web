@@ -17,14 +17,14 @@ export default function Home() {
   return (
     <main className="min-h-screen">
 
+
      <Navigation />
       <Hero_ />
    
       <MetricsSection />
-      <CustomerSuccessSection />
       <LookingForSection />
       <MarqueeSection />
-
+      <CustomerSuccessSection />
       <ClientTesti />
       <Event/>
       <Getintouch />
