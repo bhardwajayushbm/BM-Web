@@ -16,8 +16,8 @@ import Jumpstart_ from '@/components/JumpStart_';
 export default function Home() {
   return (
     <main className="min-h-screen">
-     
 
+     <Navigation />
       <Hero_ />
    
       <MetricsSection />
