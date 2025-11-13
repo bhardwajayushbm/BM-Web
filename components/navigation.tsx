@@ -1,19 +1,11 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { Menu } from 'lucide-react';
+import { Menu, ChevronDown } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const { scrollY } = useScroll();
-  const backgroundColor = useTransform(
-    scrollY,
-    [0, 100],
-    ['rgba(255, 255, 255, 0)', 'rgba(255, 255, 255, 0.95)']
-  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,69 +16,86 @@ export function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-
   return (
-    <motion.nav
-      style={{ backgroundColor }}
+    <div
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'shadow-lg backdrop-blur-sm' : ''
+        isScrolled ? 'bg-white/98 shadow-sm backdrop-blur-md' : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-6 py-5">
         <div className="flex items-center justify-between">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-2xl font-bold"
-          >
-          
-         <Image src="/BM Logo.svg" alt="BM Logo" layout="responsive" width={100} height={50} />
-           
-          </motion.div>
+          {/* Left: Logo */}
+          <div className="flex items-center">
+            <Image 
+              src="/BM Logo.svg" 
+              alt="BANGMETRIC Logo" 
+              width={200} 
+              height={50}
+              className="h-10 w-auto"
+            />
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="hidden md:flex items-center gap-8"
+          {/* Center: Desktop Menu */}
+          <div
+            className="hidden lg:flex items-center justify-center gap-10 flex-1"
+            style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}
           >
-            <a
-              href="#services"
-              className={`font-medium hover:text-purple-600 transition-colors ${
-                isScrolled ? 'text-gray-700' : 'text-white'
-              }`}
-            >
-              Services
-            </a>
-            <a
-              href="#success"
-              className={`font-medium hover:text-purple-600 transition-colors ${
-                isScrolled ? 'text-gray-700' : 'text-white'
-              }`}
-            >
-              Success Stories
-            </a>
-            <a
+            <a 
               href="#about"
-              className={`font-medium hover:text-purple-600 transition-colors ${
-                isScrolled ? 'text-gray-700' : 'text-white'
-              }`}
+              className="text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors"
             >
               About
             </a>
-            <Button
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-full"
+            <a 
+              href="#services"
+              className="text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors"
             >
-              Contact Us
-            </Button>
-          </motion.div>
+              Services
+            </a>
+            <a 
+              href="#industries"
+              className="text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors"
+            >
+              Industries
+            </a>
+            <a 
+              href="#resources"
+              className="text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors"
+            >
+              Resources
+            </a>
+            <a 
+              href="#careers"
+              className="text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors"
+            >
+              Careers
+            </a>
 
-          <button className="md:hidden">
-            <Menu className={isScrolled ? 'text-black' : 'text-white'} />
+            <button 
+              className="flex items-center gap-1 text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors"
+            >
+              Lorem Ipsum
+              <ChevronDown className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* Right: Get In Touch */}
+          <div className="hidden lg:flex items-center">
+            <a
+              href="#contact"
+              className="text-[16px] text-black rounded-full px-6 py-2.5 transition-colors"
+              style={{  fontFamily: 'Helvetica, Arial, sans-serif' }}
+            >
+              Get In Touch
+            </a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button className="lg:hidden">
+            <Menu className="text-gray-900 w-6 h-6" />
           </button>
         </div>
       </div>
-    </motion.nav>
+    </div>
   );
 }
