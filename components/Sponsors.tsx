@@ -49,7 +49,7 @@ export function Sponsors() {
         </motion.div>
 
         <div className="relative flex justify-center lg:justify-end">
-          <div className="grid grid-cols-2 gap-8 pr-10">
+          <div className="grid grid-cols-2 gap-8 pr-10 pt-48">
             {["/ISO.png", "/QC.png", "/SP.png", "/MSM.png"].map((src, i) => (
               <motion.div
                 key={src}

@@ -20,7 +20,7 @@ export function Event() {
   return (
     <section
       ref={ref}
-      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden py-20"
     >
       <div className="absolute inset-0">
         <Image
@@ -32,6 +32,19 @@ export function Event() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#ffffffcc] via-[#ffffff99] to-transparent"></div>
       </div>
+
+      {/* Events Heading */}
+      <motion.div
+        initial={{ opacity: 0, y: -30 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8 }}
+        className="relative z-10 text-center mb-16"
+      >
+        <h1 className="font-[Helvetica] font-bold text-[48px] sm:text-[56px] md:text-[64px] leading-tight text-black"
+        style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
+          Events
+        </h1>
+      </motion.div>
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <motion.div
@@ -51,13 +64,12 @@ export function Event() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
             className="bg-[#9562EB] hover:bg-[#8449E6] text-white 
-  font-[Helvetica] font-normal text-[22px] leading-[55px]
-  w-[200px] h-[46px] rounded-[5px] transition-all duration-300 shadow-md
-  flex items-center justify-center"
+            font-[Helvetica] font-normal text-[22px] leading-[55px]
+            w-[200px] h-[46px] rounded-[5px] transition-all duration-300 shadow-md
+            flex items-center justify-center"
           >
             Read More
           </motion.button>
-
         </motion.div>
 
         <div className="relative flex justify-center lg:justify-end items-center">

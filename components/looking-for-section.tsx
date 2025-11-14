@@ -102,7 +102,7 @@ export function LookingForSection() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <h2 className="font-[Helvetica] font-bold text-[32px] sm:text-[40px] md:text-[50px] leading-[45px] sm:leading-[55px] md:leading-[65px] text-black mb-6">
+          <h2 className="font-[Helvetica] font-bold text-[32px] text-center sm:text-[40px] md:text-[50px] leading-[45px] sm:leading-[55px] md:leading-[65px] text-black mb-6">
             Are you looking for?
           </h2>
         </motion.div>
@@ -169,9 +169,10 @@ export function LookingForSection() {
           className="flex justify-center md:justify-start mb-10 sm:mb-12"
         >
           <button
-            className="w-[120px] sm:w-[125px] md:w-[131px] h-[30px] bg-[#7E3AF2] hover:bg-[#6D2EEB] text-white 
-            font-[Poppins] font-normal text-[16px] sm:text-[18px] md:text-[20px] leading-[100%]
-            text-center rounded-md transition-all duration-300"
+            className="bg-[#9562EB] hover:bg-[#8449E6] text-white 
+  font-[Helvetica] font-normal text-[22px] leading-[55px]
+  w-[200px] h-[46px] rounded-[5px] transition-all duration-300 shadow-md
+  flex items-center justify-center mt-10"
           >
             Learn More
           </button>

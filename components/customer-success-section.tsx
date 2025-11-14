@@ -47,9 +47,10 @@ function CaseStudyCard({ title, description, delay, offsetY }: CaseStudyCardProp
             transition={{ duration: 0.5, delay: delay + 0.3 }}
           >
             <button
-              className="w-[110px] sm:w-[120px] md:w-[131px] h-[28px] sm:h-[30px] bg-[#7E3AF2] hover:bg-[#6D2EEB] text-white 
-              font-[Poppins] font-normal text-[16px] sm:text-[18px] md:text-[20px] leading-[100%] 
-              text-center rounded-md transition-all duration-300"
+              className="bg-[#9562EB] hover:bg-[#8449E6] text-white 
+  font-[Helvetica] font-normal text-[22px] leading-[55px]
+  w-[200px] h-[46px] rounded-[5px] transition-all duration-300 shadow-md
+  flex items-center justify-center"
             >
               Read More
             </button>
@@ -106,9 +107,10 @@ export function CustomerSuccessSection() {
           className="flex justify-center md:justify-start mb-12"
         >
           <button
-            className="w-[131px] h-[30px] bg-[#7E3AF2] hover:bg-[#6D2EEB] text-white 
-            font-[Poppins] font-normal text-[20px] leading-[100%]
-            text-center rounded-md transition-all duration-300"
+            className="bg-[#9562EB] hover:bg-[#8449E6] text-white 
+  font-[Helvetica] font-normal text-[22px] leading-[55px]
+  w-[200px] h-[46px] rounded-[5px] transition-all duration-300 shadow-md
+  flex items-center justify-center"
           >
             Case Studies
           </button>

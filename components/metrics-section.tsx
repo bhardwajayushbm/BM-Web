@@ -44,7 +44,7 @@ function MetricCard({ value, suffix, label, delay }: MetricCardProps) {
       transition={{ duration: 0.6, delay }}
       className="flex flex-col items-center text-center"
     >
-      <div className="text-6xl md:text-7xl font-bold text-black mb-4">
+      <div className="text-6xl md:text-7xl font-semibold text-black mb-4 min-w-[200px] tabular-nums">
         {count}
         {suffix}
       </div>
@@ -58,8 +58,11 @@ export function MetricsSection() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section ref={ref} className="py-20 bg-white flex justify-center items-center">
-      <div className="container mx-auto px-4">
+    <section 
+      ref={ref} 
+      className="py-20 bg-white flex justify-center items-center overflow-x-hidden -mt-10"
+    >
+      <div className="container mx-auto px-10">
         <div className="grid grid-cols-1 md:grid-cols-9 items-center text-center gap-10 md:gap-0">
           <MetricCard value={8} suffix="+" label="Years in Business" delay={0.2} />
           <div className="hidden md:block h-16 w-px bg-gray-300 mx-auto" />
