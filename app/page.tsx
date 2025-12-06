@@ -4,6 +4,8 @@ import { ClientTesti } from '@/components/ClientTesti';
 import { MetricsSection } from '@/components/metrics-section';
 import { CustomerSuccessSection } from '@/components/customer-success-section';
 import { LookingForSection } from '@/components/looking-for-section';
+import AreYouLookingForCard from '@/components/are-You-looking-card';
+
 import { MarqueeSection } from '@/components/marquee-section';
 import { Getintouch } from '@/components/Getintouch';
 import {Sponsors} from '@/components/Sponsors';
@@ -23,6 +25,7 @@ export default function Home() {
    
       <MetricsSection />
       <LookingForSection />
+      <AreYouLookingForCard/>
       <MarqueeSection />
       <CustomerSuccessSection />
       <ClientTesti />
