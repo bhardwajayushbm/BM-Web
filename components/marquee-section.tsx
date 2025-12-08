@@ -24,10 +24,7 @@ export function MarqueeSection() {
   return (
     <section className="min-h-[50vh] bg-white overflow-hidden flex flex-col justify-center py-10">
       <div className="relative">
-        {/* Left gradient fade */}
         <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-
-        {/* Right gradient fade */}
         <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
         <div

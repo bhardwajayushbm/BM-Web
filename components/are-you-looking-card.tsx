@@ -38,7 +38,6 @@ export default function AreYouLookingForCard() {
             const cleaned = rawTitle.toLowerCase().trim();
             const isExploreMore = cleaned === "explore more";
 
-            // ⭐ EXPLORE MORE BLOCK — CLICKABLE
             if (isExploreMore) {
               return (
                 <Link
@@ -82,7 +81,6 @@ export default function AreYouLookingForCard() {
               );
             }
 
-            // ⭐ NORMAL CARDS
             const title = rawTitle;
             const isLong = title.length > 22;
 

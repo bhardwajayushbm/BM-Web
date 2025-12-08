@@ -33,7 +33,6 @@ export function Event() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#ffffffcc] via-[#ffffff99] to-transparent"></div>
       </div>
 
-      {/* Events Heading */}
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}

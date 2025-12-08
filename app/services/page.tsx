@@ -26,7 +26,6 @@ export default function ServicesPage() {
           flex items-center justify-center
         "
       >
-        {/* Background Image */}
         <Image
           src="/BG2.png"
           alt="Background"
@@ -34,14 +33,8 @@ export default function ServicesPage() {
           priority
           className="object-cover object-center"
         />
-
-        {/* 🔥 Black opacity overlay (subtle) */}
-        <div className="absolute inset-0 bg-black/30"></div>
-
-        {/* Original White Gradient Overlay (kept on top of black overlay) */}
+        <div className="absolute inset-0 bg-black/60"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/40 to-transparent"></div>
-
-        {/* Logo container */}
         <div className="relative z-10 w-full flex justify-center">
           <div className="w-[1160px] h-[190px] flex items-center justify-center">
             <Image

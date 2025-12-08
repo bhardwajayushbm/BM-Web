@@ -12,10 +12,8 @@ export default function LookingForCard() {
   ];
 
   return (
-    <section className="w-full flex justify-center bg-[#F2F2F4] py-12 px-4 md:px-10">
+    <section className="w-full flex justify-center bg-white py-12 px-4 md:px-10">
       <div className="w-full max-w-[1440px] mx-auto">
-
-        {/* Correct 2-line heading */}
         <h2
           className="
             text-center font-[Helvetica] font-bold
@@ -26,8 +24,6 @@ export default function LookingForCard() {
           60-Day<br />
           BANGMETRIC Jumpstarts
         </h2>
-
-        {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
           {items.map((title, i) => {
             const isLong = title.length > 22;
@@ -43,11 +39,6 @@ export default function LookingForCard() {
                   bg-white
                   transition-all duration-300
                   hover:bg-[#D8CDFF]
-                  ${
-                    title === "FSM Standard"
-                      ? "bg-[#A88AEC]/30 hover:bg-[#D8CDFF]"
-                      : ""
-                  }
                 `}
               >
                 <div className="flex justify-between">
@@ -101,6 +92,7 @@ export default function LookingForCard() {
             );
           })}
         </div>
+
       </div>
     </section>
   );

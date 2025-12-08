@@ -95,7 +95,7 @@ export function LookingForSection() {
   return (
     <section ref={ref} className="py-20 bg-gray-100 relative">
       <div className="container mx-auto px-6 max-w-7xl">
-        {/* Section Title */}
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -107,7 +107,6 @@ export function LookingForSection() {
           </h2>
         </motion.div>
 
-        {/* Scrollable Cards Section */}
         <div className="relative">
           <div
             ref={scrollContainerRef}
@@ -125,7 +124,6 @@ export function LookingForSection() {
             ))}
           </div>
 
-          {/* Scroll Buttons */}
           {canScrollLeft && (
             <button
               onClick={() => scroll('left')}
@@ -160,8 +158,6 @@ export function LookingForSection() {
             </button>
           )}
         </div>
-
-        {/* Case Studies Button */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}

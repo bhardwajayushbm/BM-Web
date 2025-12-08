@@ -17,7 +17,6 @@ export default function Sales() {
                 transition={{ duration: 0.8 }}
                 className="relative w-full max-w-[1386px] h-[428px] rounded-[10px]"
             >
-                {/* BACKGROUND BLOCK */}
                 <div className="absolute inset-0 rounded-[10px] overflow-hidden bg-white">
                     <Image
                         src="/BG3.png"
@@ -28,8 +27,8 @@ export default function Sales() {
                     />
                 </div>
 
-                {/* PERSON IMAGE */}
-                <div className="absolute left-0 top-[-256px] w-[535px] h-[684px] z-30">
+
+                <div className="absolute left-0 top-[-114px] w-[535px] h-[540px] z-30">
                     <Image
                         src="/Sales.png"
                         alt="Arthur Yeames"

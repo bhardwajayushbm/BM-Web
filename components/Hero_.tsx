@@ -15,20 +15,15 @@ export default function Hero_() {
   const translateY = Math.max(0, scrollY * 0.25);
   const videoOpacity = Math.min(1, scrollY / 300);
   
-  // Hero section ko fade out karo jab content fully visible ho
   const heroOpacity = Math.max(0, 1 - (scrollY - 400) / 200);
-  
-  // Text ko tab dikhao jab video opacity 0.8+ ho (almost fully visible)
   const textOpacity = videoOpacity >= 0.8 ? 1 : 0;
 
   return (
     <section className="relative w-full min-h-[160vh] text-center overflow-hidden bg-white">
-      {/* Fixed Hero Container - ye fade out hoga */}
       <div
         className="fixed inset-0 z-20 pointer-events-none transition-opacity duration-500"
         style={{ opacity: heroOpacity }}
       >
-        {/* Fullscreen Background Video */}
         <video
           autoPlay
           loop
@@ -39,20 +34,16 @@ export default function Hero_() {
         >
           <source src="/BGVIDEO1.mp4" type="video/mp4" />
         </video>
-
-        {/* Purple Overlay ye h */}
         <div
           className="absolute inset-0 pointer-events-none transition-opacity duration-700 ease-out"
           style={{ backgroundColor: "#ae9ecaff", opacity: videoOpacity * 0.45 }}
         />
 
-        {/* White Fade Layer ye h */}
         <div
           className="absolute inset-0 bg-white transition-opacity duration-700 ease-out"
           style={{ opacity: 1 - videoOpacity }}
         />
 
-        {/* Animated Gradient Circle yaha par h */}
         <div
           className="absolute left-1/2 bottom-[-350px] -translate-x-1/2 w-[750px] h-[750px] bg-gradient-to-r from-[#d6c8fe] via-[#d8cdff] to-[#ffffff] rounded-full transition-transform duration-300 ease-out"
           style={{
@@ -61,7 +52,6 @@ export default function Hero_() {
           }}
         ></div>
 
-        {/* Foreground Text Content yaha h */}
         <div
           className="absolute inset-0 flex items-center justify-center z-10 px-6 md:px-12 transition-opacity duration-300 ease-out"
           style={{ opacity: textOpacity }}
