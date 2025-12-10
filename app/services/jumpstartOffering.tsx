@@ -53,7 +53,7 @@ function DecimalCounter({ value, duration = 1500 }) {
 
 export default function JumpstartOfferings() {
   return (
-    <section className="w-full bg-[#F2F2F4] px-4 sm:px-6 md:px-12 lg:px-20 py-16 md:py-20">
+    <section className="w-full bg-[#F6F5FA] px-4 sm:px-6 md:px-12 lg:px-20 py-16 md:py-20">
       
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">

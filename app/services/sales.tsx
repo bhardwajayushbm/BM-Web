@@ -15,7 +15,7 @@ export default function Sales() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8 }}
-                className="relative w-full max-w-[1386px] h-[428px] rounded-[10px]"
+                className="relative w-full max-w-[1386px] h-[360px] rounded-[10px]"
             >
                 <div className="absolute inset-0 rounded-[10px] overflow-hidden bg-white">
                     <Image
@@ -28,7 +28,7 @@ export default function Sales() {
                 </div>
 
 
-                <div className="absolute left-0 top-[-114px] w-[535px] h-[540px] z-30">
+                <div className="absolute left-0 top-[-120px] w-[535px] h-[480px] z-30">
                     <Image
                         src="/Sales.png"
                         alt="Arthur Yeames"
