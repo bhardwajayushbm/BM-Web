@@ -3,6 +3,7 @@
 import { Menu, ChevronDown } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,7 +25,8 @@ export function Navigation() {
     >
       <div className="container mx-auto px-6 py-5">
         <div className="flex items-center justify-between">
-          {/* Left: Logo */}
+          
+         
           <div className="flex items-center">
             <Image 
               src="/BM Logo.svg" 
@@ -35,35 +37,39 @@ export function Navigation() {
             />
           </div>
 
-          {/* Center: Desktop Menu */}
+       
           <div
             className="hidden lg:flex items-center justify-center gap-10 flex-1"
             style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}
           >
-            <a 
-              href="#about"
+            <Link
+              href="/aboutUs"
               className="text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors"
             >
               About
-            </a>
+            </Link>
+
             <a 
               href="#services"
               className="text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors"
             >
               Services
             </a>
+
             <a 
               href="#industries"
               className="text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors"
             >
               Industries
             </a>
+
             <a 
               href="#resources"
               className="text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors"
             >
               Resources
             </a>
+
             <a 
               href="#careers"
               className="text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors"
@@ -79,18 +85,15 @@ export function Navigation() {
             </button>
           </div>
 
-          {/* Right: Get In Touch */}
           <div className="hidden lg:flex items-center">
             <a
               href="#contact"
               className="text-[16px] text-black rounded-full px-6 py-2.5 transition-colors"
-              style={{  fontFamily: 'Helvetica, Arial, sans-serif' }}
+              style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}
             >
               Get In Touch
             </a>
           </div>
-
-          {/* Mobile Menu Button */}
           <button className="lg:hidden">
             <Menu className="text-gray-900 w-6 h-6" />
           </button>
