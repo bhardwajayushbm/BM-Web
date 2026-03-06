@@ -6,27 +6,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export function Navigation() {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <div
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/98 shadow-sm backdrop-blur-md'
-          : 'bg-transparent'
-      }`}
+      className="
+        fixed top-0 left-0 right-0 z-50
+        bg-white shadow-sm
+      "
     >
       <div className="container mx-auto px-6 py-5">
         <div className="flex items-center justify-between">
+
+          {/* Logo */}
           <div className="flex items-center">
             <Image
               src="/BM Logo.svg"
@@ -36,18 +26,21 @@ export function Navigation() {
               className="h-10 w-auto"
             />
           </div>
+
+          {/* Desktop Navigation */}
           <div
             className="hidden lg:flex items-center justify-center gap-10 flex-1"
             style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}
           >
             <div className="relative group">
               <a
-              href="/aboutUs"
-              className="text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors"
-            >
-              About
-            </a>
+                href="/aboutUs"
+                className="text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors"
+              >
+                About
+              </a>
 
+              {/* Dropdown */}
               <div
                 className="
                   absolute top-full left-0 mt-3 w-44
@@ -67,7 +60,7 @@ export function Navigation() {
             </div>
 
             <a
-              href="#services"
+              href="/services"
               className="text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors"
             >
               Services
@@ -99,6 +92,8 @@ export function Navigation() {
               <ChevronDown className="w-4 h-4" />
             </button>
           </div>
+
+          {/* Contact Button */}
           <div className="hidden lg:flex items-center">
             <a
               href="#contact"
@@ -108,9 +103,12 @@ export function Navigation() {
               Get In Touch
             </a>
           </div>
+
+          {/* Mobile Menu Icon */}
           <button className="lg:hidden">
             <Menu className="text-gray-900 w-6 h-6" />
           </button>
+
         </div>
       </div>
     </div>
