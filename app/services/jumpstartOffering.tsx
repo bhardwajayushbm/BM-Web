@@ -53,9 +53,7 @@ function DecimalCounter({ value, duration = 1500 }) {
 
 export default function JumpstartOfferings() {
   return (
-    <section className="w-full bg-[#F6F5FA] px-4 sm:px-6 md:px-12 lg:px-20 py-16 md:py-20">
-      
-
+   <section className="w-full bg-[#F6F5FA] px-4 sm:px-6 md:px-12 lg:px-20 pt-16 md:pt-20 pb-0">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
         
         <div>
@@ -77,7 +75,7 @@ export default function JumpstartOfferings() {
         </div>
 
         <div className="relative max-w-[503px]">
-          <div className="absolute left-[17px] top-[18px] w-[2px] h-[calc(100%-60px)] bg-[#D8C6FF]" />
+          <div className="absolute left-[17px] top-[2px] w-[2px] h-[calc(100%-60px)] bg-black" />
 
           <div className="flex flex-col gap-10 md:gap-[48px] relative">
             {[
@@ -90,7 +88,8 @@ export default function JumpstartOfferings() {
                   <div className="w-[30px] h-[30px] md:w-[35px] md:h-[35px] rounded-full bg-[#D8CDFF] shadow-[inset_3px_2px_3.5px_#AB9AE8]" />
                 </div>
 
-                <p className="font-helvetica text-[16px] sm:text-[18px] md:text-[20px] leading-[130%] text-[#474545]">
+                <p className="font-helvetica text-[20px] md:text-[22px] leading-[140%] text-[#474545]">
+
                   {text}
                 </p>
               </div>
@@ -105,7 +104,7 @@ export default function JumpstartOfferings() {
             src="/Lab.png"
             alt="Lab"
             width={800}
-            height={500}
+            height={533}
             className="rounded-xl object-cover w-full h-auto"
           />
         </div>
@@ -119,7 +118,7 @@ export default function JumpstartOfferings() {
             { comp: <Counter value={3} suffix="+" />, label: "Global Delivery<br/>Centers" },
           ].map((item, i) => (
             <div key={i} className="flex flex-col items-center text-center">
-              <span className="font-helvetica font-bold text-[36px] sm:text-[40px] md:text-[48px] leading-none text-black">
+              <span className="font-helvetica text-[36px] sm:text-[40px] md:text-[48px] leading-none text-black">
                 {item.comp}
               </span>
               <p

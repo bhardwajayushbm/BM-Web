@@ -14,7 +14,7 @@ export default function aboutPage() {
         w-full flex justify-center 
         px-4 md:px-8 lg:px-10 
         mt-8 md:mt-20 lg:mt-28 
-        mb-8 md:mb-16 lg:mb-24   /* 👈 Added bottom margin */
+        mb-8 md:mb-16 lg:mb-24  
       "
     >
       <motion.div

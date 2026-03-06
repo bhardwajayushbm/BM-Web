@@ -41,16 +41,16 @@ export default function CoreValuesPage() {
   return (
     <section className="w-full flex flex-col items-center px-6 md:px-12 lg:px-20 py-20">
       {/* Heading */}
-      <h1 className="font-helvetica font-normal text-[96px] leading-[90px] text-black text-center">
+      <h1 className="font-helvetica font-normal text-[76px] leading-[90px] text-black text-center">
         Core Values
       </h1>
 
-      <p className="font-helvetica text-[30px] leading-[30px] text-black text-center mt-14 max-w-[783px]">
+      <p className="font-helvetica text-[30px] leading-[30px] text-black text-center mt-8 max-w-[783px]">
         Our values shape how we work with our clients, with our teams, and with the world of technology.
       </p>
 
       {/* Card Stack */}
-      <div className="relative mt-32 w-full max-w-[900px] flex flex-col gap-[120px]">
+      <div className="relative mt-12 w-full max-w-[900px] flex flex-col gap-[120px]">
         {cards.map((card, index) => (
           <motion.div
             key={index}

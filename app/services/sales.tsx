@@ -9,7 +9,7 @@ export default function Sales() {
     const isInView = useInView(ref, { once: true });
 
     return (
-        <section className="w-full flex justify-center px-4 md:px-8 lg:px-10 mt-40 pt-28">
+        <section className="w-full flex justify-center px-4 md:px-8 lg:px-10 mt-10 pt-28">
             <motion.div
                 ref={ref}
                 initial={{ opacity: 0, y: 40 }}

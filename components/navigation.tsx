@@ -20,71 +20,85 @@ export function Navigation() {
   return (
     <div
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/98 shadow-sm backdrop-blur-md' : 'bg-transparent'
+        isScrolled
+          ? 'bg-white/98 shadow-sm backdrop-blur-md'
+          : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-6 py-5">
         <div className="flex items-center justify-between">
-          
-         
           <div className="flex items-center">
-            <Image 
-              src="/BM Logo.svg" 
-              alt="BANGMETRIC Logo" 
-              width={200} 
+            <Image
+              src="/BM Logo.svg"
+              alt="BANGMETRIC Logo"
+              width={200}
               height={50}
               className="h-10 w-auto"
             />
           </div>
-
-       
           <div
             className="hidden lg:flex items-center justify-center gap-10 flex-1"
             style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}
           >
-            <Link
+            <div className="relative group">
+              <a
               href="/aboutUs"
               className="text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors"
             >
               About
-            </Link>
+            </a>
 
-            <a 
+              <div
+                className="
+                  absolute top-full left-0 mt-3 w-44
+                  rounded-lg bg-white shadow-lg border border-gray-100
+                  opacity-0 invisible
+                  group-hover:opacity-100 group-hover:visible
+                  transition-all duration-200
+                "
+              >
+                <Link
+                  href="/company"
+                  className="block px-5 py-3 text-[15px] text-gray-900 hover:bg-purple-50 hover:text-purple-600 transition-colors"
+                >
+                  Company
+                </Link>
+              </div>
+            </div>
+
+            <a
               href="#services"
               className="text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors"
             >
               Services
             </a>
 
-            <a 
+            <a
               href="#industries"
               className="text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors"
             >
               Industries
             </a>
 
-            <a 
-              href="#resources"
+            <a
+              href="/resources"
               className="text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors"
             >
               Resources
             </a>
 
-            <a 
-              href="#careers"
+            <a
+              href="/careers"
               className="text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors"
             >
               Careers
             </a>
 
-            <button 
-              className="flex items-center gap-1 text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors"
-            >
+            <button className="flex items-center gap-1 text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors">
               Lorem Ipsum
               <ChevronDown className="w-4 h-4" />
             </button>
           </div>
-
           <div className="hidden lg:flex items-center">
             <a
               href="#contact"

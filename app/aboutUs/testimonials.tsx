@@ -46,30 +46,33 @@ const ceoVariants = {
 export default function LeadershipPage() {
   return (
     <section className="w-full flex flex-col items-center px-6 md:px-12 lg:px-20 py-20">
-      <h1
-        className="font-helvetica font-normal text-[40px] md:text-[48px] lg:text-[56px]
-        leading-tight lg:leading-[90px] text-black text-center mx-auto"
-        style={{ maxWidth: "643px" }}
-      >
-        Our Leadership Team
-      </h1>
-      <p
-        className="font-helvetica font-normal text-[18px] md:text-[22px] lg:text-[26px]
-        leading-[26px] md:leading-[28px] lg:leading-[30px]
-        text-black text-center mx-auto mt-10 lg:mt-14"
-        style={{ maxWidth: "783px" }}
-      >
-        Our leadership team comprises seasoned technologists, strategists, and industry experts who guide our vision and uphold our commitment to excellence.
-      </p>
+     <h1
+  className="
+    font-helvetica font-normal
+    !text-[28px] md:!text-[48px] lg:!text-[72px]
+    leading-tight lg:leading-[82px]
+    text-black text-center mx-auto mb-10
+  "
+  style={{ maxWidth: "760px" }}
+>
+  Our Leadership Team
+</h1>
 
-      <p
-        className="font-helvetica font-normal text-[18px] md:text-[22px] lg:text-[26px]
-        leading-[26px] md:leading-[28px] lg:leading-[30px]
-        text-black text-center mx-auto mt-4 lg:mt-6"
-        style={{ maxWidth: "783px" }}
-      >
-        They champion innovation, customer success, and a people-first culture—driving BANGMETRIC’s growth across markets and industries.
-      </p>
+<p
+  className="
+    font-helvetica font-normal
+    text-[14px] md:text-[18px] lg:text-[21px]
+    leading-[22px] md:leading-[26px] lg:leading-[28px]
+    text-black text-center mx-auto
+  "
+  style={{ maxWidth: "820px" }}
+>
+  Our leadership team comprises seasoned technologists, strategists, and industry experts who guide our vision and uphold our commitment to excellence.
+</p>
+
+
+
+
       <motion.div
         className="hidden lg:block w-[1065px] relative mt-24"
         variants={containerVariants}

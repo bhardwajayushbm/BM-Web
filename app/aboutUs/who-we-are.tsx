@@ -12,7 +12,7 @@ export default function AboutUsPage() {
                         className="
               font-helvetica
               font-normal
-              text-[96px]
+              text-[76px]
               leading-[100%]
               text-black
             "
@@ -39,14 +39,7 @@ export default function AboutUsPage() {
                 </div>
 
                 <div className="mt-6 w-full flex">
-                    <p
-                        className="
-              font-helvetica 
-              font-normal 
-              text-[30px] 
-              leading-[100%] 
-              text-black
-            "
+                    <p className="font-helvetica font-normal text-[30px] leading-[120%] text-black"
                         style={{ maxWidth: "1109px" }}
                     >
                         BANGMETRIC is a global SaaS and ServiceNow partner built by experts
@@ -55,8 +48,9 @@ export default function AboutUsPage() {
                     </p>
                 </div>
 
-                <div className="mt-10 space-y-10">
-                    <p className="font-helvetica font-normal text-[30px] leading-[150%] text-black">
+
+                <div className="mt-6 space-y-2">
+                    <p className="font-helvetica font-normal text-[30px] leading-[110%] text-black">
                         We blend business consulting, platform problem-solving, and value
                         maximization to help enterprises streamline operations and drive meaningful
                         outcomes. Our consultants work as an extension of your team, guiding,
@@ -64,7 +58,7 @@ export default function AboutUsPage() {
                         and real expertise.
                     </p>
 
-                    <p className="font-helvetica font-normal text-[30px] leading-[150%] text-black">
+                    <p className="font-helvetica font-normal text-[30px] leading-[110%] text-black mt-4">
                         At our core, we’re people who want your business to run better, smarter,
                         and with long-term confidence.
                     </p>

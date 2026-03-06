@@ -9,46 +9,46 @@ export default function JumpstartSection() {
 
   return (
     <section className="w-full flex flex-col items-center px-6 md:px-12 lg:px-20 py-20">
-    <motion.h1
-  ref={ref}
-  initial={{ y: 200, scale: 0.8 }}
-  animate={
-    isInView
-      ? {
-          y: [200, -20, 10, -5, 0],
-          scale: [0.8, 1.05, 0.95, 1.02, 1],
+      <motion.h1
+        ref={ref}
+        initial={{ y: 200, scale: 0.8 }}
+        animate={
+          isInView
+            ? {
+              y: [200, -20, 10, -5, 0],
+              scale: [0.8, 1.05, 0.95, 1.02, 1],
+            }
+            : {}
         }
-      : {}
-  }
-  transition={{
-    duration: 1.2,
-    ease: "easeOut",
-    times: [0, 0.45, 0.7, 0.85, 1],
-  }}
-  className="
+        transition={{
+          duration: 1.2,
+          ease: "easeOut",
+          times: [0, 0.45, 0.7, 0.85, 1],
+        }}
+        className="
     mt-40 mb-40 
     text-center font-helvetica font-bold text-[70px] leading-[100%] text-[#60D94F]
   "
->
-  US based project oversight <br /> provided with every Jumpstart.
-</motion.h1>
+      >
+        US based project oversight <br /> provided with every Jumpstart.
+      </motion.h1>
 
       <motion.div
         initial={{ scale: 0.7, opacity: 0 }}
         animate={isInView ? { scale: 1, opacity: 1 } : {}}
         transition={{ duration: 0.35, ease: "easeOut" }}
-        className="mt-16 w-full max-w-[1300px] grid grid-cols-1 md:grid-cols-2 gap-12 items-start"
+        className="mt-6 w-full max-w-[1300px] grid grid-cols-1 md:grid-cols-2 gap-12 items-start"
       >
         <div>
-         <h2 className="font-helvetica font-normal text-[40px] leading-[44px] text-black">
-  Lorem Ipsum is simply<br />
-  dummy text of the printing<br />
-  and Lorem Ipsum has<br />
-  been
-</h2>
+          <h2 className="font-helvetica font-normal text-[40px] leading-[44px] text-black">
+            Lorem Ipsum is simply<br />
+            dummy text of the printing<br />
+            and Lorem Ipsum has<br />
+            been
+          </h2>
 
 
-          <p className=" font-helvetica mt-2 text-[12px] md:text-[26px] text-gray-600">
+          <p className=" font-helvetica mt-6 text-[12px] md:text-[26px] text-gray-600">
             Lorem Ipsum is simply dummy text of the<br />
             printing and Lorem Ipsum has been
           </p>
