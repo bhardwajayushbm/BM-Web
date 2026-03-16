@@ -1,174 +1,180 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import Image from "next/image";
 
 export function Getintouch() {
+
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const imageVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, delay: i * 0.2 },
+    }),
+  };
 
   return (
-    <section
-      ref={ref}
-      className="
-        relative w-full h-screen overflow-hidden   
-        max-w-[1800px] mx-auto
+    <section className="relative w-full min-h-[1200px] overflow-hidden">
 
-        mt-[60px]             
-        px-[0px] md:px-[80px]
+      {/* Background */}
+      <Image
+        src="/Get.png"
+        alt="Background"
+        fill
+        priority
+        className="object-cover"
+      />
 
-        flex flex-col lg:flex-row
-        items-center lg:items-center
-        justify-between
-        gap-[40px] lg:gap-[140px]   
-      "
-    >
-      <motion.div
-        initial={{ opacity: 0, x: -40 }}
-        animate={isInView ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 0.6 }}
-        className="w-full lg:w-[520px] shrink-0"
-      >
-        <h2
-          className="
-            font-[Helvetica] font-bold
-            text-[34px] md:text-[50px] lg:text-[64px]
-            leading-[42px] md:leading-[60px] lg:leading-[72px]
-            text-black mb-[18px]
-          "
-        >
-          Get in <br /> Touch Today!
-        </h2>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/25"></div>
 
-        <p
-          className="
-            text-black font-[Helvetica]
-            text-[15px] md:text-[16px] lg:text-[17px]
-            leading-[22px] md:leading-[24px] lg:leading-[26px]
-            max-w-[520px]
-            mb-[25px]
-          "
-        >
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s.
-        </p>
+      {/* LEFT CONTENT */}
+      <div className="relative z-20 flex items-start pt-20 px-20">
 
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.96 }}
-          className="
-            bg-[#9562EB] hover:bg-[#8449E6]
-            text-white font-[Helvetica]
-            text-[16px] md:text-[18px]
-            px-6 py-3 rounded-md shadow-md
-          "
-        >
-          Book a Free Consultation Session
-        </motion.button>
-      </motion.div>
+        <div className="text-white max-w-lg">
 
-      <div
-        className="
-          relative
-          w-full max-w-[650px]
+          <h1 className="text-6xl font-bold leading-tight">
+            Get in <br /> Touch Today!
+          </h1>
 
-          mt-[40px] lg:mt-[80px]    
-          
-          h-[480px] md:h-[560px] lg:h-[700px] 
-          shrink-0
-        "
-      >
-      
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.9 }}
-          className="
-            absolute right-0 top-[20px]   
-            scale-[0.75] md:scale-[0.85] lg:scale-[1]
-            origin-top-right
-            z-10
-          "
-        >
-          <Image
-            src="/boy.png"
-            alt="Person"
-            width={620}
-            height={620}
-            className="object-contain"
-          />
-        </motion.div>
-
-      
-
- 
-        <div
-          className="
-            absolute
-            top-[200px] md:top-[230px] lg:top-[260px]
-            left-[0px] md:left-[-40px] lg:left-[-90px]
-            
-            w-[210px] md:w-[240px] lg:w-[270px]
-            h-[45px] md:h-[50px] lg:h-[53px]
-            
-            bg-white rounded-[12px]
-            border border-[#CFCFCF]
-            shadow-[0_4px_4px_rgba(0,0,0,0.25)]
-            flex items-center gap-3 px-4
-            z-20
-          "
-        >
-          <Image src="/icon.png" width={22} height={22} alt="icon" />
-          <p className="text-[13px] md:text-[15px] lg:text-[16px] text-black">
-            Lorem Ipsum is simply
+          <p className="text-sm mt-4 opacity-80 max-w-xs">
+            Lorem Ipsum is simply dummy text of the printing
+            and typesetting industry.
           </p>
+
+          {/* FORM */}
+          <div className="mt-6 bg-white rounded-md shadow-lg p-5 w-[380px]">
+
+            <form className="space-y-3 text-gray-700 text-sm">
+
+              <div>
+                <label className="block text-xs font-medium text-gray-600 mb-1">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  placeholder="Value"
+                  className="w-full border rounded px-3 py-2 outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-medium text-gray-600 mb-1">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  placeholder="Value"
+                  className="w-full border rounded px-3 py-2 outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-medium text-gray-600 mb-1">
+                  Message
+                </label>
+                <textarea
+                  rows={3}
+                  placeholder="Value"
+                  className="w-full border rounded px-3 py-2 outline-none"
+                />
+              </div>
+
+              <button
+                className="w-full text-white py-2 rounded"
+                style={{ backgroundColor: "#9562EB" }}
+              >
+                Submit
+              </button>
+
+            </form>
+
+          </div>
+
         </div>
 
-        <div
-          className="
-            absolute
-            top-[290px] md:top-[340px] lg:top-[380px]
-            left-[40px] md:left-[0px] lg:left-[-20px]
-            
-            w-[210px] md:w-[240px] lg:w-[270px]
-            h-[45px] md:h-[50px] lg:h-[53px]
-            
-            bg-white rounded-[12px]
-            border border-[#CFCFCF]
-            shadow-[0_4px_4px_rgba(0,0,0,0.25)]
-            flex items-center gap-3 px-4
-            z-20
-          "
-        >
-          <Image src="/icon.png" width={22} height={22} alt="icon" />
-          <p className="text-[13px] md:text-[15px] lg:text-[16px] text-black">
-            Lorem Ipsum is simply
-          </p>
-        </div>
-        <div
-          className="
-            absolute
-            top-[380px] md:top-[450px] lg:top-[520px]
-            left-[80px] md:left-[40px] lg:left-[40px]
-            
-            w-[210px] md:w-[240px] lg:w-[270px]
-            h-[45px] md:h-[50px] lg:h-[53px]
-            
-            bg-white rounded-[12px]
-            border border-[#CFCFCF]
-            shadow-[0_4px_4px_rgba(0,0,0,0.25)]
-            flex items-center gap-3 px-4
-            z-20
-          "
-        >
-          <Image src="/icon.png" width={22} height={22} alt="icon" />
-          <p className="text-[13px] md:text-[15px] lg:text-[16px] text-black">
-            Lorem Ipsum is simply
-          </p>
-        </div>
       </div>
+
+
+      {/* CURVE SECTION */}
+      <div className="absolute bottom-0 left-0 w-full z-10">
+
+        {/* White Curve */}
+        <svg
+          viewBox="0 0 1440 600"
+          className="w-full h-[500px]"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="#ffffff"
+            d="
+              M0,220
+              A1000,500 0 0,1 1050,380
+              L1300,600
+              L0,600
+              Z
+            "
+          />
+        </svg>
+
+        {/* Sponsors Content */}
+        <div
+          ref={ref}
+          className="absolute top-28 left-24 flex items-start gap-24"
+        >
+
+          {/* TEXT */}
+          <motion.div
+            initial={{ opacity: 0, x: -60 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="max-w-sm"
+          >
+            <h2 className="font-bold text-[28px] text-black mb-2 pt-40">
+              BANGMETRIC Sponsors
+              <br />
+              ServiceNow
+            </h2>
+
+            <p className="text-gray-600 text-sm">
+              Lorem Ipsum is simply dummy text of
+              the printing and typesetting industry.
+            </p>
+          </motion.div>
+
+
+          {/* LOGOS */}
+          <div className="grid grid-cols-2 gap-4 mt-36">
+
+            {["/ISO.png", "/QC.png", "/SP.png", "/MSM.png"].map((src, i) => (
+              <motion.div
+                key={src}
+                custom={i}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                variants={imageVariants}
+              >
+                <Image
+                  src={src}
+                  alt={`Sponsor ${i + 1}`}
+                  width={90}
+                  height={90}
+                  className="object-contain"
+                />
+              </motion.div>
+            ))}
+
+          </div>
+
+        </div>
+
+      </div>
+
     </section>
   );
 }

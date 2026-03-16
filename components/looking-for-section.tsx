@@ -103,7 +103,7 @@ export function LookingForSection() {
           className="mb-16"
         >
           <h2 className="font-[Helvetica] font-bold text-[32px] text-center sm:text-[40px] md:text-[50px] leading-[45px] sm:leading-[55px] md:leading-[65px] text-black mb-6">
-            Are you looking for?
+           ServiceNow Offerings Built for Enterprise Success
           </h2>
         </motion.div>
 

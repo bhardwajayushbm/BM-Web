@@ -17,7 +17,7 @@ export default function OurOfficesPage() {
         }}
       />
 
-      {/* Very light overlay */}
+      {/* Light overlay */}
       <div className="absolute inset-0 bg-black/10" />
 
       {/* Content */}
@@ -39,22 +39,46 @@ export default function OurOfficesPage() {
         </p>
 
         <div className="flex gap-[40px] mt-[80px]">
+
+          {/* India Office */}
           <OfficeCard
             image="/India.png"
-            title="India-Global Headquarters (Noida)"
+            title="India – Global Headquarters (Noida)"
+            location="7th Floor, Tower A"
+            address={`Noida One, B-Block,
+Sector 62, Noida,
+Uttar Pradesh 201301`}
+            phone="+91 882 6431 333"
+            email="connect@bangmetric.com"
           />
+
+          {/* USA Office */}
           <OfficeCard
             image="/US.png"
-            title="United States- Regional Consulting & Client Services"
+            title="United States – Regional Consulting & Client Services"
+            location="BANGMETRIC LLC"
+            address={`619 Little School Road,
+Suite 204, Kennedale
+TX 76060`}
+            phone="+1 (817) 953-3330"
+            email="connect@bangmetric.com"
           />
+
+          {/* South Africa Office */}
           <OfficeCard
             image="/SA.png"
-            title="South Africa- Delivery & Operations Support"
+            title="South Africa – Delivery & Operations Support"
+            location="16 Troy Close"
+            address={`Sandton,
+Johannesburg,
+SA 2021`}
+            phone="+27 72 235 9351"
+            email="connect@bangmetric.com"
           />
         </div>
       </div>
 
-      {/* Globe (glow only on top, bottom static) */}
+      {/* Globe */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[900px] h-[420px] z-10 pointer-events-none">
         <motion.div
           animate={{
@@ -101,13 +125,13 @@ export default function OurOfficesPage() {
   );
 }
 
-function OfficeCard({ image, title }) {
+function OfficeCard({ image, title, location, address, phone, email }) {
   return (
     <div
       className="bg-white flex flex-col p-[16px]"
       style={{
-        width: "353.31px",
-        height: "437.16px",
+        width: "353px",
+        height: "437px",
         borderRadius: "10px",
       }}
     >
@@ -115,19 +139,18 @@ function OfficeCard({ image, title }) {
         <Image src={image} alt={title} fill className="object-cover" priority />
       </div>
 
-      <h3 className="mt-4 text-[22px] leading-[22px] font-semibold text-black">
+      <h3 className="mt-4 text-[22px] leading-[24px] font-semibold text-black">
         {title}
       </h3>
 
-      <p className="mt-4 text-[16px] leading-[20px] text-black">
-        <span className="font-bold">Located in:</span> KLJ Noida One
+      <p className="mt-4 text-[16px] leading-[22px] text-black">
+        <span className="font-bold">Located in:</span> {location}
         <br />
-        <span className="font-bold">Address:</span> 7th Floor, KLJ, Noida One,
-        B 8, Block B,
+        <span className="font-bold">Address:</span> {address}
         <br />
-        Industrial Area, Sector 62, Noida, Uttar Pradesh 201309
+        <span className="font-bold">Tel:</span> {phone}
         <br />
-        <span className="font-bold">Phone:</span> 084475 32355
+        <span className="font-bold">Email:</span> {email}
       </p>
     </div>
   );

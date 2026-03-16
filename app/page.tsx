@@ -24,14 +24,14 @@ export default function Home() {
       <Hero_ />
    
       <MetricsSection />
-      <LookingForSection />
+      {/* <LookingForSection /> */}
       <AreYouLookingForCard/>
       <MarqueeSection />
       <CustomerSuccessSection />
       <ClientTesti />
       <Event/>
       <Getintouch />
-      <Sponsors/>
+      {/* <Sponsors/> */}
       <Footer />
     </main>
   );

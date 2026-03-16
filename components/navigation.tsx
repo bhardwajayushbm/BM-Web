@@ -1,9 +1,9 @@
 'use client';
 
-import { Menu, ChevronDown } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { Menu } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Getintouch } from '@/components/Getintouch';
 
 export function Navigation() {
   return (
@@ -33,17 +33,17 @@ export function Navigation() {
             style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}
           >
             <div className="relative group">
-              <a
+              <Link
                 href="/aboutUs"
                 className="text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors"
               >
                 About
-              </a>
+              </Link>
 
               {/* Dropdown */}
               <div
                 className="
-                  absolute top-full left-0 mt-3 w-44
+                  absolute top-full left-0 mt-3 w-48
                   rounded-lg bg-white shadow-lg border border-gray-100
                   opacity-0 invisible
                   group-hover:opacity-100 group-hover:visible
@@ -51,20 +51,27 @@ export function Navigation() {
                 "
               >
                 <Link
-                  href="/company"
+                  href="/aboutUs"
                   className="block px-5 py-3 text-[15px] text-gray-900 hover:bg-purple-50 hover:text-purple-600 transition-colors"
                 >
                   Company
                 </Link>
+
+                <Link
+                  href="/company"
+                  className="block px-5 py-3 text-[15px] text-gray-900 hover:bg-purple-50 hover:text-purple-600 transition-colors"
+                >
+                  Life at Bangmetric
+                </Link>
               </div>
             </div>
 
-            <a
+            <Link
               href="/services"
               className="text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors"
             >
               Services
-            </a>
+            </Link>
 
             <a
               href="#industries"
@@ -73,35 +80,29 @@ export function Navigation() {
               Industries
             </a>
 
-            <a
+            <Link
               href="/resources"
               className="text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors"
             >
               Resources
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="/careers"
               className="text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors"
             >
               Careers
-            </a>
-
-            <button className="flex items-center gap-1 text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors">
-              Lorem Ipsum
-              <ChevronDown className="w-4 h-4" />
-            </button>
+            </Link>
           </div>
 
           {/* Contact Button */}
           <div className="hidden lg:flex items-center">
-            <a
-              href="#contact"
-              className="text-[16px] text-black rounded-full px-6 py-2.5 transition-colors"
-              style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}
+             <Link
+              href="/Getintouch"
+              className="text-[16px] font-normal text-gray-900 hover:text-purple-600 transition-colors"
             >
-              Get In Touch
-            </a>
+              Get in Touch
+            </Link>
           </div>
 
           {/* Mobile Menu Icon */}

@@ -21,8 +21,7 @@ export default function LookingForCard() {
             text-black pt-4 leading-tight
           "
         >
-          60-Day<br />
-          BANGMETRIC Jumpstarts
+          Adopt ServiceNow in 60 Days
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">

@@ -27,13 +27,11 @@ export default function AreYouLookingForCard() {
       <div className="w-full max-w-[1440px] mx-auto">
 
         <h2 className="text-center font-[Helvetica] font-bold 
-          text-[32px] sm:text-[40px] md:text-[48px] text-black pt-4">
-          Are you looking for?
+        text-[26px] sm:text-[40px] md:text-[48px] text-black pt-4">
+          ServiceNow Offerings Built for Enterprise Success
         </h2>
 
-        <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10"
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
           {items.map((rawTitle, i) => {
             const cleaned = rawTitle.toLowerCase().trim();
             const isExploreMore = cleaned === "explore more";
@@ -57,23 +55,12 @@ export default function AreYouLookingForCard() {
                   "
                 >
                   <div className="flex justify-between items-start w-full">
-                    <h3
-                      className="
-                        font-[Helvetica] font-normal 
-                        text-[22px] sm:text-[24px] md:text-[25px]
-                        text-white
-                      "
-                    >
+                    <h3 className="font-[Helvetica] font-normal 
+                      text-[22px] sm:text-[24px] md:text-[25px] text-white">
                       Explore More
                     </h3>
 
-                    <span
-                      className="
-                        text-white 
-                        text-[28px] md:text-[32px] 
-                        font-bold leading-none
-                      "
-                    >
+                    <span className="text-white text-[28px] md:text-[32px] font-bold">
                       ↗
                     </span>
                   </div>
@@ -123,11 +110,30 @@ export default function AreYouLookingForCard() {
                     </p>
                   </div>
 
-                  <span className="text-black 
-                    text-[20px] sm:text-[22px] md:text-[24px] 
-                    font-bold">
-                    ↗
-                  </span>
+                  {/* Arrow Navigation */}
+                  {title === "CSM Standard" && (
+                    <Link
+                      href="/customer"
+                      className="text-black text-[22px] font-bold"
+                    >
+                      ↗
+                    </Link>
+                  )}
+
+                  {title === "ITSM Standard" && (
+                    <Link
+                      href="/it"
+                      className="text-black text-[22px] font-bold"
+                    >
+                      ↗
+                    </Link>
+                  )}
+
+                  {title !== "CSM Standard" && title !== "ITSM Standard" && (
+                    <span className="text-black text-[22px] font-bold">
+                      ↗
+                    </span>
+                  )}
                 </div>
 
                 {!isLong && (

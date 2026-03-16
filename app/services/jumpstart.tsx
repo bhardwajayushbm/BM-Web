@@ -41,16 +41,13 @@ export default function JumpstartSection() {
       >
         <div>
           <h2 className="font-helvetica font-normal text-[40px] leading-[44px] text-black">
-            Lorem Ipsum is simply<br />
-            dummy text of the printing<br />
-            and Lorem Ipsum has<br />
-            been
+            BANGMETRIC Jumpstart Offerings
           </h2>
 
 
-          <p className=" font-helvetica mt-6 text-[12px] md:text-[26px] text-gray-600">
-            Lorem Ipsum is simply dummy text of the<br />
-            printing and Lorem Ipsum has been
+          <p className=" font-helvetica mt-6 text-[12px] md:text-[26px] text-black">
+            BANGMETRIC Jumpstart Offerings are focused, fast-track onboarding packages designed to accelerate ServiceNow<br />
+            adoption. Specifically designed mid-market and commercial organizations.
           </p>
         </div>
 

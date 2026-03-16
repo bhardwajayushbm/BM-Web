@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AreYouLookingForCard() {
   const items = [
@@ -25,13 +26,23 @@ export default function AreYouLookingForCard() {
             text-black pt-4 leading-tight 
           "
         >
-          45-Day<br />
-          BANGMETRIC Jumpstarts
+          Adopt ServiceNow in 45 Days
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-20">
           {items.map((title, i) => {
             const isLong = title.length > 22;
+
+            const arrow = (
+              <div className="relative w-[49px] h-[49px] cursor-pointer">
+                <Image
+                  src="/arrow.png"
+                  alt="Arrow"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            );
 
             return (
               <div
@@ -71,7 +82,7 @@ export default function AreYouLookingForCard() {
                       {title}
                     </h3>
 
-                    {/* Description text */}
+                    {/* Description */}
                     <p
                       className="
                         font-[Helvetica] font-normal 
@@ -95,18 +106,17 @@ export default function AreYouLookingForCard() {
                     </p>
                   </div>
 
-                  {/* Arrow */}
-                  <div className="relative w-[49px] h-[49px]">
-                    <Image
-                      src="/arrow.png"
-                      alt="Arrow"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
+                  {/* Arrow Navigation */}
+                  {title === "CSM Standard" ? (
+                    <Link href="/customer">{arrow}</Link>
+                  ) : title === "ITSM Standard" ? (
+                    <Link href="/it">{arrow}</Link>
+                  ) : (
+                    arrow
+                  )}
                 </div>
 
-                {/* Star – visible on all cards */}
+                {/* Star */}
                 <div className="absolute bottom-3 right-4">
                   <Image
                     src="/star.png"

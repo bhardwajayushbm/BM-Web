@@ -31,7 +31,7 @@ export default function ITSMJumpstartSection() {
           {/* RIGHT IMAGE */}
           <div className="relative w-[280px] h-[300px]">
             <Image
-              src="/Jump.png"
+              src="/IT.png"
               alt="Jump Graphic"
               fill
               className="object-contain"
@@ -50,17 +50,19 @@ export default function ITSMJumpstartSection() {
               w-[560px]
               h-[200px]
               rounded-[20px]
-              bg-[#9F9EF2]
+              bg-black
+              border border-[#9562EB]
               p-8
               flex flex-col justify-center
-              shadow-md
+              transition-all duration-300
+              hover:bg-[#9F9EF2]
             "
           >
             <h3 className="text-[30px] font-semibold mb-4 text-white">
               45-Day ITSM Foundation
             </h3>
 
-            <p className="text-[16px] leading-[1.6] text-white max-w-[480px]">
+            <p className="text-[16px] leading-[1.6] text-gray-300 max-w-[480px]">
               A clean, effective baseline that actually improves flow:
               Incident, Request, core Catalog, Knowledge, practical SLAs,
               Major Incident basics, and a portal that reduces effort.
@@ -77,8 +79,11 @@ export default function ITSMJumpstartSection() {
               rounded-[20px]
               border
               border-[#9562EB]
+              bg-black
               p-8
               flex flex-col justify-center
+              transition-all duration-300
+              hover:bg-[#9F9EF2]
             "
           >
             <h3 className="text-[30px] font-semibold mb-4 text-white">
