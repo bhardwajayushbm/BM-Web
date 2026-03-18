@@ -2,16 +2,16 @@
 
 export default function CSMJumpstartSection() {
   return (
-    <section className="w-full bg-black py-24 px-4 md:px-8 lg:px-12 flex justify-center">
-      <div className="w-full max-w-[1200px] text-center font-helvetica">
+    <section className="w-full bg-white py-24 px-4 md:px-8 lg:px-12 flex justify-center">
+      <div className="w-full max-w-[1100px] text-center font-helvetica">
 
         {/* Heading */}
-        <h2 className="text-white text-[30px] md:text-[48px]  mb-2">
+        <h2 className="text-black text-[26px] md:text-[48px]  mb-0">
           Our CSM Jumpstart Offerings
         </h2>
 
         {/* Subtitle */}
-        <p className="text-gray-300 text-[24px] mb-14">
+        <p className="text-black text-[18px] mb-14">
           BANGMETRIC delivers value fast, without compromising design.
         </p>
 
@@ -21,24 +21,24 @@ export default function CSMJumpstartSection() {
           {/* Card 1 */}
           <div
             className="
-              w-full md:w-[679px]
-              h-[250px]
-              rounded-[20px]
-              border border-[#9562EB]
-              bg-black
+              w-full md:w-[659px]
+              h-[180px]
+              rounded-[10px]
+              border border-black
+              bg-white
               text-left
               p-8
               transition-all duration-300
-              hover:bg-[#9F9EF2]
+              hover:bg-[#E3DCFF]
             "
-            style={{
-              boxShadow: "inset 0px 0px 4.3px 3px rgba(0,0,0,0.28)"
-            }}
+            // style={{
+            //   boxShadow: "inset 0px 0px 4.3px 3px rgba(0,0,0,0.28)"
+            // }}
           >
-            <h3 className="text-[30px] font-semibold mb-4 text-white">
+            <h3 className="text-[30px] font-semibold mb-4 text-black">
               45-Day CSM Standard
             </h3>
-            <p className="text-[16px] leading-[1.5] text-white">
+            <p className="text-[12px] leading-[1.5] text-black">
               A clean, expertly designed CSM foundation delivered with
               speed and clarity. Ideal for organisations wanting a strong
               core built right the first time, without unnecessary complexity.
@@ -48,24 +48,21 @@ export default function CSMJumpstartSection() {
           {/* Card 2 */}
           <div
             className="
-              w-full md:w-[679px]
-              h-[250px]
-              rounded-[20px]
-              border border-[#9562EB]
-              bg-black
+              w-full md:w-[659px]
+              h-[180px]
+              rounded-[10px]
+              border border-black
+              bg-white
               text-left
               p-8
               transition-all duration-300
-              hover:bg-[#9F9EF2]
+              hover:bg-[#E3DCFF]
             "
-            style={{
-              boxShadow: "inset 0px 0px 4.3px 3px rgba(0,0,0,0.28)"
-            }}
           >
-            <h3 className="text-[30px] font-semibold mb-4 text-white">
+            <h3 className="text-[30px] font-semibold mb-4 text-black">
               60-Day CSM Pro
             </h3>
-            <p className="text-[16px] leading-[1.5] text-white">
+            <p className="text-[12px] leading-[1.5] text-black">
               For teams ready to unlock CSM Pro capabilities. Intelligent
               workflows, AI supported service, and scalable design,
               delivered deliberately, not rushed.

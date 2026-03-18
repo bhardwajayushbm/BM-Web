@@ -42,7 +42,7 @@ export default function EducationSection() {
 
   return (
     <section className="w-full bg-white px-4 sm:px-8 lg:px-[80px] flex justify-center">
-      <div className="w-full max-w-[1155px] font-[Helvetica] text-black">
+      <div className="w-full max-w-[955px] font-[Helvetica] text-black">
 
         <div className="w-full h-px bg-[#8A8A8A] my-10"></div>
 
@@ -61,7 +61,7 @@ export default function EducationSection() {
                   <input
                     type="text"
                     placeholder="Select.."
-                    className="w-full h-[38px] border border-[#E5E5E5] rounded-[6px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
+                    className="w-full h-[38px] border border-black rounded-[6px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
                   />
                 </div>
 
@@ -70,7 +70,7 @@ export default function EducationSection() {
                   <input
                     type="text"
                     placeholder="Select.."
-                    className="w-full h-[38px] border border-[#E5E5E5] rounded-[6px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
+                    className="w-full h-[38px] border border-black rounded-[6px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
                   />
                 </div>
 
@@ -79,7 +79,7 @@ export default function EducationSection() {
                   <input
                     type="text"
                     placeholder="Select.."
-                    className="w-full h-[38px] border border-[#E5E5E5] rounded-[6px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
+                    className="w-full h-[38px] border border-black rounded-[6px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
                   />
                 </div>
 
@@ -92,7 +92,7 @@ export default function EducationSection() {
                     </label>
                     <input
                       type="month"
-                      className="w-full h-[38px] border border-[#E5E5E5] rounded-[6px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
+                      className="w-full h-[38px] border border-black rounded-[6px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
                     />
                   </div>
 
@@ -102,7 +102,7 @@ export default function EducationSection() {
                     </label>
                     <input
                       type="month"
-                      className="w-full h-[38px] border border-[#E5E5E5] rounded-[6px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
+                      className="w-full h-[38px] border border-black rounded-[6px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
                     />
                   </div>
 
@@ -117,7 +117,7 @@ export default function EducationSection() {
                     </label>
                     <input
                       type="month"
-                      className="w-full h-[38px] border border-[#E5E5E5] rounded-[6px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
+                      className="w-full h-[38px] border border-black rounded-[6px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
                     />
                   </div>
 
@@ -127,7 +127,7 @@ export default function EducationSection() {
                     </label>
                     <input
                       type="month"
-                      className="w-full h-[38px] border border-[#E5E5E5] rounded-[6px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
+                      className="w-full h-[38px] border border-black rounded-[6px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
                     />
                   </div>
 
@@ -159,7 +159,7 @@ export default function EducationSection() {
 
             <input
               type="url"
-              className="w-full h-[38px] border border-[#E5E5E5] rounded-[6px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
+              className="w-full h-[38px] border border-black rounded-[6px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
             />
           </div>
 
@@ -170,7 +170,7 @@ export default function EducationSection() {
 
             <input
               type="url"
-              className="w-full h-[38px] border border-[#E5E5E5] rounded-[6px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
+              className="w-full h-[38px] border border-black rounded-[6px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
             />
           </div>
 

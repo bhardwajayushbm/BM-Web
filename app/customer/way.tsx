@@ -27,16 +27,16 @@ export default function BangmetricWay() {
             className="w-full bg-white py-28"
             style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
         >
-            <div className="max-w-[1400px] mx-auto flex justify-between items-center px-10">
+            <div className="max-w-[1100px] mx-auto flex justify-between items-center px-10">
 
                 {/* LEFT SECTION */}
                 <div className="max-w-[520px]">
 
-                    <h2 className="text-[40px] font-semibold text-black mt-16">
+                    <h2 className="text-[36px] font-normal text-black mt-16">
                         The BANGMETRIC Way
                     </h2>
 
-                    <p className="text-[30px] text-black">
+                    <p className="text-[22px] text-black">
                         Our Customer Service Blueprint
                     </p>
                     <div className="relative w-[450px] h-[369px] mt-6 left-[-140px]">
@@ -60,11 +60,11 @@ export default function BangmetricWay() {
                             <div
                                 className="
                   absolute
-                  -left-[22px]
+                  -left-[20px]
                   top-1/2
                   -translate-y-1/2
-                  w-[44px]
-                  h-[44px]
+                  w-[34px]
+                  h-[34px]
                   rounded-full
                   bg-[#D8CDFF]
                   shadow-md
@@ -75,13 +75,13 @@ export default function BangmetricWay() {
                             {/* Card */}
                             <div
                                 className="
-                w-[600px]
-                h-[120px]
+                w-[440px]
+                h-[90px]
                 rounded-[10px]
                 flex
                 items-center
                 px-8
-                gap-6
+                gap-2
                 border
                 border-[#D8D8D8]
                 bg-[#F1F1F4]
@@ -93,7 +93,7 @@ export default function BangmetricWay() {
                             >
 
                                 {/* Title */}
-                                <div className="w-[220px] text-[20px] font-semibold leading-tight">
+                                <div className="w-[220px] text-[18px] font-semibold leading-tight">
                                     {step.title}
                                 </div>
 
@@ -110,7 +110,7 @@ export default function BangmetricWay() {
                                 />
 
                                 {/* Description */}
-                                <p className="text-[16px] leading-[1.5]">
+                                <p className="text-[14px] leading-[1.2]">
                                     {step.desc}
                                 </p>
 

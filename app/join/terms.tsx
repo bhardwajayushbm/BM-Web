@@ -3,7 +3,7 @@
 export default function TermsSection() {
   return (
     <section className="w-full bg-white px-4 sm:px-8 lg:px-[77px] py-10 flex justify-center">
-      <div className="w-full max-w-[1100px] font-[Helvetica] text-black text-[16px] sm:text-[17px] leading-[1.5]">
+      <div className="w-full max-w-[955px] font-[Helvetica] text-black text-[16px] sm:text-[17px] leading-[1.5]">
 
         {/* Links Row */}
         <div className="mb-6 text-[18px] sm:text-[20px] flex flex-wrap gap-x-2 gap-y-2">
@@ -32,9 +32,8 @@ export default function TermsSection() {
 
         </div>
 
-
         {/* Paragraph 1 */}
-        <p className="text-gray-500 mb-6">
+        <p className="text-gray-500 text-[14px] sm:text-[15px] mb-6">
           © 2026 For more information contact BANGMETRIC India. Deloitte refers
           to one or more of BANGMETRIC Touche Tohmatsu Limited (“DTTL”), its
           global network of member firms, and their related entities
@@ -47,9 +46,8 @@ export default function TermsSection() {
           to clients. Please see www.bangmetric.com/about to learn more.
         </p>
 
-
         {/* Paragraph 2 */}
-        <p className="text-gray-500 mb-6">
+        <p className="text-gray-500 text-[14px] sm:text-[15px] mb-6">
           If you have given your consent to receive job offers from us, please
           note that you can withdraw your consent anytime by sending your
           request at cerecruiting@bangmetric.com. Once we have processed your
@@ -62,9 +60,8 @@ export default function TermsSection() {
           processing based on consent before its withdrawal.
         </p>
 
-
         {/* Paragraph 3 */}
-        <p className="text-gray-500">
+        <p className="text-gray-500 text-[14px] sm:text-[15px]">
           On the basis of its legitimate interest, Avature collects IP addresses
           for the sole purpose of filtering out malicious traffic. We do not
           associate the IP addresses with any other information and do not share

@@ -5,7 +5,7 @@ import { Bell } from "lucide-react";
 export default function ApplyJobPage() {
   return (
     <section className="w-full bg-white px-4 sm:px-8 lg:px-[80px] py-10 flex justify-center">
-      <div className="w-full max-w-[1155px] font-[Helvetica] text-black">
+      <div className="w-full max-w-[955px] font-[Helvetica] text-black">
 
         {/* Job Alert Card */}
         <div className="w-full border border-[#D9D9D9] rounded-[10px] bg-white flex items-start sm:items-center gap-4 p-6">
@@ -34,7 +34,6 @@ export default function ApplyJobPage() {
 
         </div>
 
-
         {/* Apply Section */}
         <div className="w-full mt-16">
 
@@ -42,7 +41,7 @@ export default function ApplyJobPage() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
 
             <div>
-              <h2 className="text-[28px] sm:text-[34px] md:text-[40px] font-medium text-[#9562EB]">
+              <h2 className="text-[20px] sm:text-[20px] md:text-[20px] font-medium text-[#9562EB]">
                 Apply for this job
               </h2>
 
@@ -60,7 +59,6 @@ export default function ApplyJobPage() {
 
           </div>
 
-
           {/* Form */}
           <form className="space-y-6 w-full max-w-[620px]">
 
@@ -68,7 +66,7 @@ export default function ApplyJobPage() {
               <label className="block text-[16px] mb-1">Name</label>
               <input
                 type="text"
-                className="w-full h-[38px] border border-[#E5E5E5] rounded-[4px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
+                className="w-full h-[40px] border border-black rounded-[4px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
               />
             </div>
 
@@ -76,7 +74,7 @@ export default function ApplyJobPage() {
               <label className="block text-[16px] mb-1">Last Name</label>
               <input
                 type="text"
-                className="w-full h-[38px] border border-[#E5E5E5] rounded-[4px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
+                className="w-full h-[40px] border border-black rounded-[4px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
               />
             </div>
 
@@ -84,17 +82,16 @@ export default function ApplyJobPage() {
               <label className="block text-[16px] mb-1">Email</label>
               <input
                 type="email"
-                className="w-full h-[38px] border border-[#E5E5E5] rounded-[4px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
+                className="w-full h-[40px] border border-black rounded-[4px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
               />
             </div>
-
 
             {/* Country + Phone */}
             <div className="flex flex-col sm:flex-row gap-4">
 
               <div className="w-full sm:w-[40%]">
                 <label className="block text-[16px] mb-1">Country</label>
-                <select className="w-full h-[38px] border border-[#E5E5E5] rounded-[4px] px-3 text-[14px] text-gray-500 outline-none focus:border-[#9562EB]">
+                <select className="w-full h-[40px] border border-black rounded-[4px] px-3 text-[14px] outline-none focus:border-[#9562EB]">
                   <option>Select...</option>
                   <option>India</option>
                   <option>USA</option>
@@ -106,30 +103,29 @@ export default function ApplyJobPage() {
                 <label className="block text-[16px] mb-1">Phone</label>
                 <input
                   type="tel"
-                  className="w-full h-[38px] border border-[#E5E5E5] rounded-[4px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
+                  className="w-full h-[40px] border border-black rounded-[4px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
                 />
               </div>
 
             </div>
 
+            {/* Resume Upload Section */}
+            <div className="w-full max-w-[400px] space-y-3">
 
-            {/* Upload Section */}
-            <div className="flex flex-col sm:flex-row gap-4">
-
-              <div className="w-full sm:w-[40%]">
-                <label className="block text-[16px] mb-1">Resume/CV</label>
+              <div>
+                <label className="block text-[16px] mb-2">Resume/CV</label>
 
                 <label
                   className="
-                    w-full h-[38px]
+                    w-[300px] h-[40px]
                     border border-[#9562EB]
-                    rounded-[4px]
+                    rounded-[6px]
                     flex items-center justify-center
                     text-[14px] text-[#9562EB]
                     cursor-pointer
-                    transition-all
-                    hover:text-white
                     hover:bg-[#9562EB]
+                    hover:text-white
+                    transition
                   "
                 >
                   Attach
@@ -137,31 +133,28 @@ export default function ApplyJobPage() {
                 </label>
               </div>
 
-
-              <div className="w-full sm:w-[40%]">
-                <label className="block text-[16px] mb-1">Portfolio</label>
-
+              <div>
                 <label
                   className="
-                    w-full h-[38px]
+                    w-[300px] h-[40px]
                     border border-[#9562EB]
-                    rounded-[4px]
+                    rounded-[6px]
                     flex items-center justify-center
                     text-[14px] text-[#9562EB]
                     cursor-pointer
-                    transition-all
-                    hover:text-white
                     hover:bg-[#9562EB]
+                    hover:text-white
+                    transition
                   "
                 >
-                  Upload
+                  Portfolio
                   <input type="file" className="hidden" />
                 </label>
-
-                <p className="text-[11px] mt-1">
-                  Accepted file types: pdf, doc, docx
-                </p>
               </div>
+
+              <p className="text-[12px] text-gray-600">
+                Accepted file types: pdf, doc, docx
+              </p>
 
             </div>
 
