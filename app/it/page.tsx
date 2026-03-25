@@ -6,7 +6,6 @@ export default function CustomerServiceManagementPage() {
   return (
     <div className="w-full bg-white font-helvetica">
 
-      {/* HERO BANNER */}
       <section className="w-full flex justify-center px-4 md:px-8 lg:px-10 mt-8 md:mt-20 lg:mt-28">
         <div
           className="
@@ -42,12 +41,9 @@ export default function CustomerServiceManagementPage() {
         </div>
       </section>
 
-
-      {/* CONTENT SECTION */}
       <section className="w-full flex justify-center px-4 md:px-8 lg:px-12 mt-16 mb-6">
         <div className="w-full max-w-[1400px] grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
 
-          {/* LEFT HEADING */}
           <div>
             <h2 className="text-[28px] md:text-[40px] lg:text-[48px] leading-[1.15] text-black">
               Designed from <br />
@@ -58,8 +54,6 @@ export default function CustomerServiceManagementPage() {
             </h2>
           </div>
 
-
-          {/* RIGHT CONTENT */}
           <div className="text-[16px] md:text-[18px] leading-[1.5] text-black max-w-[560px]">
 
             <p className="mb-6">

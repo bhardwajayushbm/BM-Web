@@ -5,8 +5,6 @@ export default function JoinPage() {
     <section className="w-full bg-white py-12">
       <div className="flex justify-center px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32">
         <div className="w-full max-w-[900px] text-black font-[Helvetica]">
-
-          {/* Title */}
           <h1 className="text-[26px] sm:text-[24px] md:text-[30px] leading-tight font-normal">
             AI/ML Architect
           </h1>
@@ -15,7 +13,6 @@ export default function JoinPage() {
             India - Remote
           </p>
 
-          {/* Why Us */}
           <h2 className="text-[18px] sm:text-[18px] md:text-[18px] mt-8">
             Why Us
           </h2>
@@ -33,8 +30,6 @@ export default function JoinPage() {
             <br /><br />
             Come join our Crew!
           </p>
-
-          {/* Role */}
           <h2 className="text-[18px] sm:text-[18px] md:text-[18px] mt-8">
             The Role
           </h2>
@@ -49,8 +44,6 @@ export default function JoinPage() {
             <br /><br />
             We are #GoingBeyond Come join our crew!
           </p>
-
-          {/* What You Will Be Doing */}
           <h2 className="text-[18px] sm:text-[18px] md:text-[18px] mt-8">
             What You Will Be Doing
           </h2>
@@ -72,8 +65,6 @@ export default function JoinPage() {
           <p className="text-[16px] md:text-[18px] mt-6">
             May perform additional duties as assigned.
           </p>
-
-          {/* What You Bring */}
           <h2 className="text-[18px] sm:text-[18px] md:text-[18px] mt-8">
             What You Bring Along
           </h2>
@@ -91,8 +82,6 @@ export default function JoinPage() {
             <li>Ability to work collaboratively and adapt to new AI technologies.</li>
             <li>Strong analytical and problem-solving skills.</li>
           </ul>
-
-          {/* Education */}
           <h2 className="text-[18px] sm:text-[18px] md:text-[18px] mt-8">
             Education
           </h2>

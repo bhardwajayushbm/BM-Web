@@ -3,153 +3,124 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const cards = [
+  {
+    title: "Enterprise Asset Management",
+    desc: "Visibility and control of your software, hardware, and app portfolios.",
+  },
+  {
+    title: "Enterprise Operations Management",
+    desc: "Unified operations to reduce downtime and enhance service performance.",
+  },
+  {
+    title: "Enterprise Service Management",
+    desc: "Standardizing and scaling service delivery across all business functions.",
+  },
+  {
+    title: "Strategic Portfolio Management",
+    desc: "Aligning investments and strategies to maximize business outcomes.",
+  },
+  {
+    title: "Customer Service Management",
+    desc: "Connected customer experiences that elevate service interactions.",
+  },
+  {
+    title: "Field Service Management",
+    desc: "Optimized field operations enabling faster and smarter service.",
+  },
+  {
+    title: "Third Party Risk Management",
+    desc: "Stronger third-party risk monitoring with proactive visibility.",
+  },
+  {
+    title: "Enterprise Risk Management",
+    desc: "Proactive risk visibility and governance across the entire organization.",
+  },
+];
+
 export default function AreYouLookingForCard() {
-  const items = [
-    "CSM Standard",
-    "FSM Standard",
-    "TPRM Standard",
-    "ITSM Standard",
-    "CMDB Optimization & Hardening",
-    "HRSD Standard",
-    "HAM Standard",
-    "SAM Standard",
-    "ITOM Standard",
-    "CSM Standard",
-    "FSM Standard",
-    "TPRM Standard",
-    "ITSM Standard",
-    "CMDB Optimization & Hardening",
-    "Explore More",
-  ];
-
   return (
-    <section className="w-full flex justify-center bg-[#F2F2F4] py-12 px-4 md:px-10">
-      <div className="w-full max-w-[1440px] mx-auto">
+    <section className="w-full bg-[#F2F2F4] py-16 px-4">
 
-        <h2 className="text-center font-[Helvetica] font-bold 
-        text-[26px] sm:text-[40px] md:text-[48px] text-black pt-4">
-          ServiceNow Offerings Built for Enterprise Success
+      <div className="max-w-[1100px] mx-auto">
+
+        <h2 className="text-center font-[Helvetica] font-normal text-[32px] sm:text-[40px] md:text-[48px] text-black">
+          ServiceNow Offerings Built for
+          <br />
+          Enterprise Success
         </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-          {items.map((rawTitle, i) => {
-            const cleaned = rawTitle.toLowerCase().trim();
-            const isExploreMore = cleaned === "explore more";
+          {cards.map((item, i) => (
+            <div
+              key={i}
+              className="
+                relative
+                rounded-[10px]
+                border border-[#D1D1D1]
+                px-5 py-4
+                h-[120px]
+                flex items-center justify-between
+                bg-white
+                hover:bg-[#D8CDFF]
+                transition-all duration-300
+              "
+            >
+              <div className="flex items-center gap-3">
 
-            if (isExploreMore) {
-              return (
-                <Link
-                  key={i}
-                  href="/services"
-                  className="
-                    h-[135px]
-                    rounded-[10px] 
-                    border border-[#BEBEBE]
-                    bg-[#9562EB]
-                    flex flex-col justify-between
-                    px-6 py-4
-                    w-full
-                    cursor-pointer
-                    hover:opacity-90
-                    transition
-                  "
-                >
-                  <div className="flex justify-between items-start w-full">
-                    <h3 className="font-[Helvetica] font-normal 
-                      text-[22px] sm:text-[24px] md:text-[25px] text-white">
-                      Explore More
-                    </h3>
+                <Image
+                  src="/SS.png"
+                  alt="icon"
+                  width={30}
+                  height={30}
+                  className="w-[30px] h-[30px] object-contain shrink-0"
+                />
 
-                    <span className="text-white text-[28px] md:text-[32px] font-bold">
-                      ↗
-                    </span>
-                  </div>
-                </Link>
-              );
-            }
+                <div className="flex flex-col justify-center">
+                  <h3 className="ml-2 font-[Helvetica] text-[18px] leading-[22px] text-black">
+                    {item.title}
+                  </h3>
 
-            const title = rawTitle;
-            const isLong = title.length > 22;
-
-            return (
-              <div
-                key={i}
-                className={`
-                  h-[135px]
-                  rounded-[10px] 
-                  border border-[#BEBEBE]
-                  p-4 flex flex-col justify-between
-                  bg-white
-                  transition-all duration-300
-                  hover:bg-[#D8CDFF]
-                  ${
-                    title === "FSM Standard"
-                      ? "bg-[#A88AEC]/30 hover:bg-[#D8CDFF]"
-                      : ""
-                  }
-                `}
-              >
-                <div className="flex justify-between">
-                  <div>
-                    <h3
-                      className={`
-                        font-[Helvetica] font-normal 
-                        text-[20px] sm:text-[22px] md:text-[24px]
-                        leading-[24px] text-black
-                        ${isLong ? "w-[210px] sm:w-[230px] md:w-[240px]" : ""}
-                        mb-[6px]
-                      `}
-                    >
-                      {title}
-                    </h3>
-
-                    <p className="font-[Helvetica] font-normal 
-                      text-[15px] sm:text-[17px] md:text-[18px] 
-                      text-[#474545] leading-[19px]">
-                      Improve access to service and increase service efficiency.
-                    </p>
-                  </div>
-
-                  {/* Arrow Navigation */}
-                  {title === "CSM Standard" && (
-                    <Link
-                      href="/customer"
-                      className="text-black text-[22px] font-bold"
-                    >
-                      ↗
-                    </Link>
-                  )}
-
-                  {title === "ITSM Standard" && (
-                    <Link
-                      href="/it"
-                      className="text-black text-[22px] font-bold"
-                    >
-                      ↗
-                    </Link>
-                  )}
-
-                  {title !== "CSM Standard" && title !== "ITSM Standard" && (
-                    <span className="text-black text-[22px] font-bold">
-                      ↗
-                    </span>
-                  )}
+                  <p className="ml-2 text-[13px] text-black leading-[16px] max-w-[240px] mt-1">
+                    {item.desc}
+                  </p>
                 </div>
-
-                {!isLong && (
-                  <div className="flex justify-end">
-                    <Image
-                      src="/star.png"
-                      alt="star"
-                      width={40}
-                      height={40}
-                      className="object-contain md:w-[45px] md:h-[45px]"
-                    />
-                  </div>
-                )}
               </div>
-            );
-          })}
+
+              <Image
+                src="/arrow.png"
+                alt="arrow"
+                width={18}
+                height={18}
+                className="absolute top-3 right-4 object-contain"
+              />
+            </div>
+          ))}
+
+          <Link
+            href="/services"
+            className="
+              relative
+              rounded-[10px]
+              px-5 py-4
+              h-[120px]
+              flex items-center justify-between
+              bg-gradient-to-r from-[#9562EB] to-[#7A4ED9]
+              text-white
+            "
+          >
+            <h3 className="text-[20px] font-[Helvetica]">
+              Explore More
+            </h3>
+            <Image
+              src="/arrow.png"
+              alt="arrow"
+              width={18}
+              height={18}
+              className="absolute top-3 right-4 object-contain invert brightness-0"
+            />
+          </Link>
+
         </div>
       </div>
     </section>

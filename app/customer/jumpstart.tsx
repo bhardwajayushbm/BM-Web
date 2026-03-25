@@ -4,21 +4,16 @@ export default function CSMJumpstartSection() {
   return (
     <section className="w-full bg-white py-24 px-4 md:px-8 lg:px-12 flex justify-center">
       <div className="w-full max-w-[1100px] text-center font-helvetica">
-
-        {/* Heading */}
         <h2 className="text-black text-[26px] md:text-[48px]  mb-0">
           Our CSM Jumpstart Offerings
         </h2>
 
-        {/* Subtitle */}
         <p className="text-black text-[18px] mb-14">
           BANGMETRIC delivers value fast, without compromising design.
         </p>
-
-        {/* Cards */}
         <div className="flex flex-col md:flex-row gap-10 justify-center items-center">
 
-          {/* Card 1 */}
+
           <div
             className="
               w-full md:w-[659px]
@@ -31,9 +26,6 @@ export default function CSMJumpstartSection() {
               transition-all duration-300
               hover:bg-[#E3DCFF]
             "
-            // style={{
-            //   boxShadow: "inset 0px 0px 4.3px 3px rgba(0,0,0,0.28)"
-            // }}
           >
             <h3 className="text-[30px] font-semibold mb-4 text-black">
               45-Day CSM Standard
@@ -45,7 +37,6 @@ export default function CSMJumpstartSection() {
             </p>
           </div>
 
-          {/* Card 2 */}
           <div
             className="
               w-full md:w-[659px]
@@ -71,7 +62,6 @@ export default function CSMJumpstartSection() {
 
         </div>
 
-        {/* Button */}
         <div className="mt-16 flex justify-center">
           <button
             className="

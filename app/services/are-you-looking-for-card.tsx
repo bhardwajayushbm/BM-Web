@@ -63,7 +63,6 @@ export default function AreYouLookingForCard() {
                   }
                 `}
               >
-                {/* Top content */}
                 <div className="flex justify-between">
                   <div>
                     <h3
@@ -81,8 +80,6 @@ export default function AreYouLookingForCard() {
                     >
                       {title}
                     </h3>
-
-                    {/* Description */}
                     <p
                       className="
                         font-[Helvetica] font-normal 
@@ -105,8 +102,6 @@ export default function AreYouLookingForCard() {
                       service efficiency.
                     </p>
                   </div>
-
-                  {/* Arrow Navigation */}
                   {title === "CSM Standard" ? (
                     <Link href="/customer">{arrow}</Link>
                   ) : title === "ITSM Standard" ? (
@@ -115,8 +110,6 @@ export default function AreYouLookingForCard() {
                     arrow
                   )}
                 </div>
-
-                {/* Star */}
                 <div className="absolute bottom-3 right-4">
                   <Image
                     src="/star.png"

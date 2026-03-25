@@ -28,11 +28,7 @@ export default function ResultsClientsSee() {
 
   return (
     <section className="w-full bg-[#F5F5F5] font-[Helvetica]">
-
-      {/* RESULTS SECTION */}
       <div className="max-w-[1400px] mx-auto px-16 py-24">
-
-        {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-[52px] font-normal text-black">
             The Results Our Clients See
@@ -42,8 +38,6 @@ export default function ResultsClientsSee() {
             When ITSM is designed properly, the numbers move
           </p>
         </div>
-
-        {/* Cards */}
         <div className="flex justify-between gap-6">
 
           {cards.map((card, index) => (
@@ -79,8 +73,6 @@ export default function ResultsClientsSee() {
           ))}
 
         </div>
-
-        {/* Green Bottom Heading */}
         <div className="text-center mt-20">
           <h3
             className="text-[34px] font-semibold leading-[1.3]"

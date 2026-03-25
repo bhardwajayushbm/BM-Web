@@ -33,7 +33,7 @@ export default function WhatYouCanExpect() {
         variants={containerVariants}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.2 }} // ✅ animate only once
+        viewport={{ once: true, amount: 0.2 }} 
       >
         <motion.div
           variants={cardVariants}

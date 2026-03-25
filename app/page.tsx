@@ -7,13 +7,14 @@ import { LookingForSection } from '@/components/looking-for-section';
 import AreYouLookingForCard from '@/components/are-You-looking-card';
 
 import { MarqueeSection } from '@/components/marquee-section';
-import { Getintouch } from '@/components/Getintouch';
-import {Sponsors} from '@/components/Sponsors';
+// import {Sponsors} from '@/components/Sponsors';
 import {Event} from '@/components/Event';
 import { TestimonialsSection } from '@/components/testimonials-section';
 import { Footer } from '@/components/footer';
 import Nav from '@/components/nav';
 import Hero_ from '@/components/Hero_';
+import GetInTouch from '@/components/Getintouch';
+import Philosophy from '@/components/philosphy';
 import Jumpstart_ from '@/components/JumpStart_';
 export default function Home() {
   return (
@@ -25,13 +26,14 @@ export default function Home() {
    
       <MetricsSection />
       {/* <LookingForSection /> */}
+       <Philosophy/>
       <AreYouLookingForCard/>
       <MarqueeSection />
       <CustomerSuccessSection />
       <ClientTesti />
       <Event/>
-      <Getintouch />
       {/* <Sponsors/> */}
+      <GetInTouch/>
       <Footer />
     </main>
   );

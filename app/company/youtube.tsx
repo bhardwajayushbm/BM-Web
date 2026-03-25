@@ -77,8 +77,6 @@ export default function HumansOfBangmetric() {
               )}
 
               <div className="absolute inset-0 bg-black/40 z-10" />
-
-              {/* YouTube SVG Icon */}
               <div className="absolute top-4 left-4 z-20">
                 <svg
                   width="36"

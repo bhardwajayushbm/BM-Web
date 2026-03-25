@@ -58,7 +58,7 @@ export default function ResourcesPage() {
         <h2
           className="
             font-helvetica font-normal text-black text-center
-            text-[32px] sm:text-[40px] md:text-[56px] lg:text-[72px] xl:text-[80px]
+            text-[36px] sm:text-[36px] md:text-[36px] lg:text-[36px] xl:text-[60px]
             leading-none
           "
         >

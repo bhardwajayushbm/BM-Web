@@ -29,7 +29,6 @@ export default function BangmetricWay() {
         >
             <div className="max-w-[1100px] mx-auto flex justify-between items-center px-10">
 
-                {/* LEFT SECTION */}
                 <div className="max-w-[520px]">
 
                     <h2 className="text-[36px] font-normal text-black mt-16">
@@ -50,13 +49,11 @@ export default function BangmetricWay() {
 
                 </div>
 
-                {/* RIGHT SECTION */}
                 <div className="ml-20 relative w-[740px] flex flex-col gap-8">
 
                     {steps.map((step, index) => (
                         <div key={index} className="relative flex items-center group">
 
-                            {/* Circle */}
                             <div
                                 className="
                   absolute
@@ -72,9 +69,7 @@ export default function BangmetricWay() {
                 "
                             />
 
-                            {/* Card */}
-                            <div
-                                className="
+                            <div className="
                 w-[440px]
                 h-[90px]
                 rounded-[10px]
@@ -90,16 +85,12 @@ export default function BangmetricWay() {
                 group-hover:bg-[#9383DC]
                 group-hover:text-white
                 "
-                            >
+                >
+                <div className="w-[220px] text-[18px] font-semibold leading-tight">
+                {step.title}
+                </div>
 
-                                {/* Title */}
-                                <div className="w-[220px] text-[18px] font-semibold leading-tight">
-                                    {step.title}
-                                </div>
-
-                                {/* Divider */}
-                                <div
-                                    className="
+                <div  className="
                   w-[1.5px]
                   h-[70px]
                   bg-black
@@ -107,17 +98,17 @@ export default function BangmetricWay() {
                   duration-300
                   group-hover:bg-white/50
                   "
-                                />
+                 />
 
-                                {/* Description */}
-                                <p className="text-[14px] leading-[1.2]">
-                                    {step.desc}
-                                </p>
+                               
+                <p className="text-[14px] leading-[1.2]">
+                 {step.desc}
+                </p>
 
-                            </div>
+                </div>
 
-                        </div>
-                    ))}
+                </div>
+                ))}
 
                 </div>
 

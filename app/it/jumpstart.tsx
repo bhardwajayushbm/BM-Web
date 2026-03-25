@@ -6,11 +6,8 @@ export default function ITSMJumpstartSection() {
   return (
     <section className="w-full bg-black py-24 px-6 md:px-12 flex justify-center">
       <div className="w-full max-w-[1300px] font-[Helvetica] text-white">
-
-        {/* ===== TOP SECTION ===== */}
         <div className="flex justify-between items-start mb-10">
 
-          {/* LEFT TEXT */}
           <div className="max-w-[650px]">
 
             <h2 className="text-[56px] leading-[1.1] font-normal">
@@ -27,8 +24,6 @@ export default function ITSMJumpstartSection() {
             </p>
 
           </div>
-
-          {/* RIGHT IMAGE */}
           <div className="relative w-[280px] h-[300px]">
             <Image
               src="/IT.png"
@@ -40,11 +35,8 @@ export default function ITSMJumpstartSection() {
 
         </div>
 
-
-        {/* ===== CARDS ===== */}
         <div className="flex gap-10 justify-between">
 
-          {/* CARD 1 */}
           <div
             className="
               w-[560px]
@@ -70,8 +62,6 @@ export default function ITSMJumpstartSection() {
             </p>
           </div>
 
-
-          {/* CARD 2 */}
           <div
             className="
               w-[560px]
@@ -98,9 +88,6 @@ export default function ITSMJumpstartSection() {
           </div>
 
         </div>
-
-
-        {/* ===== BUTTON ===== */}
         <div className="flex justify-center mt-16">
           <button
             className="

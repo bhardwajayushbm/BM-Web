@@ -45,8 +45,6 @@ export default function EducationSection() {
       <div className="w-full max-w-[955px] font-[Helvetica] text-black">
 
         <div className="w-full h-px bg-[#8A8A8A] my-10"></div>
-
-        {/* EDUCATION FORM */}
         <div className="w-full max-w-[620px]">
 
           <h2 className="text-[22px] font-semibold mb-6">Education</h2>
@@ -83,7 +81,6 @@ export default function EducationSection() {
                   />
                 </div>
 
-                {/* START DATE */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
                   <div>
@@ -108,7 +105,6 @@ export default function EducationSection() {
 
                 </div>
 
-                {/* END DATE */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
                   <div>
@@ -149,7 +145,6 @@ export default function EducationSection() {
 
         <div className="w-full h-px bg-[#8A8A8A] my-10"></div>
 
-        {/* LINKS */}
         <div className="w-full max-w-[620px] space-y-5">
 
           <div>
@@ -176,7 +171,6 @@ export default function EducationSection() {
 
         </div>
 
-        {/* SUBMIT BUTTON */}
         <div className="w-full flex justify-center sm:justify-end mt-8">
 
           <button

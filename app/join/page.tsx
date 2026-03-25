@@ -39,8 +39,6 @@ export default function CareersPage() {
           priority
           className="object-cover object-center"
         />
-
-        {/* Overlay Content */}
         <div className="relative z-10 w-full flex items-center justify-center text-center px-4">
           <h1
             className="

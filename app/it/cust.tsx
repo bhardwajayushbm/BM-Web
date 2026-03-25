@@ -5,8 +5,6 @@ import Image from "next/image";
 export default function CustomerServiceBanner() {
   return (
     <section className="relative w-full h-[260px]">
-
-      {/* Background Image */}
       <Image
         src="/Cust.jpg"
         alt="Customer Service Management"
@@ -14,11 +12,7 @@ export default function CustomerServiceBanner() {
         priority
         className="object-cover"
       />
-
-      {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/60" />
-
-      {/* Content */}
       <div className="absolute inset-0 flex items-center px-[82px]">
 
         <div>

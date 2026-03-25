@@ -20,73 +20,69 @@ export function Event() {
   return (
     <section
       ref={ref}
-      className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden py-20"
+      className="w-full flex justify-center py-16 md:py-20"
     >
-      <div className="absolute inset-0">
-        <Image
-          src="/Walpaper.png"
-          alt="Background"
-          fill
-          priority
-          className="object-cover object-center opacity-80"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#ffffffcc] via-[#ffffff99] to-transparent"></div>
-      </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: -30 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8 }}
-        className="relative z-10 text-center mb-16"
-      >
-        <h1 className="font-[Helvetica] font-bold text-[48px] sm:text-[56px] md:text-[64px] leading-tight text-black"
-        style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
-          Events
-        </h1>
-      </motion.div>
-
-      <div className="container mx-auto px-6 max-w-7xl relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="w-full max-w-[1100px] px-4 sm:px-6">
         <motion.div
-          initial={{ opacity: 0, x: -80 }}
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          initial={{ opacity: 0, y: -30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="font-[Helvetica] font-bold text-[32px] sm:text-[40px] md:text-[50px] leading-[45px] sm:leading-[55px] md:leading-[65px] text-black mb-6">
-            BANGMETRIC Sponsors Servicenow Developer Meetup
-          </h2>
-          <p className="text-lg text-gray-700 mb-8 leading-relaxed max-w-xl">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s.
-          </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            className="bg-[#9562EB] hover:bg-[#8449E6] text-white 
-            font-[Helvetica] font-normal text-[22px] leading-[55px]
-            w-[200px] h-[46px] rounded-[5px] transition-all duration-300 shadow-md
-            flex items-center justify-center"
-          >
-            Read More
-          </motion.button>
+          <h1 className="font-[Helvetica] font-normal text-[28px] sm:text-[40px] md:text-[52px] lg:text-[60px] leading-tight text-black">
+            Events & News
+          </h1>
         </motion.div>
-
-        <div className="relative flex justify-center lg:justify-end items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 items-center">
           <motion.div
-            custom={0}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            variants={imageVariants}
-            className="relative z-20"
+            initial={{ opacity: 0, x: -80 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="text-center lg:text-left"
           >
-            <Image
-              src="/Event.png"
-              alt="Event"
-              width={623}
-              height={513}
-              className="object-contain drop-shadow-xl rounded-lg"
-            />
+            <h2 className="font-[Helvetica] font-normal text-[24px] sm:text-[30px] md:text-[38px] lg:text-[42px] leading-[1.3] text-black mb-4 md:mb-6">
+              BANGMETRIC at Servicenow Knowledge 2025
+            </h2>
+
+            <p className="font-[Helvetica] text-[16px] sm:text-[18px] md:text-[18px] text-black mb-6 md:mb-8 leading-[1.5] max-w-[500px] mx-auto lg:mx-0">
+              Our ServiceNow Jumpstart offerings were met with great enthusiasm
+              and buzz at ServiceNow Knowledge 2025
+            </p>
+
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              className="
+                bg-[#9562EB] hover:bg-[#8449E6] text-white
+                font-[Helvetica] text-[16px] sm:text-[18px]
+                w-[140px] sm:w-[160px] h-[38px] sm:h-[38px]
+                rounded-[6px] shadow-md
+                transition-all duration-300
+                flex items-center justify-center
+                mx-auto lg:mx-0
+              "
+            >
+              Read More
+            </motion.button>
           </motion.div>
+          <div className="flex justify-center lg:justify-end">
+            <motion.div
+              custom={0}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              variants={imageVariants}
+              className="w-full max-w-[520px]"
+            >
+              <Image
+                src="/Event.png"
+                alt="Event"
+                width={623}
+                height={513}
+                className="w-full h-auto object-contain rounded-lg drop-shadow-xl"
+              />
+            </motion.div>
+          </div>
+
         </div>
       </div>
     </section>

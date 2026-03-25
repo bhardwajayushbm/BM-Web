@@ -4,15 +4,18 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 const logos = [
-  { src: '/L1.png', alt: 'Carpenter Technology' },
-  { src: '/L2.png', alt: 'ITC Infotech' },
-  { src: '/L3.png', alt: 'ZenSar Technologies' },
-  { src: '/L4.png', alt: 'R Systems' },
-  { src: '/L5.png', alt: 'Tech Mahindra' },
-  { src: '/L6.png', alt: 'Cisco Meraki' },
-  { src: '/L7.png', alt: 'Construction Specialties' },
-  { src: '/L8.png', alt: 'TridentCare' },
-  { src: '/L9.png', alt: 'TEKsystems' },
+  // { src: '/L1.png', alt: 'Carpenter Technology' },
+  { src: '/ITC-Infotech-Logo.png', alt: 'ITC Infotech' },
+  { src: '/Zensar-Logo.png', alt: 'ZenSar Technologies' },
+  { src: '/Rsystem-Logo.png', alt: 'R Systems' },
+  { src: '/TechMahindra-Logo.png', alt: 'Tech Mahindra' },
+  // { src: '/L6.png', alt: 'Cisco Meraki' },
+  // { src: '/L7.png', alt: 'Construction Specialties' },
+  // { src: '/L8.png', alt: 'TridentCare' },
+  { src: '/Teksystems-Logo.png', alt: 'TEKsystems' },
+  { src: '/Tsystem-Logo.png', alt: 'Tsystems' },
+   { src: '/UST-Technologies-Logo.png', alt: 'UST Technology' },
+   { src: '/Hexaware-Logo.png', alt: 'Hexaware' },
   { src: '/L10.png', alt: 'Another Logo' },
 ];
 

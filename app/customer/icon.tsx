@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function ResultsClientsSee() {
   const cards = [
@@ -28,11 +29,8 @@ export default function ResultsClientsSee() {
 
   return (
     <section className="w-full bg-white font-helvetica">
-
-      {/* ===== RESULTS SECTION ===== */}
       <div className="max-w-[1100px] mx-auto px-16 py-24">
 
-        {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-[52px] font-normal text-black">
             The Results Our Clients See
@@ -43,12 +41,14 @@ export default function ResultsClientsSee() {
           </p>
         </div>
 
-        {/* Cards */}
         <div className="flex justify-between gap-6">
 
           {cards.map((card, index) => (
-            <div
+            <motion.div
               key={index}
+              whileTap={{ scale: 0.96 }}   
+              whileHover={{ scale: 1.03 }} 
+              transition={{ type: "spring", stiffness: 300 }}
               className="
                 w-[240px]
                 h-[200px]
@@ -58,9 +58,10 @@ export default function ResultsClientsSee() {
                 flex flex-col
                 px-6
                 pt-2
+                cursor-pointer
+                hover:shadow-md
               "
             >
-              {/* Icon */}
               <Image
                 src={card.icon}
                 alt="icon"
@@ -68,18 +69,15 @@ export default function ResultsClientsSee() {
                 height={80}
                 className="mb-6"
               />
-
-              {/* Text */}
               <p className="text-[14px] text-black leading-[1.2]">
                 {card.text}
               </p>
-            </div>
+            </motion.div>
           ))}
 
         </div>
       </div>
 
-      {/* ===== IMAGE BANNER SECTION ===== */}
       <div className="relative w-full h-[200px]">
 
         <Image

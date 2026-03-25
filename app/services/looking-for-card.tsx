@@ -42,7 +42,6 @@ export default function LookingForCard() {
                   hover:bg-[#D8CDFF]
                 "
               >
-                {/* Top content */}
                 <div className="flex justify-between">
                   <div>
                     <h3
@@ -56,8 +55,6 @@ export default function LookingForCard() {
                     >
                       {title}
                     </h3>
-
-                    {/* Description text – EXACT same as above page */}
                     <p
                       className="
                         font-[Helvetica] font-normal 
@@ -81,7 +78,6 @@ export default function LookingForCard() {
                     </p>
                   </div>
 
-                  {/* Arrow icon (same as above page) */}
                   <div className="relative w-[49px] h-[49px]">
                     <Image
                       src="/arrow.png"
@@ -91,8 +87,6 @@ export default function LookingForCard() {
                     />
                   </div>
                 </div>
-
-                {/* Star – fixed & visible on all cards */}
                 <div className="absolute bottom-3 right-4">
                   <Image
                     src="/star.png"

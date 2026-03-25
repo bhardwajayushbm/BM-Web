@@ -17,7 +17,6 @@ export default function Mindset() {
         transition={{ duration: 0.8 }}
         className="relative w-full max-w-[1386px] h-[430px] rounded-[12px]"
       >
-        {/* Background */}
         <div className="absolute inset-0 rounded-[12px] overflow-hidden">
           <Image
             src="/BGAJ.png"
@@ -27,8 +26,6 @@ export default function Mindset() {
             className="object-cover"
           />
         </div>
-
-        {/* Text Content */}
         <div className="relative z-20 max-w-[620px] pl-[100px] pt-[30px] text-white">
           <h1 className="font-[Helvetica] font-bold text-[20px] sm:text-[36px] md:text-[44px] leading-[1.1] mb-3">
             The Mindset: Servant Leadership at the Core
@@ -77,8 +74,6 @@ export default function Mindset() {
 
 
         </div>
-
-        {/* CEO Image (Always Image, No Video) */}
         <a
           target="_blank"
           rel="noopener noreferrer"

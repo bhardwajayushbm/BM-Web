@@ -49,7 +49,6 @@ export default function AboutPage() {
           cursor-pointer
         "
       >
-        {/* Background image subtle motion */}
         <motion.div
           animate={{ scale: [1.50, 1, 1.50] }}
           transition={{

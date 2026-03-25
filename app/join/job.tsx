@@ -7,7 +7,6 @@ export default function ApplyJobPage() {
     <section className="w-full bg-white px-4 sm:px-8 lg:px-[80px] py-10 flex justify-center">
       <div className="w-full max-w-[955px] font-[Helvetica] text-black">
 
-        {/* Job Alert Card */}
         <div className="w-full border border-[#D9D9D9] rounded-[10px] bg-white flex items-start sm:items-center gap-4 p-6">
           
           <div className="w-[37px] h-[37px] flex items-center justify-center text-[#9562EB] flex-shrink-0">
@@ -34,10 +33,7 @@ export default function ApplyJobPage() {
 
         </div>
 
-        {/* Apply Section */}
         <div className="w-full mt-16">
-
-          {/* Header */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
 
             <div>
@@ -59,7 +55,6 @@ export default function ApplyJobPage() {
 
           </div>
 
-          {/* Form */}
           <form className="space-y-6 w-full max-w-[620px]">
 
             <div>
@@ -85,8 +80,6 @@ export default function ApplyJobPage() {
                 className="w-full h-[40px] border border-black rounded-[4px] px-3 text-[14px] outline-none focus:border-[#9562EB]"
               />
             </div>
-
-            {/* Country + Phone */}
             <div className="flex flex-col sm:flex-row gap-4">
 
               <div className="w-full sm:w-[40%]">
@@ -108,8 +101,6 @@ export default function ApplyJobPage() {
               </div>
 
             </div>
-
-            {/* Resume Upload Section */}
             <div className="w-full max-w-[400px] space-y-3">
 
               <div>

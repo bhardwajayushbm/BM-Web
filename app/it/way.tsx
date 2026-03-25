@@ -27,7 +27,6 @@ export default function BangmetricWay() {
     >
       <div className="max-w-[1200px] mx-auto px-10">
 
-        {/* Heading */}
         <div className="text-center mb-20">
           <h2 className="text-[44px] font-semibold text-black">
             The BANGMETRIC Way
@@ -38,13 +37,11 @@ export default function BangmetricWay() {
           </p>
         </div>
 
-        {/* Grid */}
         <div className="grid grid-cols-2 gap-x-10 gap-y-10">
 
           {steps.map((step, index) => (
             <div key={index} className="relative group">
 
-              {/* Circle centered */}
               <div
                 className="
                   absolute
@@ -60,7 +57,6 @@ export default function BangmetricWay() {
                 "
               />
 
-              {/* Card */}
               <div
                 className="
                   flex
@@ -78,16 +74,10 @@ export default function BangmetricWay() {
                   group-hover:text-white
                 "
               >
-
-                {/* Title */}
                 <div className="w-[180px] font-semibold text-[18px] leading-tight">
                   {step.title}
                 </div>
-
-                {/* Divider */}
                 <div className="w-[1px] h-[60px] bg-black" />
-
-                {/* Description */}
                 <p className="text-[15px] leading-[1.5]">
                   {step.desc}
                 </p>

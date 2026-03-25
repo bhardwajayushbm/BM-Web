@@ -5,8 +5,6 @@ import Image from "next/image";
 export default function WhatWeBuild() {
   return (
     <section className="relative w-full min-h-screen font-helvetica text-white overflow-hidden">
-
-      {/* BACKGROUND */}
       <Image
         src="/B11.png"
         alt="Background"
@@ -17,14 +15,11 @@ export default function WhatWeBuild() {
 
       <div className="max-w-[1600px] mx-auto px-8 py-28">
 
-        {/* HEADING */}
         <div className="w-full flex justify-center mb-20">
           <h2 className="text-white text-[42px] md:text-[56px] leading-tight whitespace-nowrap text-center">
             What We Build With ServiceNow ITSM
           </h2>
         </div>
-
-        {/* GRID */}
         <div className="grid grid-cols-2 gap-x-20 gap-y-20 justify-items-center">
 
           <BuildCard
@@ -58,7 +53,6 @@ export default function WhatWeBuild() {
   );
 }
 
-/* IMAGE TEXT OVERLAY */
 
 function BuildCard({
   image,

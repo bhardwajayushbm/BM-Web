@@ -4,177 +4,126 @@ import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-export function Getintouch() {
-
+export default function GetInTouch() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const imageVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, delay: i * 0.2 },
-    }),
-  };
-
   return (
-    <section className="relative w-full min-h-[1200px] overflow-hidden">
+    <section
+      ref={ref}
+      className="
+        w-full
+        flex justify-center
+        bg-no-repeat bg-center
+        pt-12 sm:pt-16 md:pt-20
+      "
+      style={{
+        backgroundImage: "url('/GetT4.png')",
+        backgroundSize: "cover",
+      }}
+    >
+      <div className="w-full max-w-[1100px] px-4 sm:px-6 flex flex-col lg:flex-row items-center justify-between gap-12">
 
-      {/* Background */}
-      <Image
-        src="/Get.png"
-        alt="Background"
-        fill
-        priority
-        className="object-cover"
-      />
+        <motion.div
+          initial={{ opacity: 0, x: -80 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.7 }}
+          className="w-full lg:w-1/2 text-center lg:text-left"
+        >
+          <h2 className="font-[Helvetica] font-bold text-[26px] sm:text-[34px] md:text-[44px] lg:text-[48px] text-black mb-2">
+            Get in Touch Today!
+          </h2>
+          <div className="flex justify-center lg:justify-start">
+            <svg
+              viewBox="0 0 284 20"
+              className="w-[180px] sm:w-[220px] md:w-[260px] lg:w-[284px] h-auto mb-6 md:mb-8"
+            >
+              <path
+                d="M2 18C60 2 220 2 282 18"
+                stroke="#9562EB"
+                strokeWidth="2"
+                strokeLinecap="round"
+                fill="none"
+              />
+            </svg>
+          </div>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/25"></div>
+          <div className="space-y-4 md:space-y-5 pb-6 md:pb-10">
 
-      {/* LEFT CONTENT */}
-      <div className="relative z-20 flex items-start pt-20 px-20">
+            <div className="flex flex-col sm:flex-row gap-4">
 
-        <div className="text-white max-w-lg">
-
-          <h1 className="text-6xl font-bold leading-tight">
-            Get in <br /> Touch Today!
-          </h1>
-
-          <p className="text-sm mt-4 opacity-80 max-w-xs">
-            Lorem Ipsum is simply dummy text of the printing
-            and typesetting industry.
-          </p>
-
-          {/* FORM */}
-          <div className="mt-6 bg-white rounded-md shadow-lg p-5 w-[380px]">
-
-            <form className="space-y-3 text-gray-700 text-sm">
-
-              <div>
-                <label className="block text-xs font-medium text-gray-600 mb-1">
+              <div className="w-full text-left">
+                <label className="text-[13px] md:text-[14px] text-black mb-1 block">
                   Name
                 </label>
                 <input
                   type="text"
-                  placeholder="Value"
-                  className="w-full border rounded px-3 py-2 outline-none"
+                  className="w-full h-[38px] md:h-[42px] rounded-[6px] border border-gray-300 px-3 bg-white outline-none"
                 />
               </div>
 
-              <div>
-                <label className="block text-xs font-medium text-gray-600 mb-1">
+              <div className="w-full text-left">
+                <label className="text-[13px] md:text-[14px] text-black mb-1 block">
                   Email
                 </label>
                 <input
                   type="email"
-                  placeholder="Value"
-                  className="w-full border rounded px-3 py-2 outline-none"
+                  className="w-full h-[38px] md:h-[42px] rounded-[6px] border border-gray-300 px-3 bg-white outline-none"
                 />
               </div>
 
-              <div>
-                <label className="block text-xs font-medium text-gray-600 mb-1">
-                  Message
-                </label>
-                <textarea
-                  rows={3}
-                  placeholder="Value"
-                  className="w-full border rounded px-3 py-2 outline-none"
-                />
-              </div>
+            </div>
 
+            <div className="text-left">
+              <label className="text-[13px] md:text-[14px] text-black mb-1 block">
+                Message
+              </label>
+              <textarea
+                rows={4}
+                className="w-full rounded-[6px] border border-gray-300 px-3 py-2 bg-white resize-none outline-none"
+              />
+            </div>
+
+            <div className="flex justify-center lg:justify-start">
               <button
-                className="w-full text-white py-2 rounded"
-                style={{ backgroundColor: "#9562EB" }}
+                className="
+                  bg-gradient-to-r from-[#9562EB] to-[#7A4ED9]
+                  text-white
+                  w-[120px] sm:w-[130px] md:w-[140px]
+                  h-[36px] sm:h-[38px] md:h-[40px]
+                  rounded-[6px]
+                  text-[13px] md:text-[14px]
+                  shadow-md
+                  hover:opacity-90
+                  transition
+                "
               >
                 Submit
               </button>
-
-            </form>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      {/* CURVE SECTION */}
-      <div className="absolute bottom-0 left-0 w-full z-10">
-
-        {/* White Curve */}
-        <svg
-          viewBox="0 0 1440 600"
-          className="w-full h-[500px]"
-          preserveAspectRatio="none"
-        >
-          <path
-            fill="#ffffff"
-            d="
-              M0,220
-              A1000,500 0 0,1 1050,380
-              L1300,600
-              L0,600
-              Z
-            "
-          />
-        </svg>
-
-        {/* Sponsors Content */}
-        <div
-          ref={ref}
-          className="absolute top-28 left-24 flex items-start gap-24"
-        >
-
-          {/* TEXT */}
-          <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8 }}
-            className="max-w-sm"
-          >
-            <h2 className="font-bold text-[28px] text-black mb-2 pt-40">
-              BANGMETRIC Sponsors
-              <br />
-              ServiceNow
-            </h2>
-
-            <p className="text-gray-600 text-sm">
-              Lorem Ipsum is simply dummy text of
-              the printing and typesetting industry.
-            </p>
-          </motion.div>
-
-
-          {/* LOGOS */}
-          <div className="grid grid-cols-2 gap-4 mt-36">
-
-            {["/ISO.png", "/QC.png", "/SP.png", "/MSM.png"].map((src, i) => (
-              <motion.div
-                key={src}
-                custom={i}
-                initial="hidden"
-                animate={isInView ? "visible" : "hidden"}
-                variants={imageVariants}
-              >
-                <Image
-                  src={src}
-                  alt={`Sponsor ${i + 1}`}
-                  width={90}
-                  height={90}
-                  className="object-contain"
-                />
-              </motion.div>
-            ))}
+            </div>
 
           </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 80 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.3 }} // 👈 delayed
+          className="w-full lg:w-1/2 flex justify-center lg:justify-end"
+        >
+          <div className="relative w-[220px] sm:w-[260px] md:w-[300px] lg:w-[340px] xl:w-[360px]">
 
-        </div>
+            <Image
+              src="/GetT3.png"
+              alt="Contact"
+              width={360}
+              height={420}
+              className="object-contain w-full h-auto"
+            />
+
+          </div>
+        </motion.div>
 
       </div>
-
     </section>
   );
 }
