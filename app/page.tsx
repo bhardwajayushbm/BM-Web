@@ -1,5 +1,4 @@
 import { Navigation } from '@/components/navigation';
-import { HeroSection } from '@/components/hero-section';
 import { ClientTesti } from '@/components/ClientTesti';
 import { MetricsSection } from '@/components/metrics-section';
 import { CustomerSuccessSection } from '@/components/customer-success-section';

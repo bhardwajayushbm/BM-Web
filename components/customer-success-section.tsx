@@ -63,9 +63,10 @@ export function CustomerSuccessSection() {
 
         {/* HEADER */}
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-[28px] sm:text-[36px] md:text-[48px] text-black mb-4 md:mb-6">
-            Customer Success in Action
-          </h2>
+          <h2 className="text-center font-[Helvetica] font-normal text-[32px] sm:text-[40px] md:text-[48px] text-black">
+           Customer Success in Action
+          
+        </h2>
 
           <p className="text-[14px] sm:text-[16px] max-w-[650px] mx-auto leading-[1.5]">
             Discover how leading organizations across industries are transforming

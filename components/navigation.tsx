@@ -49,10 +49,22 @@ export function Navigation() {
               </div>
             </div>
 
-            <Link href="/services">Services</Link>
-            <a href="#industries">Industries</a>
-            <Link href="/resources">Resources</Link>
-            <Link href="/careers">Careers</Link>
+            <Link href="/services"
+            className="text-[16px] text-gray-900 hover:text-purple-600"
+            >Services</Link>
+
+            <a href="#industries"
+            className="text-[16px] text-gray-900 hover:text-purple-600"
+            >Industries</a>
+
+            <Link href="/resources"
+            className="text-[16px] text-gray-900 hover:text-purple-600"
+            >Resources</Link>
+
+            <Link href="/careers"
+            className="text-[16px] text-gray-900 hover:text-purple-600"
+            >Careers</Link>
+            
           </div>
           <div className="hidden lg:flex">
             <Link

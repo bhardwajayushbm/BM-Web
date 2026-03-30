@@ -35,11 +35,12 @@ export function ClientTesti() {
         <div className="flex flex-col lg:flex-row items-center gap-10">
 
           <div className="lg:w-1/3 text-center lg:text-left">
-            <h2 className="text-[36px] sm:text-[32px] md:text-[36px] font-normal text-black leading-tight mb-4 md:mb-6">
+            <h2 className="font-[Helvetica] font-normal text-[32px] sm:text-[40px] md:text-[48px] text-black leading-tight mb-4 md:mb-6">
               Client <br className="hidden lg:block" /> Testimonials
             </h2>
+            
 
-            <p className="text-black text-[16px] leading-[1.4] max-w-[380px]">
+            <p className="text-black text-[16px] leading-[1.4] max-w-[380px] ml-2">
               Discover how leading organizations across 
               <br />
               industries are transforming with our 

@@ -29,32 +29,37 @@ export default function aboutPage() {
           h-[220px] sm:h-[280px] md:h-[340px] lg:h-[404px]
           rounded-[20px]
           overflow-hidden
-          flex items-center justify-center
+          flex items-center
         "
       >
+
+        {/* ===== BACKGROUND (ZOOMED) ===== */}
         <Image
-          src="/About.jpg"
+          src="/About.png"
           alt="Background"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-center scale-110"
         />
-        <div className="relative z-10 w-full flex justify-center">
-          <div className="w-[1160px] h-[190px] flex items-center justify-center">
+
+        {/* ===== TEXT ===== */}
+        <div className="relative z-10 w-full flex justify-start px-6 md:px-12 lg:px-20">
+          <div className="flex items-center justify-start">
             <h1
               className="
                 font-helvetica 
                 font-bold 
-                text-[100px] 
-                leading-[100%] 
-                text-white 
-                text-center
+                text-[32px] sm:text-[50px] md:text-[70px] lg:text-[80px]
+                leading-[90%] 
+                text-black 
+                text-left
               "
             >
               About Us
             </h1>
           </div>
         </div>
+
       </motion.div>
     </section>
   );

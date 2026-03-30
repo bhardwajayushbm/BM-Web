@@ -53,81 +53,107 @@ function DecimalCounter({ value, duration = 1500 }) {
 
 export default function JumpstartOfferings() {
   return (
-   <section className="w-full bg-[#F6F5FA] px-4 sm:px-6 md:px-12 lg:px-20 pt-16 md:pt-20 pb-0">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
-        
-        <div>
-          <h2 className="font-helvetica font-normal text-[24px] sm:text-[26px] md:text-[30px] leading-[110%] text-black max-w-[648px]">
-            BANGMETRIC Jumpstart Offerings
-            <br />
-            are focused, fast-track onboarding
-            <br />
-            packages designed to accelerate
-            <br />
-            ServiceNow adoption. Specifically
-            <br />
-            designed mid-market and
-            <br />
-            commercial organizations, they
-            <br />
-            provide:
-          </h2>
-        </div>
+    <section className="w-full bg-[#F6F5FA] px-4 sm:px-6 md:px-12 lg:px-20 pt-12 sm:pt-14 md:pt-20 pb-0">
+      
+      <div className="max-w-[1100px] mx-auto">
 
-        <div className="relative max-w-[503px]">
-          <div className="absolute left-[17px] top-[2px] w-[2px] h-[calc(100%-60px)] bg-black" />
+        {/* ===== TOP CONTENT (FORCED SAME LAYOUT) ===== */}
+        <div className="grid grid-cols-2 gap-4 md:gap-16">
+          
+          {/* LEFT TEXT */}
+          <div>
+            <h2 className="
+              font-helvetica text-black max-w-[648px]
+              text-[14px] sm:text-[16px] md:text-[20px]
+              leading-[130%] md:leading-[110%]
+            ">
+              BANGMETRIC Jumpstart Offerings are focused, fast-track onboarding
+              packages designed to accelerate ServiceNow adoption. Specifically
+              designed mid-market and commercial organizations, they provide:
+            </h2>
+          </div>
 
-          <div className="flex flex-col gap-10 md:gap-[48px] relative">
-            {[
-              "Core functionality quickly to enable rapid time-to-value",
-              "A structured, clear approach for rapid onboarding and successful deployment of ServiceNow modules",
-              "An approach to minimize complexity while laying a scalable foundation for future growth.",
-            ].map((text, i) => (
-              <div key={i} className="flex items-start gap-5 md:gap-6">
-                <div className="relative z-10">
-                  <div className="w-[30px] h-[30px] md:w-[35px] md:h-[35px] rounded-full bg-[#D8CDFF] shadow-[inset_3px_2px_3.5px_#AB9AE8]" />
+          {/* RIGHT BULLETS */}
+          <div className="relative">
+
+            <div className="flex flex-col gap-3 md:gap-7">
+              {[
+                "Core functionality quickly to enable rapid time-to-value",
+                "A structured, clear approach for rapid onboarding and successful deployment of ServiceNow modules",
+                "An approach to minimize complexity while laying a scalable foundation for future growth.",
+              ].map((text, i) => (
+                <div key={i} className="flex items-start gap-2 sm:gap-4">
+
+                  {/* ⭐ STAR */}
+                  <div className="w-[24px] sm:w-[32px] min-w-[24px] sm:min-w-[32px] flex justify-center mt-1">
+                    <Image
+                      src="/Star.png"
+                      alt="star"
+                      width={20}
+                      height={20}
+                      className="object-contain sm:w-[24px] sm:h-[24px]"
+                    />
+                  </div>
+
+                  {/* TEXT */}
+                  <p className="
+                    font-helvetica text-[#474545]
+                    text-[13px] sm:text-[15px] md:text-[20px]
+                    leading-[140%]
+                  ">
+                    {text}
+                  </p>
+
                 </div>
-
-                <p className="font-helvetica text-[20px] md:text-[22px] leading-[140%] text-[#474545]">
-
-                  {text}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 mt-16 md:mt-20 items-center">
-        
-        <div className="rounded-xl overflow-hidden">
-          <Image
-            src="/Lab.png"
-            alt="Lab"
-            width={800}
-            height={533}
-            className="rounded-xl object-cover w-full h-auto"
-          />
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-14">
+
+        {/* ===== IMAGE + STATS (SAME LAYOUT) ===== */}
+        <div className="grid grid-cols-2 gap-4 md:gap-16 mt-10 md:mt-16 items-center">
           
-          {[
-            { comp: <DecimalCounter value={4.8} />, label: "CSAT Score" },
-            { comp: <Counter value={250} suffix="+" />, label: "Certified Resources" },
-            { comp: <Counter value={300} suffix="+" />, label: "Project<br/>Implementation" },
-            { comp: <Counter value={350} suffix="+" />, label: "Integration<br/>Completed" },
-            { comp: <Counter value={3} suffix="+" />, label: "Global Delivery<br/>Centers" },
-          ].map((item, i) => (
-            <div key={i} className="flex flex-col items-center text-center">
-              <span className="font-helvetica text-[36px] sm:text-[40px] md:text-[48px] leading-none text-black">
-                {item.comp}
-              </span>
-              <p
-                className="mt-2 font-helvetica text-[16px] sm:text-[18px] leading-[22px] text-black"
-                dangerouslySetInnerHTML={{ __html: item.label }}
-              />
-            </div>
-          ))}
+          {/* IMAGE */}
+          <div className="rounded-xl overflow-hidden">
+            <Image
+              src="/Lab.png"
+              alt="Lab"
+              width={800}
+              height={533}
+              className="rounded-xl object-cover w-full h-auto"
+            />
+          </div>
+
+          {/* STATS */}
+          <div className="grid grid-cols-2 gap-4 md:gap-12">
+            
+            {[
+              { comp: <DecimalCounter value={4.8} />, label: "CSAT Score" },
+              { comp: <Counter value={250} suffix="+" />, label: "Certified Resources" },
+              { comp: <Counter value={300} suffix="+" />, label: "Project<br/>Implementation" },
+              { comp: <Counter value={350} suffix="+" />, label: "Integration<br/>Completed" },
+              { comp: <Counter value={3} suffix="+" />, label: "Global Delivery<br/>Centers" },
+            ].map((item, i) => (
+              <div key={i} className="flex flex-col items-center text-center">
+                <span className="
+                  font-helvetica text-black leading-none
+                  text-[20px] sm:text-[28px] md:text-[44px]
+                ">
+                  {item.comp}
+                </span>
+                <p
+                  className="
+                    mt-1 md:mt-2 font-helvetica text-black
+                    text-[11px] sm:text-[13px] md:text-[16px]
+                  "
+                  dangerouslySetInnerHTML={{ __html: item.label }}
+                />
+              </div>
+            ))}
+
+          </div>
         </div>
+
       </div>
     </section>
   );
