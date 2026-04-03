@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function CoreValues() {
   const cards = [
@@ -26,10 +27,53 @@ export default function CoreValues() {
     },
   ];
 
-  return (
-    <section className="relative w-full py-20 md:py-28 font-[Helvetica]">
+  /* ===== ANIMATIONS ===== */
+  const sectionVariant = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { duration: 0.8 },
+    },
+  };
 
-      {/* ===== FULL WIDTH BACKGROUND ===== */}
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 },
+    },
+  };
+
+  const container = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const cardVariant = {
+    hidden: { opacity: 0, y: 40, scale: 0.95 },
+    show: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
+  return (
+    <motion.section
+      variants={sectionVariant}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      className="relative w-full py-20 md:py-28 font-[Helvetica]"
+    >
+
+      {/* BACKGROUND */}
       <Image
         src="/Cloud.jpg"
         alt="cloud"
@@ -37,15 +81,17 @@ export default function CoreValues() {
         className="object-cover"
       />
 
-      {/* ===== CONTENT (MAX WIDTH 1100) ===== */}
       <div className="relative z-10 max-w-[1100px] mx-auto px-4 sm:px-6 md:px-8">
 
-        {/* ===== TOP SECTION ===== */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        {/* GRID */}
+        <motion.div
+          variants={container}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch"
+        >
 
           {/* LEFT TEXT */}
-          <div>
-            <h2 className="text-[36px] sm:text-[36px] md:text-[40px] font-normal text-black">
+          <motion.div variants={fadeUp}>
+            <h2 className="text-[36px] md:text-[40px] text-black">
               Core Values
             </h2>
 
@@ -53,70 +99,48 @@ export default function CoreValues() {
               Our values shape how we work with our clients, with our teams,
               and with the world of technology.
             </p>
-          </div>
+          </motion.div>
 
-          {/* RIGHT TOP CARDS */}
-          {cards.slice(0, 2).map((item, i) => (
-            <div
+          {/* CARDS */}
+          {cards.map((item, i) => (
+            <motion.div
               key={i}
+              variants={cardVariant}
+              whileHover={{ scale: 1.05, y: -6 }}
+              whileTap={{ scale: 0.97 }}
               className="
                 bg-white rounded-[10px] p-5
-                flex gap-3 items-start shadow-sm
+                flex flex-col justify-between
+                shadow-sm
+                h-[140px] md:h-[160px]
+                cursor-pointer
               "
             >
-              <Image
-                src="/SS.png"
-                alt="star"
-                width={26}
-                height={26}
-                className="mt-1 shrink-0"
-              />
+              <div className="flex gap-3 items-start">
+                <Image
+                  src="/SS.png"
+                  alt="star"
+                  width={26}
+                  height={26}
+                  className="mt-1 shrink-0"
+                />
 
-              <div>
-                <h3 className="text-[16px] font-semibold text-black leading-[20px] whitespace-pre-line">
-                  {item.title}
-                </h3>
-                <p className="text-[13px] text-black mt-2 leading-[18px]">
-                  {item.desc}
-                </p>
+                <div>
+                  <h3 className="text-[16px] font-semibold text-black leading-[20px] whitespace-pre-line">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-[13px] text-black mt-2 leading-[18px]">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-
-        {/* ===== BOTTOM CARDS ===== */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-10">
-
-          {cards.slice(2).map((item, i) => (
-            <div
-              key={i}
-              className="
-                bg-white rounded-[10px] p-5
-                flex gap-3 items-start shadow-sm
-              "
-            >
-              <Image
-                src="/SS.png"
-                alt="star"
-                width={26}
-                height={26}
-                className="mt-1 shrink-0"
-              />
-
-              <div>
-                <h3 className="text-[16px] font-semibold text-black leading-[20px] whitespace-pre-line">
-                  {item.title}
-                </h3>
-                <p className="text-[13px] text-black mt-2 leading-[18px]">
-                  {item.desc}
-                </p>
-              </div>
-            </div>
+            </motion.div>
           ))}
 
-        </div>
+        </motion.div>
 
       </div>
-    </section>
+    </motion.section>
   );
 }

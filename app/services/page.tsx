@@ -9,7 +9,7 @@ export default function ServicesPage() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="w-full flex justify-center px-4 md:px-8 lg:px-10 mt-8 md:mt-20 lg:mt-28">
+    <section className="w-full flex justify-center px-4 md:px-8 lg:px-10 mt-28 md:mt-20 lg:mt-28">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 40 }}
@@ -25,25 +25,28 @@ export default function ServicesPage() {
           flex items-center justify-center
         "
       >
-        {/* Background Image ONLY */}
         <Image
-          src="/BG2.png"
+          src="/Services.jpg"
           alt="Background"
           fill
           priority
           className="object-cover object-center"
         />
 
-        {/* Logo */}
-        <div className="relative z-10 w-full flex justify-center">
-          <div className="w-[1160px] h-[190px] flex items-center justify-center">
-            <Image
-              src="/Logo1.webp"
-              alt="Logo"
-              width={1160}
-              height={190}
-              className="object-contain"
-            />
+        <div className="relative z-10 w-full flex justify-start px-6 md:px-12 lg:px-20">
+          <div className="flex items-center justify-start">
+            <h1
+              className="
+                font-helvetica 
+                font-bold 
+                text-[32px] sm:text-[50px] md:text-[70px] lg:text-[80px]
+                leading-[90%] 
+                text-black 
+                text-left
+              "
+            >
+              Our Services
+            </h1>
           </div>
         </div>
       </motion.div>

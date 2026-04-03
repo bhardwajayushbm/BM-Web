@@ -6,70 +6,63 @@ import Image from "next/image";
 
 export default function CareersPage() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true });
 
   return (
-    <section
-      className="
-        w-full flex justify-center 
-        px-4 md:px-8 lg:px-10 
-        mt-8 md:mt-20 lg:mt-28 
-        mb-8 md:mb-16 lg:mb-24
-      "
-    >
+    <section className="w-full bg-white flex justify-center py-14 sm:py-16 md:py-20 lg:py-24">
+      
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 40 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
-        className="
-          relative
-          w-full
-          max-w-[1376px]
-          h-[220px] sm:h-[280px] md:h-[340px] lg:h-[404px]
-          rounded-[20px]
-          overflow-hidden
-          flex items-center justify-center
-        "
+        className="w-full max-w-[900px] flex flex-col items-center text-center px-4 sm:px-6"
       >
-        <Image
-          src="/career.png"
-          alt="Background"
-          fill
-          priority
-          className="object-cover object-center"
-        />
-        <div className="relative z-10 w-full flex flex-col items-center justify-center text-center px-4">
-         
-          <div className="h-[70px] flex items-center justify-center overflow-hidden">
-            <h1
-              className="
-                font-helvetica 
-                font-bold 
-                text-[70px] 
-                leading-none 
-                text-white 
-                m-0 p-0
-              "
-            >
-              Careers at BANGMETRIC
-            </h1>
-          </div>
-          <p
+
+        {/* ===== IMAGE ===== */}
+        <div className="mt-4 sm:mt-6 md:mt-8 mb-1 md:mb-2">
+          <Image
+            src="/Careers.png"
+            alt="Careers"
+            width={240}
+            height={240}
             className="
-              mt-4
-              max-w-[772px]
-              font-helvetica
-              font-normal
-              text-[30px]
-              leading-[100%]
-              text-white
-              text-center
+              object-contain
+              w-[140px] sm:w-[180px] md:w-[220px] lg:w-[240px]
+              h-auto
             "
-          >
-            Join a workplace where leaders empower, listen, and help you become your best self.
-          </p>
+            priority
+          />
         </div>
+
+        {/* ===== HEADING ===== */}
+        <h1
+          className="
+            font-helvetica
+            font-normal
+            text-[22px] sm:text-[28px] md:text-[36px] lg:text-[48px]
+            text-black
+            leading-tight
+          "
+        >
+          Careers at BANGMETRIC
+        </h1>
+
+        {/* ===== TEXT ===== */}
+        <p
+          className="
+            mt-2 sm:mt-3 md:mt-4
+            max-w-[90%] sm:max-w-[600px] md:max-w-[620px]
+            font-helvetica
+            font-normal
+            text-[13px] sm:text-[14px] md:text-[16px] lg:text-[18px]
+            text-black/80
+            leading-[1.4]
+          "
+        >
+          Join a workplace where leaders empower, listen, and help you become your best self.
+        </p>
+
       </motion.div>
     </section>
   );

@@ -1,194 +1,190 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
-
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const leaderVariants = {
-  hidden: {
-    opacity: 0,
-    y: 80,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  },
-};
-
-const ceoVariants = {
-  hidden: {
-    opacity: 0,
-    y: 120,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-    },
-  },
-};
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function LeadershipPage() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+    margin: "-100px",
+  });
+
+  const fadeUpCard = {
+    hidden: { opacity: 0, y: 60 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
+
   return (
-    <section className="w-full flex flex-col items-center px-6 md:px-12 lg:px-20 py-20">
-     <h1
-  className="
-    font-helvetica font-normal
-    !text-[28px] md:!text-[48px] lg:!text-[72px]
-    leading-tight lg:leading-[82px]
-    text-black text-center mx-auto mb-10
-  "
-  style={{ maxWidth: "760px" }}
->
-  Our Leadership Team
-</h1>
+    <section className="w-full py-16 sm:py-20 px-4 bg-white flex justify-center font-[Helvetica]">
+      <div className="w-full max-w-[1100px]">
 
-<p
-  className="
-    font-helvetica font-normal
-    text-[14px] md:text-[18px] lg:text-[21px]
-    leading-[22px] md:leading-[26px] lg:leading-[28px]
-    text-black text-center mx-auto
-  "
-  style={{ maxWidth: "820px" }}
->
-  Our leadership team comprises seasoned technologists, strategists, and industry experts who guide our vision and uphold our commitment to excellence.
-</p>
+        {/* TITLE */}
+        <h1 className="text-center text-[28px] sm:text-[36px] md:text-[48px] lg:text-[64px] font-normal text-black">
+          Our Leadership Team
+        </h1>
 
+        {/* SUBTEXT */}
+        <p className="text-center mt-4 text-[13px] sm:text-[14px] md:text-[16px] lg:text-[18px] max-w-[680px] mx-auto text-black">
+          Our leadership team comprises seasoned technologists, strategists, and industry experts who guide our vision and uphold our commitment to excellence.
+        </p>
 
+        <motion.div
+          ref={ref}
+          className="flex justify-center mt-12 md:mt-16"
+          initial="hidden"
+          animate={isInView ? "show" : "hidden"}
+          variants={{
+            show: {
+              transition: {
+                staggerChildren: 0.12,
+              },
+            },
+          }}
+        >
 
+          {/* MOBILE */}
+          <div className="grid grid-cols-3 gap-4 md:hidden">
+            {leaders.map((item, i) => (
+              <MobileCard key={i} {...item} fadeUpCard={fadeUpCard} />
+            ))}
+          </div>
 
-      <motion.div
-        className="hidden lg:block w-[1065px] relative mt-24"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-        <div className="relative h-[470px]">
-          <LeaderAbs top={0} left={0} name="Sharad Mishra" title="Director, Business Development, APAC" img="/Sharad.jpg" textTop />
-          <LeaderAbs top={0} right={0} name="Theuns Rossouw" title="Advisory Head, AMS" img="/Theuns.png" textTop />
+          {/* DESKTOP */}
+          <div className="hidden md:flex md:flex-wrap md:justify-center md:gap-6 lg:flex-nowrap lg:gap-x-3">
 
-          {/* CENTER ROW */}
-          <LeaderAbs top={160} left={160} name="Jitender Sharma" title="Head, Delivery" img="/Jeet.png" />
-          <LeaderAbs top={100} left={310} name="Aloka Sen Awasthi" title="HR Head" img="/Aloka.png" />
-          <LeaderAbs
-            top={150}
-            left={460}
-            name="Anuj Bhardwaj"
-            title="Chief Executive Officer"
-            img="/Anuj.png"
-            isCEO
-          />
+            <Column>
+              <Card {...leaders[0]} fadeUpCard={fadeUpCard} />
+              <Card {...leaders[1]} fadeUpCard={fadeUpCard} />
+            </Column>
 
-          <LeaderAbs top={100} left={610} name="Art Yeames, Ed.D." title="Senior Vice President of Sales – North America" img="/Art.png" />
-          <LeaderAbs top={150} left={760} name="Rohan Bathla" title="Practice Head, ServiceNow" img="/Rohan.png" />
-          <LeaderAbs top={260} left={0} name="Lorelle Jacob" title="Advisory Head, South Africa" img="/Lorelle.png" />
-          <LeaderAbs top={260} right={0} name="CY Comer" title="Business Head, AMS" img="/CY.png" />
-        </div>
-      </motion.div>
-      <motion.div
-        className="block lg:hidden w-full max-w-[900px] mt-16"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-12 justify-items-center">
-          {[
-            ["Sharad Mishra", "Director, Business Development, APAC", "/Sharad.jpg"],
-            ["Theuns Rossouw", "Advisory Head, AMS", "/Theuns.png"],
-            ["Jitender Sharma", "Head, Delivery", "/Jeet.png"],
-            ["Aloka Sen Awasthi", "HR Head", "/Aloka.png"],
-            ["Anuj Bhardwaj", "Chief Executive Officer", "/Anuj.png"],
-            ["Art Yeames, Ed.D.", "Senior Vice President of Sales – North America", "/Art.png"],
-            ["Rohan Bathla", "Practice Head, ServiceNow", "/Rohan.png"],
-            ["Lorelle Jacob", "Advisory Head, South Africa", "/Lorelle.png"],
-            ["CY Comer", "Business Head, AMS", "/CY.png"],
-          ].map(([name, title, img]) => (
-            <Leader key={name} name={name} title={title} img={img} />
-          ))}
-        </div>
-      </motion.div>
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.97 }}
-        className="mt-2 bg-[#9562EB] hover:bg-[#8449E6]
-        text-white font-helvetica font-normal text-[20px] md:text-[22px]
-        w-[80px] md:w-[200px] h-[42px]
-        rounded-[5px] transition-all duration-300 shadow-md
-        flex items-center justify-center"
-      >
-        Testimonials
-      </motion.button>
+            <Column className="mt-4">
+              <Card {...leaders[2]} fadeUpCard={fadeUpCard} />
+              <Card {...leaders[3]} fadeUpCard={fadeUpCard} />
+            </Column>
+
+            <Column>
+              <Card {...leaders[4]} fadeUpCard={fadeUpCard} />
+            </Column>
+
+            <Column className="mt-10 lg:mt-14">
+              <Card {...leaders[5]} fadeUpCard={fadeUpCard} />
+            </Column>
+
+            <Column>
+              <Card {...leaders[6]} fadeUpCard={fadeUpCard} />
+            </Column>
+
+            <Column className="mt-8 lg:mt-10">
+              <Card {...leaders[7]} fadeUpCard={fadeUpCard} />
+            </Column>
+
+            <Column className="mt-4">
+              <Card {...leaders[8]} fadeUpCard={fadeUpCard} />
+              <Card {...leaders[9]} fadeUpCard={fadeUpCard} />
+            </Column>
+
+            <Column>
+              <Card {...leaders[10]} fadeUpCard={fadeUpCard} />
+              <Card {...leaders[11]} fadeUpCard={fadeUpCard} />
+            </Column>
+
+          </div>
+
+        </motion.div>
+      </div>
     </section>
   );
 }
 
-function LeaderAbs({
-  name,
-  title,
-  img,
-  top,
-  left,
-  right,
-  textTop = false,
-  isCEO = false,
-}: any) {
+/* DATA */
+const leaders = [
+  { img: "/Shasank.jpg", name: "Shashank Vashist", role: "Country Head- Digital Transformation" },
+  { img: "/Lorelle.png", name: "Lorelle Jacob", role: "Advisory Head, South Africa" },
+  { img: "/Jeet.png", name: "Jitender Sharma", role: "Head, Delivery" },
+  { img: "/Sharad.jpg", name: "Sharad Mishra", role: "Director, Business Development, APAC" },
+  { img: "/Aloka.jpg", name: "Alokananda Sen Awasthi", role: "HR Head" },
+  { img: "/Anuj.png", name: "Anuj Bhardwaj", role: "Chief Executive Officer", isCenter: true },
+  { img: "/Art.png", name: "Art Yeames, Ed.D.", role: "Senior Vice President of Sales-North America" },
+  { img: "/Rohan.png", name: "Rohan Bathla", role: "Practice Head, ServiceNow" },
+  { img: "/Theuns.png", name: "Theuns Rossouw", role: "Advisory Head, AMS" },
+  { img: "/CY.png", name: "CY Comer", role: "Business Head, AMS" },
+  { img: "/Afiya.jpg", name: "Afiya Shahrukh", role: "Marketing Manager" },
+  { img: "/Ilze.png", name: "Ilze Rossouw", role: "Global Head-ServiceNow Practice" },
+];
+
+/* COLUMN */
+function Column({ children, className = "" }) {
+  return (
+    <div className={`flex flex-col gap-5 items-center ${className}`}>
+      {children}
+    </div>
+  );
+}
+
+/* DESKTOP CARD (LEFT ALIGNED FIX) */
+function Card({ img, name, role, isCenter, fadeUpCard }) {
   return (
     <motion.div
-      className="absolute flex flex-col items-center"
-      style={{ top, left, right }}
-      variants={isCEO ? ceoVariants : leaderVariants}
+      variants={fadeUpCard}
+      className="flex flex-col items-start text-left"
     >
-      {textTop && (
-        <div className="mb-2 text-center">
-          <p className="text-[14px] font-semibold">{name}</p>
-          <p className="text-[12px] text-black/80 max-w-[150px]">{title}</p>
-        </div>
-      )}
-
-      <div className="relative w-[139px] h-[172px]">
-        <Image src={img} alt={name} fill className="object-cover rounded-[5px]" />
+      <div
+        className={`
+          relative rounded-[8px] overflow-hidden bg-white
+          ${isCenter ? "w-[90px] h-[120px]" : "w-[80px] h-[100px]"}
+          md:w-[88px] md:h-[118px]
+        `}
+      >
+        <Image src={img} alt={name} fill className="object-cover" />
       </div>
 
-      {!textTop && (
-        <div className="mt-2 h-[42px] text-center">
-          <p className="text-[14px] font-semibold">{name}</p>
-          <p className="text-[12px] text-black/80 max-w-[150px]">{title}</p>
-        </div>
-      )}
+      <div className="mt-2 max-w-[110px]">
+        <p className="text-[11px] sm:text-[12px] font-semibold text-black leading-tight text-left">
+          {name}
+        </p>
+        <p className="text-[9px] sm:text-[10px] text-black/70 leading-[12px] text-left">
+          {role}
+        </p>
+      </div>
     </motion.div>
   );
 }
 
-function Leader({ name, title, img }: any) {
+/* MOBILE CARD (LEFT ALIGNED FIX) */
+function MobileCard({ img, name, role, fadeUpCard }) {
   return (
     <motion.div
-      className="flex flex-col items-center text-center"
-      variants={leaderVariants}
+      variants={fadeUpCard}
+      whileTap={{ scale: 0.96 }}
+      className="flex justify-center"
     >
-      <div className="relative w-[139px] h-[172px]">
-        <Image src={img} alt={name} fill className="object-cover rounded-[5px]" />
-      </div>
-      <div className="mt-3">
-        <p className="text-[14px] font-semibold">{name}</p>
-        <p className="text-[12px] text-black/80 max-w-[150px]">{title}</p>
+      <div className="w-[95px] bg-white border border-gray-200 rounded-[10px] p-[6px] shadow-[0_2px_6px_rgba(0,0,0,0.04)]">
+
+        <div className="bg-[#F3F3F3] rounded-[8px] p-[6px]">
+          <div className="relative w-full h-[95px] rounded-[6px] overflow-hidden">
+            <Image src={img} alt={name} fill className="object-cover" />
+          </div>
+        </div>
+
+        <div className="mt-[6px] text-left px-[2px]">
+          <p className="text-[11px] font-semibold text-black leading-[13px]">
+            {name}
+          </p>
+
+          <p className="text-[9px] text-gray-400 leading-[11px] mt-[2px]">
+            {role}
+          </p>
+        </div>
+
       </div>
     </motion.div>
   );

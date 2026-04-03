@@ -7,13 +7,35 @@ export default function JumpstartSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
+  /* ===== CONTENT ANIMATION (BOTTOM → UP) ===== */
+  const container = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.25,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 60 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
+
   return (
     <section className="w-full px-4 sm:px-6 md:px-12 lg:px-20 py-14 sm:py-16 md:py-20">
       
-      {/* CENTER CONTAINER */}
       <div className="max-w-[1100px] mx-auto flex flex-col items-center">
 
-        {/* ===== HEADING ===== */}
+        {/* ===== HEADING (UNCHANGED) ===== */}
         <motion.h1
           ref={ref}
           initial={{ y: 200, scale: 0.8 }}
@@ -42,11 +64,11 @@ export default function JumpstartSection() {
           provided with every Jumpstart.
         </motion.h1>
 
-        {/* ===== CONTENT ===== */}
+        {/* ===== CONTENT (BOTTOM → UP) ===== */}
         <motion.div
-          initial={{ scale: 0.7, opacity: 0 }}
-          animate={isInView ? { scale: 1, opacity: 1 } : {}}
-          transition={{ duration: 0.35, ease: "easeOut" }}
+          variants={container}
+          initial="hidden"
+          animate={isInView ? "show" : "hidden"}
           className="
             w-full
             grid grid-cols-1 md:grid-cols-2
@@ -55,7 +77,7 @@ export default function JumpstartSection() {
           "
         >
           {/* LEFT */}
-          <div>
+          <motion.div variants={fadeUp}>
             <h2 className="
               font-helvetica font-normal text-black
               text-[20px] sm:text-[24px] md:text-[28px]
@@ -73,19 +95,22 @@ export default function JumpstartSection() {
               Curious how to get started with ServiceNow without overcomplicating it? <br />
               Watch our SVP of Sales break down how our Jumpstart Offerings help organizations move faster with focused, outcome-driven implementations.
             </p>
-          </div>
+          </motion.div>
 
           {/* RIGHT (VIDEO BOX) */}
-          <div className="
-            w-full 
-            h-[200px] sm:h-[240px] md:h-[260px]
-            bg-gray-300 rounded-lg 
-            flex items-center justify-center
-          ">
+          <motion.div
+            variants={fadeUp}
+            className="
+              w-full 
+              h-[200px] sm:h-[240px] md:h-[260px]
+              bg-gray-300 rounded-lg 
+              flex items-center justify-center
+            "
+          >
             <div className="w-12 h-12 sm:w-14 sm:h-14 border-2 border-black rounded-full flex items-center justify-center">
               <div className="w-0 h-0 border-l-[10px] sm:border-l-[12px] border-l-black border-y-[7px] sm:border-y-[8px] border-y-transparent ml-[4px] sm:ml-[5px]" />
             </div>
-          </div>
+          </motion.div>
 
         </motion.div>
 

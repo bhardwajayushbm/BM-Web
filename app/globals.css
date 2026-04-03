@@ -107,3 +107,11 @@
     animation-delay: 4s;
   }
 }
+@layer base {
+  button,
+  a,
+  [role="button"],
+  .cursor-pointer {
+    cursor: pointer;
+  }
+}

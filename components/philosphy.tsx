@@ -7,18 +7,21 @@ const containerVariants = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.4,
+      staggerChildren: 0.25,
     },
   },
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 80, scale: 0.9 },
+  hidden: { opacity: 0, y: 60, scale: 0.95 },
   show: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.7, ease: "easeOut" },
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.8, 0.25, 1], // smoother easing
+    },
   },
 };
 
@@ -28,14 +31,19 @@ export default function Philosophy() {
 
       <div className="max-w-[1100px] mx-auto px-4 sm:px-6">
 
-        <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-10 mb-10 md:mb-14">
+        {/* ===== HEADER ===== */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col md:flex-row justify-between gap-6 md:gap-10 mb-10 md:mb-14"
+        >
 
           <div>
-            <h2 className="text-[22px] sm:text-[22px] md:text-[40px] leading-[1.2] text-black">
-              The Core <br />
-              <span className="font-normal">BANGMETRIC</span> <br />
-              Philosophy
-            </h2>
+           <h2 className="text-[22px] sm:text-[22px] md:text-[40px] leading-[1.2] text-black text-center md:text-left whitespace-nowrap md:whitespace-normal">
+  The Core <span className="font-normal">BANGMETRIC</span> Philosophy
+</h2>
           </div>
 
           <div className="max-w-[520px]">
@@ -47,27 +55,29 @@ export default function Philosophy() {
             </p>
           </div>
 
-        </div>
+        </motion.div>
 
+        {/* ===== CARDS ===== */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          animate="show"
+          whileInView="show"
+          viewport={{ once: true }}
           className="
             flex flex-col items-center gap-5
             md:flex-row md:justify-between md:gap-0
           "
         >
 
+          {/* CARD 1 */}
           <motion.div
             variants={cardVariants}
+            whileHover={{ scale: 1.03 }}
             className="
-              relative
-              w-full
+              relative w-full
               max-w-[100%] sm:max-w-[320px]
-              h-[280px] sm:h-[300px] md:h-[290px]   // 🔥 increased for mobile
-              rounded-[5px]
-              overflow-hidden
+              h-[260px] sm:h-[300px] md:h-[290px]
+              rounded-[5px] overflow-hidden
             "
           >
             <Image src="/PH1.png" alt="card1" fill className="object-cover" />
@@ -77,19 +87,21 @@ export default function Philosophy() {
                 Mid-market <br /> specialists
               </h3>
             </div>
+
             <div className="hidden md:block absolute bottom-12 right-5 text-white text-[26px]">
               &gt;
             </div>
           </motion.div>
+
+          {/* CARD 2 */}
           <motion.div
             variants={cardVariants}
+            whileHover={{ scale: 1.03 }}
             className="
-              relative
-              w-full
+              relative w-full
               max-w-[100%] sm:max-w-[320px]
-              h-[280px] sm:h-[300px] md:h-[290px]
-              rounded-[5px]
-              overflow-hidden
+              h-[260px] sm:h-[300px] md:h-[290px]
+              rounded-[5px] overflow-hidden
             "
           >
             <Image src="/PH2.png" alt="card2" fill className="object-cover" />
@@ -102,15 +114,16 @@ export default function Philosophy() {
               </h3>
             </div>
           </motion.div>
+
+          {/* CARD 3 */}
           <motion.div
             variants={cardVariants}
+            whileHover={{ scale: 1.03 }}
             className="
-              relative
-              w-full
+              relative w-full
               max-w-[100%] sm:max-w-[320px]
-              h-[280px] sm:h-[300px] md:h-[290px]
-              rounded-[5px]
-              overflow-hidden
+              h-[260px] sm:h-[300px] md:h-[290px]
+              rounded-[5px] overflow-hidden
             "
           >
             <Image src="/PH3.png" alt="card3" fill className="object-cover" />
@@ -123,6 +136,7 @@ export default function Philosophy() {
                 compromise
               </h3>
             </div>
+
             <div className="hidden md:block absolute bottom-10 right-5 text-white text-[26px]">
               &gt;
             </div>

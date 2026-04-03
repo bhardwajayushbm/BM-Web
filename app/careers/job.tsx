@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 
 type Job = {
   id: number;
@@ -27,21 +28,56 @@ export default function JobsPage() {
   const jobs = allJobs.slice(start, start + pageSize);
 
   const handleApply = (jobId: number) => {
-    // Redirect to /join page
     router.push("/join");
   };
 
+  // 🔥 Section animation
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 80 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  // 🔥 Each job animation
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
   return (
-    <section className="w-full bg-[#F7F7FB] py-16 flex justify-center">
+    <motion.section
+      className="w-full bg-[#F7F7FB] py-16 flex justify-center"
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ amount: 0.2, once: true }}
+    >
       <div className="w-full max-w-[1100px]">
 
-        <p className="font-helvetica text-gray-600 mb-6 text-[16px]">
+        <motion.p
+          className="font-helvetica text-gray-600 mb-6 text-[16px]"
+          variants={itemVariants}
+        >
           Find a job opening suited for you
-        </p>
+        </motion.p>
 
-        <div className="bg-white rounded-[4px] shadow-sm border border-gray-200">
+        <motion.div
+          className="bg-white rounded-[4px] shadow-sm border border-gray-200"
+          variants={sectionVariants}
+        >
           {jobs.map((job, idx) => (
-            <div key={job.id}>
+            <motion.div key={job.id} variants={itemVariants}>
               <div className="flex items-center justify-between px-8 py-6">
                 <div>
                   <h3 className="text-[15px] font-medium text-black">
@@ -73,12 +109,18 @@ export default function JobsPage() {
                   </button>
                 </div>
               </div>
+
               {idx !== jobs.length - 1 && (
                 <div className="h-px bg-black mx-8" />
               )}
-            </div>
+            </motion.div>
           ))}
-          <div className="flex justify-end items-center gap-4 px-8 py-6 text-[13px] text-gray-600">
+
+          {/* Pagination */}
+          <motion.div
+            className="flex justify-end items-center gap-4 px-8 py-6 text-[13px] text-gray-600"
+            variants={itemVariants}
+          >
             {Array.from({ length: totalPages }).map((_, i) => {
               const p = i + 1;
               return (
@@ -102,9 +144,9 @@ export default function JobsPage() {
             >
               Next &gt;
             </button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

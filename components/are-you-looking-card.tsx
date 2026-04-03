@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const cards = [
   {
@@ -38,19 +39,52 @@ const cards = [
   },
 ];
 
+/* ===== SECTION ANIMATION ===== */
+const sectionVariants = {
+  hidden: { opacity: 0, y: 80 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+/* ===== HEADING ANIMATION ===== */
+const headingVariants = {
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: "easeOut" },
+  },
+};
+
 export default function AreYouLookingForCard() {
   return (
-    <section className="w-full bg-[#F2F2F4] py-16 px-4">
-
+    <motion.section
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, margin: "-100px" }}
+      className="w-full bg-[#F2F2F4] py-16 px-4"
+    >
       <div className="max-w-[1100px] mx-auto">
 
-        <h2 className="text-center font-[Helvetica] font-normal text-[32px] sm:text-[40px] md:text-[48px] text-black">
-          ServiceNow Offerings Built for
-          <br />
-          Enterprise Success
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
+        {/* ===== HEADING ===== */}
+        <motion.h2
+  variants={headingVariants}
+  className="text-center font-[Helvetica] font-normal text-[22px] sm:text-[28px] md:text-[38px] text-black max-w-[420px] md:max-w-[520px] mx-auto mb-6"
+>
+  ServiceNow Offerings Built for
+  <br />
+  Enterprise Success
+</motion.h2>
 
+        {/* ===== CARDS (NO FRAMER MOTION) ===== */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
           {cards.map((item, i) => (
             <div
               key={i}
@@ -64,10 +98,10 @@ export default function AreYouLookingForCard() {
                 bg-white
                 hover:bg-[#D8CDFF]
                 transition-all duration-300
+                cursor-pointer
               "
             >
               <div className="flex items-center gap-3">
-
                 <Image
                   src="/SS.png"
                   alt="icon"
@@ -97,6 +131,7 @@ export default function AreYouLookingForCard() {
             </div>
           ))}
 
+          {/* ===== EXPLORE MORE CARD ===== */}
           <Link
             href="/services"
             className="
@@ -107,11 +142,13 @@ export default function AreYouLookingForCard() {
               flex items-center justify-between
               bg-gradient-to-r from-[#9562EB] to-[#7A4ED9]
               text-white
+              cursor-pointer
             "
           >
             <h3 className="text-[20px] font-[Helvetica]">
               Explore More
             </h3>
+
             <Image
               src="/arrow.png"
               alt="arrow"
@@ -120,9 +157,8 @@ export default function AreYouLookingForCard() {
               className="absolute top-3 right-4 object-contain invert brightness-0"
             />
           </Link>
-
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
