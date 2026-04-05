@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function ResultsClientsSee() {
   const cards = [
     {
-      icon: "/Icon11.png",
-      text: "20-40% faster MTTR",
+      icon: "/I4.png",
+      text: "20-40%faster MTTR",
     },
     {
       icon: "/Icon15.png",
@@ -21,69 +22,80 @@ export default function ResultsClientsSee() {
       text: "Fewer emergency changes & lower change failure rate",
     },
     {
-      icon: "/Icon11.png",
-      text: "Reduced cost per-ticket through clarity and automation",
+      icon: "/Icon12.png",
+      text: "Reduced cost per-ticket through clarity and automation ",
     },
   ];
 
   return (
-    <section className="w-full bg-[#F5F5F5] font-[Helvetica]">
-      <div className="max-w-[1400px] mx-auto px-16 py-24">
-        <div className="text-center mb-16">
-          <h2 className="text-[52px] font-normal text-black">
+    <section className="w-full bg-white font-helvetica">
+
+      {/* 🔷 CONTENT */}
+      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 py-14 sm:py-20 md:py-24">
+
+        {/* HEADER */}
+        <div className="text-center mb-10 sm:mb-14 md:mb-16">
+          <h2 className="text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px] font-normal text-black">
             The Results Our Clients See
           </h2>
 
-          <p className="text-[18px] text-black mt-3">
+          <p className="text-[14px] sm:text-[16px] md:text-[18px] text-black mt-3">
             When ITSM is designed properly, the numbers move
           </p>
         </div>
-        <div className="flex justify-between gap-6">
+
+        {/* 🔷 CARDS */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
 
           {cards.map((card, index) => (
-            <div
+            <motion.div
               key={index}
+              whileTap={{ scale: 0.96 }}
+              whileHover={{ scale: 1.03 }}
+              transition={{ type: "spring", stiffness: 300 }}
               className="
-                w-[252px]
-                h-[200px]
+                w-full
+                h-[180px] sm:h-[200px]
                 bg-white
-                border
-                border-[#BEBEBE]
-                rounded-[5px]
-                flex
-                flex-col
-                items-center
-                text-center
-                px-6
-                pt-10
+                border border-[#BEBEBE]
+                rounded-[6px]
+                flex flex-col
+                px-4 sm:px-5 md:px-6
+                pt-3
+                cursor-pointer
+                hover:shadow-md
               "
             >
               <Image
                 src={card.icon}
                 alt="icon"
-                width={64}
+                width={60}
                 height={60}
-                className="mb-3"
+                className="mb-4 sm:mb-5"
               />
 
-              <p className="text-[16px] text-black leading-[1.5]">
+              <p className="text-[13px] sm:text-[14px] text-black leading-[1.4]">
                 {card.text}
               </p>
-            </div>
+            </motion.div>
           ))}
 
         </div>
-        <div className="text-center mt-20">
-          <h3
-            className="text-[34px] font-semibold leading-[1.3]"
-            style={{ color: "#4FCA07" }}
-          >
-            Not because we added more features <br />
-            but because we removed friction.
-          </h3>
-        </div>
-
       </div>
+     <div className="text-center mt-8 sm:mt-10 mb-4 px-4">
+  <h3
+    className="
+      font-semibold leading-[1.4]
+      text-[20px] sm:text-[26px] md:text-[32px] lg:text-[40px]
+    "
+    style={{ color: "#4FCA07" }}
+  >
+    Not because we added more features
+    <br className="hidden sm:block" />
+    but because we removed friction.
+  </h3>
+</div>
+
     </section>
   );
 }

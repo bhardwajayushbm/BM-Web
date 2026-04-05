@@ -28,7 +28,7 @@ export default function CSMJumpstartSection() {
             "
           >
             <h3 className="text-[30px] font-semibold mb-4 text-black">
-              45-Day CSM Standard
+              45-Day CSM 
             </h3>
             <p className="text-[12px] leading-[1.5] text-black">
               A clean, expertly designed CSM foundation delivered with
@@ -51,7 +51,7 @@ export default function CSMJumpstartSection() {
             "
           >
             <h3 className="text-[30px] font-semibold mb-4 text-black">
-              60-Day CSM Pro
+              60-Day CSM 
             </h3>
             <p className="text-[12px] leading-[1.5] text-black">
               For teams ready to unlock CSM Pro capabilities. Intelligent

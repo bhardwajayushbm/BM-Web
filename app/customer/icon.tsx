@@ -29,35 +29,39 @@ export default function ResultsClientsSee() {
 
   return (
     <section className="w-full bg-white font-helvetica">
-      <div className="max-w-[1100px] mx-auto px-16 py-24">
 
-        <div className="text-center mb-16">
-          <h2 className="text-[52px] font-normal text-black">
+      {/* 🔷 CONTENT */}
+      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 py-14 sm:py-20 md:py-24">
+
+        {/* HEADER */}
+        <div className="text-center mb-10 sm:mb-14 md:mb-16">
+          <h2 className="text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px] font-normal text-black">
             The Results Our Clients See
           </h2>
 
-          <p className="text-[18px] text-black mt-3">
+          <p className="text-[14px] sm:text-[16px] md:text-[18px] text-black mt-3">
             When customer service is designed properly, the results follow:
           </p>
         </div>
 
-        <div className="flex justify-between gap-6">
+        {/* 🔷 CARDS */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
 
           {cards.map((card, index) => (
             <motion.div
               key={index}
-              whileTap={{ scale: 0.96 }}   
-              whileHover={{ scale: 1.03 }} 
+              whileTap={{ scale: 0.96 }}
+              whileHover={{ scale: 1.03 }}
               transition={{ type: "spring", stiffness: 300 }}
               className="
-                w-[240px]
-                h-[200px]
+                w-full
+                h-[180px] sm:h-[200px]
                 bg-white
                 border border-[#BEBEBE]
-                rounded-[5px]
+                rounded-[6px]
                 flex flex-col
-                px-6
-                pt-2
+                px-4 sm:px-5 md:px-6
+                pt-3
                 cursor-pointer
                 hover:shadow-md
               "
@@ -65,11 +69,12 @@ export default function ResultsClientsSee() {
               <Image
                 src={card.icon}
                 alt="icon"
-                width={80}
-                height={80}
-                className="mb-6"
+                width={60}
+                height={60}
+                className="mb-4 sm:mb-5"
               />
-              <p className="text-[14px] text-black leading-[1.2]">
+
+              <p className="text-[13px] sm:text-[14px] text-black leading-[1.4]">
                 {card.text}
               </p>
             </motion.div>
@@ -78,7 +83,8 @@ export default function ResultsClientsSee() {
         </div>
       </div>
 
-      <div className="relative w-full h-[200px]">
+      {/* 🔷 BOTTOM BANNER */}
+      <div className="relative w-full h-[160px] sm:h-[180px] md:h-[200px]">
 
         <Image
           src="/I11.png"
@@ -87,10 +93,10 @@ export default function ResultsClientsSee() {
           className="object-cover"
         />
 
-        <div className="absolute inset-0 flex items-center justify-center text-center px-10">
-          <h3 className="text-white text-[36px] font-semibold leading-[1.3] max-w-[900px]">
+        <div className="absolute inset-0 flex items-center justify-center text-center px-4 sm:px-8 md:px-10">
+          <h3 className="text-white text-[18px] sm:text-[24px] md:text-[30px] lg:text-[36px] font-semibold leading-[1.4] max-w-[900px]">
             Not because we added more features,
-            <br />
+            <br className="hidden sm:block" />
             but because we removed friction.
           </h3>
         </div>

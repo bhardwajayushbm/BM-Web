@@ -14,20 +14,19 @@ export default function CoreValues() {
       desc: "We believe in continuous learning, certifications, hands-on training, and growth roadmaps that keep our teams future-ready.",
     },
     {
-      title: "Integrity & Transparency",
+      title: "Integrity &\nTransparency",
       desc: "Honest pricing, clear communication, and commitments you can trust.",
     },
     {
-      title: "Innovation with Purpose",
+      title: "Innovation with\nPurpose",
       desc: "We innovate to solve real problems, optimize processes, and unlock platform potential.",
     },
     {
-      title: "Collaboration & Respect",
+      title: "Collaboration &\nRespect",
       desc: "A culture built on appreciation and mutual respect empowers our people to deliver their best work for your organization.",
     },
   ];
 
-  /* ===== ANIMATIONS ===== */
   const sectionVariant = {
     hidden: { opacity: 0 },
     show: {
@@ -73,7 +72,6 @@ export default function CoreValues() {
       className="relative w-full py-20 md:py-28 font-[Helvetica]"
     >
 
-      {/* BACKGROUND */}
       <Image
         src="/Cloud.jpg"
         alt="cloud"
@@ -101,7 +99,6 @@ export default function CoreValues() {
             </p>
           </motion.div>
 
-          {/* CARDS */}
           {cards.map((item, i) => (
             <motion.div
               key={i}

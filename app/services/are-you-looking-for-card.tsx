@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 const cards = [
   {
@@ -15,6 +16,7 @@ const cards = [
   {
     title: "Customer Service Management",
     desc: "Connected customer experiences that elevate service interactions.",
+    link: "/customer", 
   },
   {
     title: "Field Service Management",
@@ -25,28 +27,17 @@ const cards = [
 /* ===== ANIMATIONS ===== */
 const sectionVariant = {
   hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { duration: 0.8 },
-  },
+  show: { opacity: 1, transition: { duration: 0.8 } },
 };
 
 const headingVariant = {
   hidden: { opacity: 0, y: -30 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6 },
-  },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
 const containerVariant = {
   hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
+  show: { transition: { staggerChildren: 0.15 } },
 };
 
 const cardVariant = {
@@ -60,6 +51,8 @@ const cardVariant = {
 };
 
 export default function AreYouLookingForCard() {
+  const router = useRouter(); // 👈 ADD
+
   return (
     <motion.section
       variants={sectionVariant}
@@ -70,7 +63,6 @@ export default function AreYouLookingForCard() {
     >
       <div className="max-w-[1100px] mx-auto">
 
-        {/* ===== TITLE ===== */}
         <motion.h2
           variants={headingVariant}
           className="text-center font-[Helvetica] text-black text-[24px] sm:text-[32px] md:text-[40px]"
@@ -78,7 +70,6 @@ export default function AreYouLookingForCard() {
           Adopt ServiceNow in 45 Days
         </motion.h2>
 
-        {/* ===== GRID ===== */}
         <motion.div
           variants={containerVariant}
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 mt-8 sm:mt-10"
@@ -89,7 +80,10 @@ export default function AreYouLookingForCard() {
               variants={cardVariant}
               whileHover={{ scale: 1.04, y: -5 }}
               whileTap={{ scale: 0.97 }}
-              className="
+              onClick={() => {
+                if (item.link) router.push(item.link); // 👈 NAVIGATION
+              }}
+              className={`
                 relative
                 rounded-[10px]
                 border border-[#D1D1D1]
@@ -99,11 +93,10 @@ export default function AreYouLookingForCard() {
                 bg-[#EDEDED]
                 hover:bg-[#D8CDFF]
                 transition-all duration-300
-                cursor-pointer
-              "
+                ${item.link ? "cursor-pointer" : ""}
+              `}
             >
 
-              {/* ICON */}
               <Image
                 src="/SS.png"
                 alt="icon"
@@ -112,7 +105,6 @@ export default function AreYouLookingForCard() {
                 className="object-contain shrink-0 sm:w-[26px] sm:h-[26px]"
               />
 
-              {/* TEXT */}
               <div className="flex flex-col justify-center">
                 <h3 className="ml-1 sm:ml-2 font-[Helvetica] text-black text-[15px] sm:text-[17px] md:text-[18px] leading-[20px]">
                   {item.title}
@@ -123,7 +115,6 @@ export default function AreYouLookingForCard() {
                 </p>
               </div>
 
-              {/* ARROW */}
               <Image
                 src="/arrow.png"
                 alt="arrow"

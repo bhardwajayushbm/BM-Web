@@ -7,7 +7,6 @@ export default function JumpstartSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  /* ===== CONTENT ANIMATION (BOTTOM → UP) ===== */
   const container = {
     hidden: {},
     show: {
@@ -35,7 +34,7 @@ export default function JumpstartSection() {
       
       <div className="max-w-[1100px] mx-auto flex flex-col items-center">
 
-        {/* ===== HEADING (UNCHANGED) ===== */}
+        {/* HEADING */}
         <motion.h1
           ref={ref}
           initial={{ y: 200, scale: 0.8 }}
@@ -54,7 +53,7 @@ export default function JumpstartSection() {
           }}
           className="
             text-center font-helvetica font-bold text-[#60D94F]
-            mt-16 sm:mt-24 md:mt-40
+            mt-6 sm:mt-10 md:mt-14
             mb-16 sm:mb-24 md:mb-40
             text-[28px] sm:text-[40px] md:text-[55px] lg:text-[70px]
             leading-[110%] md:leading-[100%]
@@ -64,7 +63,7 @@ export default function JumpstartSection() {
           provided with every Jumpstart.
         </motion.h1>
 
-        {/* ===== CONTENT (BOTTOM → UP) ===== */}
+        {/* CONTENT */}
         <motion.div
           variants={container}
           initial="hidden"
@@ -76,12 +75,12 @@ export default function JumpstartSection() {
             items-start
           "
         >
-          {/* LEFT */}
+          {/* LEFT TEXT */}
           <motion.div variants={fadeUp}>
             <h2 className="
               font-helvetica font-normal text-black
               text-[20px] sm:text-[24px] md:text-[28px]
-              leading-[26px] md:leading-[32px]
+              leading-[26px] md:leading-[32px] mt-6
             ">
               BANGMETRIC Jumpstart Offerings
             </h2>
@@ -96,20 +95,24 @@ export default function JumpstartSection() {
               Watch our SVP of Sales break down how our Jumpstart Offerings help organizations move faster with focused, outcome-driven implementations.
             </p>
           </motion.div>
-
-          {/* RIGHT (VIDEO BOX) */}
+          
+          {/* RIGHT VIDEO */}
           <motion.div
             variants={fadeUp}
             className="
               w-full 
-              h-[200px] sm:h-[240px] md:h-[260px]
-              bg-gray-300 rounded-lg 
-              flex items-center justify-center
+              h-[220px] sm:h-[260px] md:h-[300px]
+              rounded-lg overflow-hidden
             "
           >
-            <div className="w-12 h-12 sm:w-14 sm:h-14 border-2 border-black rounded-full flex items-center justify-center">
-              <div className="w-0 h-0 border-l-[10px] sm:border-l-[12px] border-l-black border-y-[7px] sm:border-y-[8px] border-y-transparent ml-[4px] sm:ml-[5px]" />
-            </div>
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/RM61M1lrCRY"
+              title="YouTube video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
           </motion.div>
 
         </motion.div>

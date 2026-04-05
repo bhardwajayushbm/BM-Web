@@ -4,21 +4,21 @@ import Image from "next/image";
 
 export default function ITSMJumpstartSection() {
   return (
-    <section className="w-full bg-black py-24 px-6 md:px-12 flex justify-center">
+    <section className="w-full bg-white py-24 px-6 md:px-12 flex justify-center">
       <div className="w-full max-w-[1300px] font-[Helvetica] text-white">
         <div className="flex justify-between items-start mb-10">
 
           <div className="max-w-[650px]">
 
-            <h2 className="text-[56px] leading-[1.1] font-normal">
+            <h2 className="text-[56px] leading-[1.1] font-normal text-black">
               Our ITSM Jumpstarts
             </h2>
 
-            <h3 className="text-[36px] leading-[1.2] mt-1">
+            <h3 className="text-[36px] leading-[1.2] mt-1 text-black">
               (Fast, Without the Compromise)
             </h3>
 
-            <p className="text-[22px] text-gray-300 mt-8 max-w-[520px] leading-[1.5]">
+            <p className="text-[22px] text-black mt-8 max-w-[520px] leading-[1.5]">
               They’re structured, designed pathways that
               keep momentum high and quality intact.
             </p>
@@ -35,28 +35,28 @@ export default function ITSMJumpstartSection() {
 
         </div>
 
-        <div className="flex gap-10 justify-between">
+        <div className="flex flex-col md:flex-row gap-10 justify-center items-center">
+
 
           <div
             className="
-              w-[560px]
-              h-[200px]
-              rounded-[20px]
-              bg-black
-              border border-[#9562EB]
+              w-full md:w-[659px]
+              h-[180px]
+              rounded-[10px]
+              border border-black
+              bg-white
+              text-left
               p-8
-              flex flex-col justify-center
               transition-all duration-300
-              hover:bg-[#9F9EF2]
+              hover:bg-[#E3DCFF]
             "
           >
-            <h3 className="text-[30px] font-semibold mb-4 text-white">
-              45-Day ITSM Foundation
+            <h3 className="text-[30px] font-semibold mb-4 text-black">
+              45-Day ITSM 
             </h3>
-
-            <p className="text-[16px] leading-[1.6] text-gray-300 max-w-[480px]">
-              A clean, effective baseline that actually improves flow:
-              Incident, Request, core Catalog, Knowledge, practical SLAs,
+            <p className="text-[12px] leading-[1.5] text-black">
+              A clean, effective baseline that actually improves flow: 
+              Incident, Request, core Catalog, Knowledge, practical SLAs,
               Major Incident basics, and a portal that reduces effort.
               Fast to value. Built right the first time.
             </p>
@@ -64,26 +64,24 @@ export default function ITSMJumpstartSection() {
 
           <div
             className="
-              w-[560px]
-              h-[200px]
-              rounded-[20px]
-              border
-              border-[#9562EB]
-              bg-black
+              w-full md:w-[659px]
+              h-[180px]
+              rounded-[10px]
+              border border-black
+              bg-white
+              text-left
               p-8
-              flex flex-col justify-center
               transition-all duration-300
-              hover:bg-[#9F9EF2]
+              hover:bg-[#E3DCFF]
             "
           >
-            <h3 className="text-[30px] font-semibold mb-4 text-white">
-              60-Day ITSM Pro Jumpstart
+            <h3 className="text-[30px] font-semibold mb-4 text-black">
+              60-Day ITSM 
             </h3>
-
-            <p className="text-[16px] leading-[1.6] text-gray-300 max-w-[480px]">
+            <p className="text-[12px] leading-[1.5] text-black">
               For teams ready to go beyond the basics:
-              Problem & Change, Service Operations Workspace,
-              Virtual Agent, and a rightsized CMDB/CSDM.
+              Problem & Change, Service Operations Workspace, Virtual Agent,
+               and a rightsized CMDB/CSDM
             </p>
           </div>
 

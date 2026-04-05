@@ -38,7 +38,7 @@ export function Footer() {
 
               <div className="flex items-center gap-2">
                 <Mail size={16} />
-                <span>info.xyz@gmail.com</span>
+                <span>connect@bangmetric.com</span>
               </div>
             </div>
 
@@ -75,31 +75,37 @@ export function Footer() {
 
                   <li>
                     <Link href="/employee" className="hover:text-white transition">
-                      Employee Solutions
+                      IT Asset Management
                     </Link>
                   </li>
 
                   <li>
                     <Link href="/customer" className="hover:text-white transition">
-                      Customer Solutions
+                      IT Operations Management 
                     </Link>
                   </li>
 
                   <li>
                     <Link href="/technology" className="hover:text-white transition">
-                      Technology Solutions
+                      GenAI Solutions
                     </Link>
                   </li>
 
                   <li>
                     <Link href="/ai" className="hover:text-white transition">
-                      Agentic AI
+                      IT Risk Management 
                     </Link>
                   </li>
 
                   <li>
                     <Link href="/services" className="hover:text-white transition">
-                      Services
+                     Strategic Portfolio Management
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link href="/services" className="hover:text-white transition">
+                     Legal Service Delivery
                     </Link>
                   </li>
 
@@ -134,7 +140,7 @@ export function Footer() {
                   </li>
 
                   <li>
-                    <Link href="/privacy" className="hover:text-white transition">
+                    <Link href="/policy" className="hover:text-white transition">
                       Privacy Policy
                     </Link>
                   </li>

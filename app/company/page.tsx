@@ -9,7 +9,7 @@ const fadeVariants = {
   hover: {
     opacity: [1, 0, 1],
     transition: {
-      duration: 1.00,         
+      duration: 1.0,
       ease: "easeInOut",
     },
   },
@@ -25,14 +25,16 @@ export default function AboutPage() {
         w-full flex justify-center
         px-4 sm:px-6 md:px-8 lg:px-10
         mt-8 sm:mt-12 md:mt-20 lg:mt-28
-        mb-8 sm:mb-12 md:mb-16 lg:mb-24
+
+        /* 🔥 FIXED BOTTOM MARGIN */
+        mb-4 sm:mb-8 md:mb-16 lg:mb-24
       "
     >
       <motion.div
         variants={fadeVariants}
         initial="initial"
         animate="visible"
-        whileHover="hover"     
+        whileHover="hover"
         className="
           relative
           w-full
@@ -46,13 +48,13 @@ export default function AboutPage() {
           rounded-[20px]
           overflow-hidden
           flex items-center justify-center
-          cursor-pointer
+          cursor-pointer mt-10
         "
       >
         <motion.div
-          animate={{ scale: [1.50, 1, 1.50] }}
+          animate={{ scale: [1.5, 1, 1.5] }}
           transition={{
-            duration: 8,         
+            duration: 8,
             ease: "easeInOut",
             repeat: Infinity,
           }}

@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function ZurichReleasePage() {
     return (
-        <section className="w-full bg-white flex justify-center px-4 md:px-8 lg:px-10 py-16">
+        <section className="w-full bg-white flex justify-center px-5 sm:px-6 md:px-8 lg:px-10 py-16">
             <div className="w-full max-w-[955px] font-helvetica text-black">
                 <h1 className="text-[26px] font-normal leading-[100%] mb-4">
                     Introduction

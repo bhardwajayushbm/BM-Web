@@ -5,71 +5,85 @@ import Image from "next/image";
 export default function Organizations() {
   return (
     <section
-      className="w-full bg-[#F3F3F5] py-28"
+      className="w-full bg-[#F3F3F5] py-16 md:py-28"
       style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
     >
-      <div className="max-w-[1400px] mx-auto px-16 flex justify-between items-start relative">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 flex flex-col lg:flex-row justify-between items-start gap-10 relative">
 
-        <div className="max-w-[520px] relative z-10">
-
-          <h1 className="text-[46px] leading-[1.1] text-black">
+        {/* 🔷 LEFT */}
+        <div className="max-w-[520px]">
+          <h1 className="text-[28px] sm:text-[34px] md:text-[40px] lg:text-[46px] leading-[1.2] text-black">
             Why Organizations
             <br />
             Choose BANGMETRIC
           </h1>
 
-          <p className="text-[20px] text-black mt-4">
+          <p className="text-[16px] sm:text-[18px] md:text-[20px] text-black mt-4">
             You’re not looking for another implementer.
           </p>
-
         </div>
 
+        {/* 🔷 RIGHT */}
         <div className="max-w-[520px] relative">
-
-          <p className="text-[20px] font-semibold mb-8">
+          <p className="text-[16px] sm:text-[18px] md:text-[20px] font-semibold mb-6 md:mb-8">
             You’re looking for a thinking partner.
           </p>
 
-          <div className="absolute left-[17px] top-[70px] h-[260px] w-[1px] bg-black z-0" />
+          <div className="flex flex-col gap-6 md:gap-[28px] relative z-10">
 
-          <div className="flex flex-col gap-[28px] relative z-10">
-
-            <div className="flex items-start gap-4">
-              <div className="w-[46px] h-[35px] rounded-full bg-[#D8CDFF] shadow-[inset_3px_2px_3.5px_#AB9AE8] z-10" />
-              <p className="text-[18px] leading-[1.6] text-black">
+            {[
+              <>
                 <span className="font-semibold">Privately owned</span> — real
                 accountability, no investor pressure, no bloated teams
-              </p>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="w-[44px] h-[35px] rounded-full bg-[#D8CDFF] shadow-[inset_3px_2px_3.5px_#AB9AE8] z-10" />
-              <p className="text-[18px] leading-[1.6] text-black">
+              </>,
+              <>
                 <span className="font-semibold">Midmarket specialists</span> —
                 world class capability without enterprise bloat
-              </p>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="w-[60px] h-[35px] rounded-full bg-[#D8CDFF] shadow-[inset_3px_2px_3.5px_#AB9AE8] z-10" />
-              <p className="text-[18px] leading-[1.6] text-black">
+              </>,
+              <>
                 <span className="font-semibold">Outcome obsessed</span> — we move
                 MTTR, FCR, and change quality, not just sliders on a dashboard
-              </p>
-            </div>
-
-            <div className="flex items-start gap-4">
-             <div className="w-[50px] h-[35px] rounded-full bg-[#D8CDFF] shadow-[inset_3px_2px_3.5px_#AB9AE8] z-10" />
-              <p className="text-[18px] leading-[1.6] text-black">
+              </>,
+              <>
                 <span className="font-semibold">End to end</span> — strategy,
                 design, build, AI, optimisation. We own outcomes—not hours.
-              </p>
-            </div>
+              </>,
+            ].map((text, i) => (
+              <div key={i} className="flex items-start gap-4">
+
+                {/* 🔥 IMAGE DOT */}
+                <div className="relative w-[28px] h-[28px] sm:w-[32px] sm:h-[32px] shrink-0 z-10">
+                  <Image
+                    src="/SS.png"
+                    alt="icon"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+
+                {/* TEXT */}
+                <p className="text-[14px] sm:text-[16px] md:text-[18px] leading-[1.6] text-black">
+                  {text}
+                </p>
+
+              </div>
+            ))}
 
           </div>
         </div>
 
-        <div className="absolute left-0 bottom-[-100px] w-[420px] h-[300px] pointer-events-none">
+        {/* 🔷 IMAGE (BOTTOM ON MOBILE, ABSOLUTE ON DESKTOP) */}
+        <div
+          className="
+            w-full
+            max-w-[320px] sm:max-w-[380px] md:max-w-[420px]
+            h-[200px] sm:h-[240px] md:h-[300px]
+            relative
+            mt-8
+            lg:mt-0
+            lg:absolute lg:left-0 lg:bottom-[-100px]
+          "
+        >
           <Image
             src="/Og1.png"
             alt="glass"
