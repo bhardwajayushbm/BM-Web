@@ -1,11 +1,17 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function WhatWeBuild() {
   return (
-    <section className="relative w-full min-h-screen font-helvetica text-white overflow-hidden">
-
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="relative w-full min-h-screen font-helvetica text-white overflow-hidden"
+    >
       {/* 🔷 BACKGROUND */}
       <Image
         src="/B11.png"
@@ -20,20 +26,45 @@ export default function WhatWeBuild() {
         {/* ================= HEADER ================= */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 md:gap-0 mb-10 md:mb-24">
 
-          <h2 className="text-[26px] sm:text-[30px] md:text-[36px] leading-[1.2] font-normal max-w-[600px]">
+          <motion.h2
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="text-[26px] sm:text-[30px] md:text-[36px] leading-[1.2] font-normal max-w-[600px]"
+          >
             What We Build Using <br className="hidden sm:block" />
             ServiceNow CSM
-          </h2>
+          </motion.h2>
 
-          <p className="text-[14px] sm:text-[16px] md:text-[18px] leading-[1.6] max-w-[520px] text-[#E5E5E5]">
+          <motion.p
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="text-[14px] sm:text-[16px] md:text-[18px] leading-[1.6] max-w-[520px] text-[#E5E5E5]"
+          >
             ServiceNow Customer Service Management becomes the execution layer
             for a deliberately designed service experience.
-          </p>
+          </motion.p>
 
         </div>
 
         {/* ================= GRID ================= */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-x-28 md:gap-y-16">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.2,
+              },
+            },
+          }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-x-28 md:gap-y-16"
+        >
 
           <BuildCard image="/b1.png" mobileImage="/csm1.jpg" title="Customer Experience" bullets={[
             "Seamless, omnichannel service across digital and assisted channels",
@@ -59,9 +90,9 @@ export default function WhatWeBuild() {
             "Faster time-to-value and sustainable cost reduction",
           ]} />
 
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
@@ -72,31 +103,41 @@ function BuildCard({
   mobileImage,
   title,
   bullets,
-}: {
-  image: string;
-  mobileImage: string;
-  title: string;
-  bullets: string[];
 }) {
   return (
-    <div className="w-full max-w-[660px]">
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0 },
+      }}
+      transition={{ duration: 0.6 }}
+      className="w-full max-w-[660px]"
+    >
 
       {/* ================= MOBILE ================= */}
       <div className="md:hidden">
 
         {/* IMAGE */}
-        <div className="relative w-full h-[180px] rounded-lg overflow-hidden">
+        <motion.div
+          whileHover={{ scale: 1.03 }}
+          className="relative w-full h-[180px] rounded-lg overflow-hidden"
+        >
           <Image
             src={mobileImage}
             alt={title}
             fill
             className="object-cover"
           />
-        </div>
+        </motion.div>
 
-        {/* 🔷 BLACK BOX BELOW IMAGE */}
-        <div className="bg-black/60 p-4 rounded-b-lg">
-
+        {/* 🔷 CONTENT */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          viewport={{ once: true }}
+          className="bg-black/60 p-4 rounded-b-lg"
+        >
           <h3 className="text-[16px] font-semibold mb-2">
             {title}
           </h3>
@@ -109,23 +150,29 @@ function BuildCard({
               </li>
             ))}
           </ul>
-
-        </div>
+        </motion.div>
 
       </div>
 
-      {/* ================= DESKTOP / TABLET ================= */}
+      {/* ================= DESKTOP ================= */}
       <div className="hidden md:block relative h-[300px] overflow-hidden rounded-lg">
 
-        <Image
-          src={image}
-          alt={title}
-          fill
-          className="object-cover scale-[1.03]"
-        />
+        <motion.div whileHover={{ scale: 1.05 }} className="w-full h-full">
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-cover scale-[1.03]"
+          />
+        </motion.div>
 
-        <div className="absolute right-2 top-[120px] w-[320px]">
-
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="absolute right-2 top-[120px] w-[320px]"
+        >
           <h3 className="text-[20px] font-semibold mb-4 ml-2">
             {title}
           </h3>
@@ -138,11 +185,10 @@ function BuildCard({
               </li>
             ))}
           </ul>
-
-        </div>
+        </motion.div>
 
       </div>
 
-    </div>
+    </motion.div>
   );
 }

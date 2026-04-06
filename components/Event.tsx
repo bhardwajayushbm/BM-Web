@@ -4,10 +4,13 @@ import { motion } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { useInView } from "framer-motion";
 import Image from "next/image";
+import { useRouter } from "next/navigation"; // ✅ added
 
 export function Event() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const router = useRouter(); // ✅ added
 
   const [current, setCurrent] = useState(0);
 
@@ -24,7 +27,6 @@ export function Event() {
     },
   ];
 
-  // ✅ AUTO SLIDE
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => prev + 1);
@@ -35,7 +37,6 @@ export function Event() {
   const nextSlide = () => setCurrent((prev) => prev + 1);
   const prevSlide = () => setCurrent((prev) => prev + 1);
 
-  // 🔥 Animation Variants
   const container = {
     hidden: {},
     show: {
@@ -65,7 +66,6 @@ export function Event() {
     >
       <div className="w-full max-w-[1100px] px-4 sm:px-6 lg:px-8 relative">
 
-        {/* HEADING */}
         <motion.div
           initial={{ opacity: 0, y: -40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -77,10 +77,8 @@ export function Event() {
           </h1>
         </motion.div>
 
-        {/* CAROUSEL */}
         <div className="relative flex items-center">
 
-          {/* LEFT ARROW */}
           <button
             onClick={prevSlide}
             className="absolute left-0 sm:-left-2 md:-left-6 lg:-left-10 hidden md:flex w-10 h-10 border border-gray-300 rounded-full items-center justify-center hover:bg-gray-50 transition-all z-10"
@@ -90,7 +88,6 @@ export function Event() {
             </svg>
           </button>
 
-          {/* RIGHT ARROW */}
           <button
             onClick={nextSlide}
             className="absolute right-0 sm:-right-2 md:-right-6 lg:-right-10 hidden md:flex w-10 h-10 border border-gray-300 rounded-full items-center justify-center hover:bg-gray-50 transition-all z-10"
@@ -100,7 +97,6 @@ export function Event() {
             </svg>
           </button>
 
-          {/* SLIDER */}
           <div className="overflow-hidden w-full">
             <motion.div
               animate={{ x: `-${(current % slides.length) * 100}%` }}
@@ -116,7 +112,6 @@ export function Event() {
                   className="w-full flex-shrink-0 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center px-6 sm:px-8 md:px-10"
                 >
 
-                  {/* TEXT */}
                   <motion.div className="text-center lg:text-left">
                     <motion.h2
                       variants={fadeUp}
@@ -132,17 +127,18 @@ export function Event() {
                       {slide.desc}
                     </motion.p>
 
+                    {/* ✅ BUTTON FIXED */}
                     <motion.button
                       variants={fadeUp}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="bg-[#9562EB] text-white w-[130px] h-[36px] rounded-[6px]"
+                      onClick={() => router.push("/resources")}
+                      className="bg-[#9562EB] text-white w-[130px] h-[36px] rounded-[6px] cursor-pointer"
                     >
                       Read More
                     </motion.button>
                   </motion.div>
 
-                  {/* IMAGE */}
                   <motion.div
                     variants={imageAnim}
                     className="flex justify-center lg:justify-end"
@@ -165,7 +161,6 @@ export function Event() {
 
         </div>
 
-        {/* STEPPER */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

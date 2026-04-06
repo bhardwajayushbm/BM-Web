@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion"; // ✅ FIXED
 import { useRef } from "react";
 import Image from "next/image";
 
@@ -8,7 +8,6 @@ export default function Sales() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  /* ===== ANIMATIONS ===== */
   const container = {
     hidden: {},
     show: {
@@ -48,70 +47,55 @@ export default function Sales() {
         className="relative w-full max-w-[1100px]"
       >
 
-        {/* ================= MOBILE ================= */}
-        <div className="md:hidden flex flex-col items-center">
+        {/* ✅ MOBILE (LEFT IMAGE + RIGHT TEXT) */}
+        <div className="md:hidden flex items-center gap-4">
 
-          {/* IMAGE (TOP) */}
+          {/* Image */}
           <motion.div
             variants={imageAnim}
-            className="w-[180px] h-[260px] relative"
+            className="w-[140px] h-[160px] relative rounded-[12px] overflow-hidden shrink-0"
           >
             <Image
-              src="/Sales.png"
+              src="/ARTS.png"
               alt="sales"
               fill
-              className="object-contain"
+              className="object-cover"
             />
           </motion.div>
 
-          {/* BACKGROUND CARD */}
-          <div className="relative w-full rounded-[12px] overflow-hidden text-center py-6 mt-4">
-
-            {/* BACKGROUND */}
-            <div className="absolute inset-0 -z-10">
-              <Image
-                src="/BG3.png"
-                alt="bg"
-                fill
-                className="object-cover"
-              />
-            </div>
-
-            {/* TEXT */}
-            <motion.div
-              variants={container}
-              className="text-white font-helvetica px-4"
+          {/* Text */}
+          <motion.div
+            variants={container}
+            className="flex flex-col justify-center text-left"
+          >
+            <motion.h2
+              variants={fadeUp}
+              className="text-[18px] font-medium text-black leading-[22px]"
             >
-              <motion.h2
-                variants={fadeUp}
-                className="text-[20px] leading-[26px]"
-              >
-                Arthur Yeames
-              </motion.h2>
+              Arthur Yeames
+            </motion.h2>
 
-              <motion.p
-                variants={fadeUp}
-                className="mt-1 text-[18px] leading-[24px]"
-              >
-                SVP, Sales, North America
-              </motion.p>
+            <motion.p
+              variants={fadeUp}
+              className="mt-1 text-[16px] text-black leading-[20px]"
+            >
+              SVP, Sales, North America
+            </motion.p>
 
-              <motion.p
-                variants={fadeUp}
-                className="mt-2 text-[14px] opacity-90"
-              >
-                Email: artyeames@bangmetric.com
-              </motion.p>
-            </motion.div>
+            <motion.p
+              variants={fadeUp}
+              className="mt-2 text-[13px] text-black"
+            >
+              Email: artyeames@bangmetric.com
+            </motion.p>
+          </motion.div>
 
-          </div>
         </div>
 
-        {/* ================= DESKTOP ================= */}
+        {/* ✅ DESKTOP (UNCHANGED) */}
         <div className="hidden md:block">
           <div className="relative w-full max-w-[1100px] h-[320px] rounded-[12px]">
 
-            {/* BACKGROUND */}
             <div className="absolute inset-0 rounded-[12px] overflow-hidden">
               <Image
                 src="/BG3.png"
@@ -121,7 +105,6 @@ export default function Sales() {
               />
             </div>
 
-            {/* IMAGE */}
             <motion.div
               variants={imageAnim}
               className="
@@ -143,7 +126,6 @@ export default function Sales() {
               />
             </motion.div>
 
-            {/* TEXT */}
             <motion.div
               variants={container}
               className="

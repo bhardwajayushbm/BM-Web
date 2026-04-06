@@ -35,17 +35,18 @@ export function Navigation() {
               Services
             </Link>
 
-            <Link href="/company" className="text-[16px] text-gray-900 hover:text-purple-600">
-              Life at Bangmetric
-            </Link>
-
-            <Link href="/resources" className="text-[16px] text-gray-900 hover:text-purple-600">
+             <Link href="/resources" className="text-[16px] text-gray-900 hover:text-purple-600">
               Resources
             </Link>
 
             <Link href="/careers" className="text-[16px] text-gray-900 hover:text-purple-600">
               Careers
             </Link>
+
+            <Link href="/company" className="text-[16px] text-gray-900 hover:text-purple-600">
+              Life at Bangmetric
+            </Link>
+
           </div>
 
           {/* GET IN TOUCH (DESKTOP) */}
@@ -78,16 +79,16 @@ export function Navigation() {
               Services
             </Link>
 
-            <Link href="/company" onClick={() => setOpen(false)}>
-              Life at Bangmetric
-            </Link>
-
             <Link href="/resources" onClick={() => setOpen(false)}>
               Resources
             </Link>
 
             <Link href="/careers" onClick={() => setOpen(false)}>
               Careers
+            </Link>
+            
+            <Link href="/company" onClick={() => setOpen(false)}>
+              Life at Bangmetric
             </Link>
 
             <Link

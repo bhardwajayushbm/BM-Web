@@ -10,7 +10,6 @@ export default function WhyJoinBangmetric() {
     { id: "05", text: "Collaborate with global teams across India, the US, and South Africa", bg: "#F1EDFF", offset: "lg:mr-[140px]" },
   ];
 
-  // 🔥 Whole section animation (BOTTOM → UP)
   const sectionVariants = {
     hidden: { opacity: 0, y: 80 },
     show: {
@@ -23,7 +22,6 @@ export default function WhyJoinBangmetric() {
     },
   };
 
-  // Existing stagger container
   const containerVariants = {
     hidden: {},
     show: {
@@ -33,7 +31,6 @@ export default function WhyJoinBangmetric() {
     },
   };
 
-  // Card animation (UNCHANGED)
   const itemVariants = {
     hidden: { opacity: 0, x: -50 },
     show: {
@@ -60,7 +57,6 @@ export default function WhyJoinBangmetric() {
           </h2>
         </div>
 
-        {/* RIGHT */}
         <motion.div
           className="flex flex-col gap-3 w-full lg:w-auto items-center lg:items-end"
           variants={containerVariants}

@@ -25,7 +25,7 @@ export default function WhatYouCanExpect() {
   return (
     <section className="w-full bg-white py-16 md:py-24 flex flex-col items-center">
       
-      <h1 className="font-helvetica text-center text-[24px] md:text-[56px] mb-6 md:mb-4">
+      <h1 className="font-helvetica text-center text-[32px] lg:text-[48px] text-black mb-6 md:mb-4">
         What You Can Expect
       </h1>
 
@@ -72,7 +72,7 @@ export default function WhatYouCanExpect() {
           className="hidden md:block relative w-[1000px] h-[270px] rounded-[10px] overflow-hidden"
         >
           <Image src="/c1.png" alt="Card 1" fill className="object-cover" />
-          <p className="absolute left-[80px] top-1/2 -translate-y-1/2 w-[399px] font-[Helvetica] font-normal text-[2878 px] leading-[100%] text-white">
+          <p className="absolute left-[80px] top-1/2 -translate-y-1/2 w-[399px] font-[Helvetica] font-normal text-[28px] leading-[100%] text-white">
             Exponential growth, a learning curve that makes you market-ready
           </p>
         </motion.div>

@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 
 export default function WhoWeAre() {
-  // 🔥 Section animation (bottom → up)
   const sectionVariants = {
     hidden: { opacity: 0, y: 80 },
     show: {
@@ -17,7 +16,6 @@ export default function WhoWeAre() {
     },
   };
 
-  // 🔥 Child animation
   const childVariants = {
     hidden: { opacity: 0, y: 40 },
     show: {
@@ -37,12 +35,11 @@ export default function WhoWeAre() {
     >
       <div className="max-w-[1100px] mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-10 md:gap-20 w-full px-4 md:px-0">
         
-        {/* LEFT */}
         <motion.div
           className="text-center md:text-left"
           variants={childVariants}
         >
-          <h1 className="font-[Helvetica] font-normal text-[28px] md:text-[36px] leading-[1.2] text-black w-full md:w-[505px] mt-4 md:mt-20 md:ml-8">
+          <h1 className="font-[Helvetica] font-normal text-[32px] lg:text-[48px] leading-[1.2] text-black w-full md:w-[505px] mt-4 md:mt-20 md:ml-8">
             Who We're <br className="hidden md:block" />
             Looking For
           </h1>
@@ -54,13 +51,11 @@ export default function WhoWeAre() {
           </p>
         </motion.div>
 
-        {/* RIGHT */}
         <motion.div
           className="mt-6 md:mt-20 w-full flex justify-center md:block md:w-[400px] md:h-[360px]"
           variants={childVariants}
         >
-          
-          {/* MOBILE */}
+
           <div className="bg-[#F1EDFF] p-4 rounded-[20px] md:hidden">
             <div className="w-[260px] h-[240px] bg-[#F3F2F8] rounded-[16px] overflow-hidden">
               <video
@@ -74,7 +69,6 @@ export default function WhoWeAre() {
             </div>
           </div>
 
-          {/* DESKTOP */}
           <div className="relative hidden md:block w-[400px] h-[360px]">
             <div className="absolute -top-10 -right-4 w-full h-full bg-[#F1EDFF]" />
 

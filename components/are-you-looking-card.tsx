@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 const cards = [
   {
@@ -16,6 +16,7 @@ const cards = [
   {
     title: "Enterprise Service Management",
     desc: "Standardizing and scaling service delivery across all business functions.",
+    link: "/it",
   },
   {
     title: "Strategic Portfolio Management",
@@ -24,6 +25,7 @@ const cards = [
   {
     title: "Customer Service Management",
     desc: "Connected customer experiences that elevate service interactions.",
+    link: "/customer",
   },
   {
     title: "Field Service Management",
@@ -39,7 +41,6 @@ const cards = [
   },
 ];
 
-/* ===== SECTION ANIMATION ===== */
 const sectionVariants = {
   hidden: { opacity: 0, y: 80 },
   show: {
@@ -52,7 +53,6 @@ const sectionVariants = {
   },
 };
 
-/* ===== HEADING ANIMATION ===== */
 const headingVariants = {
   hidden: { opacity: 0, y: 40 },
   show: {
@@ -63,32 +63,37 @@ const headingVariants = {
 };
 
 export default function AreYouLookingForCard() {
+  const router = useRouter();
+
   return (
     <motion.section
       variants={sectionVariants}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: "-100px" }}
-      className="w-full bg-[#F2F2F4] py-16 px-4"
+      className="w-full bg-[#F2F2F4] py-16 px-4 relative z-10"
     >
       <div className="max-w-[1100px] mx-auto">
 
-        {/* ===== HEADING ===== */}
         <motion.h2
-  variants={headingVariants}
-  className="text-center font-[Helvetica] font-normal text-[22px] sm:text-[28px] md:text-[38px] text-black max-w-[420px] md:max-w-[520px] mx-auto mb-6"
->
-  ServiceNow Offerings Built for
-  <br />
-  Enterprise Success
-</motion.h2>
+          variants={headingVariants}
+          className="text-center font-[Helvetica] font-normal text-[22px] sm:text-[28px] md:text-[38px] text-black max-w-[420px] md:max-w-[520px] mx-auto mb-6"
+        >
+          ServiceNow Offerings Built for
+          <br />
+          Enterprise Success
+        </motion.h2>
 
-        {/* ===== CARDS (NO FRAMER MOTION) ===== */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
           {cards.map((item, i) => (
-            <div
+            <motion.div
               key={i}
-              className="
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              onClick={() => {
+                if (item.link) router.push(item.link);
+              }}
+              className={`
                 relative
                 rounded-[10px]
                 border border-[#D1D1D1]
@@ -99,7 +104,8 @@ export default function AreYouLookingForCard() {
                 hover:bg-[#D8CDFF]
                 transition-all duration-300
                 cursor-pointer
-              "
+                z-50
+              `}
             >
               <div className="flex items-center gap-3">
                 <Image
@@ -128,12 +134,14 @@ export default function AreYouLookingForCard() {
                 height={18}
                 className="absolute top-3 right-4 object-contain"
               />
-            </div>
+            </motion.div>
           ))}
 
-          {/* ===== EXPLORE MORE CARD ===== */}
-          <Link
-            href="/services"
+          {/* Explore More Card */}
+          <motion.div
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            onClick={() => router.push("/services")}
             className="
               relative
               rounded-[10px]
@@ -156,7 +164,7 @@ export default function AreYouLookingForCard() {
               height={18}
               className="absolute top-3 right-4 object-contain invert brightness-0"
             />
-          </Link>
+          </motion.div>
         </div>
       </div>
     </motion.section>

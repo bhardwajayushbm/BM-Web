@@ -1,40 +1,26 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
-
-const fadeVariants = {
-  initial: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0 },
-  hover: {
-    opacity: [1, 0, 1],
-    transition: {
-      duration: 1.0,
-      ease: "easeInOut",
-    },
-  },
-};
+import { motion } from "framer-motion";
 
 export default function AboutPage() {
   return (
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.35, ease: "easeOut" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className="
         w-full flex justify-center
         px-4 sm:px-6 md:px-8 lg:px-10
         mt-8 sm:mt-12 md:mt-20 lg:mt-28
-
-        /* 🔥 FIXED BOTTOM MARGIN */
         mb-4 sm:mb-8 md:mb-16 lg:mb-24
       "
     >
       <motion.div
-        variants={fadeVariants}
-        initial="initial"
-        animate="visible"
-        whileHover="hover"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        whileHover={{ scale: 1.03 }}
         className="
           relative
           w-full
@@ -48,20 +34,18 @@ export default function AboutPage() {
           rounded-[20px]
           overflow-hidden
           flex items-center justify-center
-          cursor-pointer mt-10
+          mt-10
+          cursor-pointer
         "
       >
         <motion.div
-          animate={{ scale: [1.5, 1, 1.5] }}
-          transition={{
-            duration: 8,
-            ease: "easeInOut",
-            repeat: Infinity,
-          }}
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
           className="absolute inset-0"
         >
           <Image
-            src="/Life.png"
+            src="/BM.jpg"
             alt="Life background"
             fill
             priority

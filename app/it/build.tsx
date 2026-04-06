@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function WhatWeBuild() {
   return (
@@ -15,17 +16,36 @@ export default function WhatWeBuild() {
         className="object-cover object-center -z-10"
       />
 
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 py-16 md:py-28">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 py-16 md:py-28">
 
         {/* 🔷 HEADING */}
-        <div className="w-full flex justify-center mb-10 md:mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="w-full flex justify-center mb-10 md:mb-20"
+        >
           <h2 className="text-white text-[26px] sm:text-[32px] md:text-[42px] lg:text-[56px] leading-tight text-center">
             What We Build With ServiceNow ITSM
           </h2>
-        </div>
+        </motion.div>
 
         {/* 🔷 GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-x-20 md:gap-y-20 justify-items-center">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.25,
+              },
+            },
+          }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-x-20 md:gap-y-20 justify-items-center"
+        >
 
           <BuildCard
             image="/IT1.png"
@@ -53,7 +73,7 @@ export default function WhatWeBuild() {
             ]}
           />
 
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -73,7 +93,14 @@ function BuildCard({
   bullets: string[];
 }) {
   return (
-    <div className="w-full max-w-[560px]">
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0 },
+      }}
+      transition={{ duration: 0.6 }}
+      className="w-full max-w-[560px]"
+    >
 
       {/* ================= MOBILE ================= */}
       <div className="md:hidden">
@@ -89,8 +116,13 @@ function BuildCard({
         </div>
 
         {/* 🔷 CONTENT BELOW IMAGE */}
-        <div className="bg-black/60 p-4 rounded-b-lg">
-
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          viewport={{ once: true }}
+          className="bg-black/60 p-4 rounded-b-lg"
+        >
           <h3 className="text-[16px] font-semibold mb-2">
             {title}
           </h3>
@@ -103,11 +135,10 @@ function BuildCard({
               </li>
             ))}
           </ul>
-
-        </div>
+        </motion.div>
       </div>
 
-      {/* ================= DESKTOP / TABLET (UNCHANGED) ================= */}
+      {/* ================= DESKTOP / TABLET ================= */}
       <div className="hidden md:block relative h-[420px]">
 
         <Image
@@ -117,8 +148,13 @@ function BuildCard({
           className="object-cover"
         />
 
-        <div className="absolute right-8 bottom-10 w-[320px]">
-
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="absolute right-8 bottom-10 w-[320px]"
+        >
           <h3 className="text-[20px] font-semibold mb-2">
             {title}
           </h3>
@@ -131,11 +167,10 @@ function BuildCard({
               </li>
             ))}
           </ul>
-
-        </div>
+        </motion.div>
 
       </div>
 
-    </div>
+    </motion.div>
   );
 }

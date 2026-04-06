@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Hero_() {
   const [startAnimation, setStartAnimation] = useState(false);
@@ -23,7 +24,6 @@ export default function Hero_() {
       "
     >
 
-      {/* ===== MOBILE (NO ANIMATION) ===== */}
       <div className="sm:hidden overflow-hidden rounded-[12px] bg-white w-[260px] h-[160px]">
         <video
           src="/HWV.mp4"
@@ -35,7 +35,6 @@ export default function Hero_() {
         />
       </div>
 
-      {/* ===== DESKTOP/TABLET (ANIMATION) ===== */}
       <motion.div
         initial={{
           width: "100vw",
@@ -83,21 +82,23 @@ export default function Hero_() {
           Delivering fast, scalable, and success-driven ServiceNow implementations.
         </p>
 
-        <button
-          className="
-            mt-4
-            bg-gradient-to-r from-[#9562EB] to-[#7A4ED9]
-            text-white
-            px-6 py-2
-            rounded-[6px]
-            text-[14px]
-            shadow-md
-            hover:opacity-90
-            transition
-          "
-        >
-          Learn More
-        </button>
+       <Link href="/services">
+  <button
+    className="
+      mt-4
+      bg-gradient-to-r from-[#9562EB] to-[#7A4ED9]
+      text-white
+      px-6 py-2
+      rounded-[6px]
+      text-[14px]
+      shadow-md
+      hover:opacity-90
+      transition
+    "
+  >
+    Learn More
+  </button>
+</Link>
       </motion.div>
     </section>
   );

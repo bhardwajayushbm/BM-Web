@@ -32,41 +32,33 @@ export default function TermsSection() {
         </div>
 
         <p className="text-gray-500 text-[14px] sm:text-[15px] mb-6">
-          © 2026 For more information contact BANGMETRIC India. Deloitte refers
-          to one or more of BANGMETRIC Touche Tohmatsu Limited (“DTTL”), its
-          global network of member firms, and their related entities
-          (collectively, the “BANGMETRIC LLC”). DTTL (also referred to as
-          “BANGMETRIC Global”) and each of its member firms and related entities
-          are legally separate and independent entities, which cannot obligate
-          or bind each other in respect of third parties. DTTL and each DTTL
-          member firm and related entity is liable only for its own acts and
-          omissions, and not those of each other. DTTL does not provide services
-          to clients. Please see www.bangmetric.com/about to learn more.
+          © 2026 BANGMETRIC India. All rights reserved.
+          BANGMETRIC refers to BANGMETRIC Services Private Limited and its affiliated entities (collectively,
+           “BANGMETRIC”). Each entity within BANGMETRIC operates as a legally separate and independent organization
+            and is responsible only for its own acts and omissions. No entity within BANGMETRIC has the authority
+             to bind or obligate another entity in respect of third parties.
+          For more information about BANGMETRIC, please visit: www.bangmetric.com/about
         </p>
 
         <p className="text-gray-500 text-[14px] sm:text-[15px] mb-6">
-          If you have given your consent to receive job offers from us, please
-          note that you can withdraw your consent anytime by sending your
-          request at cerecruiting@bangmetric.com. Once we have processed your
-          request you will receive a confirmation and you will no longer receive
-          job offers from us. Deleting your account by accessing the Edit my
-          profile section from your account also includes the withdrawal of your
-          consent. However, please be aware that if you wish to apply to other
-          jobs, you will need to create a new account once you have your account
-          deleted. The withdrawal of consent shall not affect the lawfulness of
-          processing based on consent before its withdrawal.
+          Candidate Communication & Consent
+          If you have provided consent to receive job opportunities from BANGMETRIC,
+           you may withdraw your consent at any time by sending a request to careers@bangmetric.com
+          Upon processing your request, you will receive a confirmation, and you will no longer receive
+           job-related communications from us. Withdrawal of consent does not affect the lawfulness of
+            processing carried out prior to such withdrawal.
         </p>
 
         <p className="text-gray-500 text-[14px] sm:text-[15px]">
-          On the basis of its legitimate interest, Avature collects IP addresses
-          for the sole purpose of filtering out malicious traffic. We do not
-          associate the IP addresses with any other information and do not share
-          that information with any third party outside of Avature unless it is
-          identified as malicious. Please refer to Avature’s{" "}
+          Data Collection & Privacy
+          BANGMETRIC may collect limited technical data, such as IP addresses, to ensure
+           platform security and prevent malicious activity. This information is used solely for
+            security purposes and is not linked with personally identifiable information or shared with third parties,
+          except where required to address security threats or comply with legal obligations.
           <a href="#" className="underline">
             privacy policy
           </a>{" "}
-          for more information regarding its processing activities.
+          For more details on how we process and protect your data, please refer to our Privacy Policy on our website.
         </p>
 
       </div>

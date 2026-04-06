@@ -1,12 +1,19 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function CustomerServiceManagementPage() {
   return (
-    <div className="w-full bg-white font-helvetica">
+    <div className="w-full bg-white font-helvetica pt-28 sm:pt-24 lg:pt-28">
 
-      <section className="w-full flex justify-center px-4 md:px-8 lg:px-10 mt-8 md:mt-20 lg:mt-28">
+      {/* HERO SECTION */}
+      <motion.section
+        initial={{ opacity: 0, y: 60 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="w-full flex justify-center px-4 md:px-8 lg:px-10"
+      >
         <div
           className="
             relative
@@ -26,7 +33,12 @@ export default function CustomerServiceManagementPage() {
             className="object-cover"
           />
 
-          <div className="relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="relative z-10 text-center px-2"
+          >
             <h1
               className="
                 text-white
@@ -37,25 +49,53 @@ export default function CustomerServiceManagementPage() {
             >
               IT Service Management
             </h1>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="w-full flex justify-center px-4 md:px-8 lg:px-12 mt-16 mb-6">
-        <div className="w-full max-w-[1400px] grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+      {/* CONTENT SECTION */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: {
+              staggerChildren: 0.2,
+            },
+          },
+        }}
+        className="w-full flex justify-center px-4 md:px-8 lg:px-12 mt-16 mb-6"
+      >
+        <div className="w-full max-w-[1100px] grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 lg:gap-20 items-start">
 
-          <div>
-            <h2 className="text-[28px] md:text-[40px] lg:text-[48px] leading-[1.15] text-black">
+          {/* LEFT */}
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, x: -40 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-[28px] md:text-[34px] lg:text-[42px] leading-[1.10] text-black">
               Designed from <br />
               the employee and <br />
               business back. <br />
               Built on{" "}
               <span className="text-[#4AC000]">ServiceNow</span>
             </h2>
-          </div>
+          </motion.div>
 
-          <div className="text-[16px] md:text-[18px] leading-[1.5] text-black max-w-[560px]">
-
+          {/* RIGHT */}
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, x: 40 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            transition={{ duration: 0.6 }}
+            className="text-[16px] md:text-[18px] leading-[1.4] text-black max-w-[560px]"
+          >
             <p className="mb-6">
               Most organizations don’t have an ITSM tool problem; they
               have a flow problem. Ticket-centric thinking, siloed
@@ -71,11 +111,10 @@ export default function CustomerServiceManagementPage() {
               the platform we build on. Experience-led, outcome-driven
               design is what makes it work in the real world.
             </p>
-
-          </div>
+          </motion.div>
 
         </div>
-      </section>
+      </motion.section>
 
     </div>
   );

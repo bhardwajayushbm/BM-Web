@@ -1,17 +1,28 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Organizations() {
   return (
-    <section
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
       className="w-full bg-[#F3F3F5] py-16 md:py-28"
       style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 flex flex-col lg:flex-row justify-between items-start gap-10 relative">
 
         {/* 🔷 LEFT */}
-        <div className="max-w-[520px]">
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="max-w-[520px]"
+        >
           <h1 className="text-[28px] sm:text-[34px] md:text-[40px] lg:text-[46px] leading-[1.2] text-black">
             Why Organizations
             <br />
@@ -21,13 +32,33 @@ export default function Organizations() {
           <p className="text-[16px] sm:text-[18px] md:text-[20px] text-black mt-4">
             You’re not looking for another implementer.
           </p>
-        </div>
+        </motion.div>
 
         {/* 🔷 RIGHT */}
-        <div className="max-w-[520px] relative">
-          <p className="text-[16px] sm:text-[18px] md:text-[20px] font-semibold mb-6 md:mb-8">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.2,
+              },
+            },
+          }}
+          className="max-w-[520px] relative"
+        >
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.6 }}
+            className="text-[16px] sm:text-[18px] md:text-[20px] font-semibold mb-6 md:mb-8"
+          >
             You’re looking for a thinking partner.
-          </p>
+          </motion.p>
 
           <div className="flex flex-col gap-6 md:gap-[28px] relative z-10">
 
@@ -49,8 +80,15 @@ export default function Organizations() {
                 design, build, AI, optimisation. We own outcomes—not hours.
               </>,
             ].map((text, i) => (
-              <div key={i} className="flex items-start gap-4">
-
+              <motion.div
+                key={i}
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.5 }}
+                className="flex items-start gap-4"
+              >
                 {/* 🔥 IMAGE DOT */}
                 <div className="relative w-[28px] h-[28px] sm:w-[32px] sm:h-[32px] shrink-0 z-10">
                   <Image
@@ -65,15 +103,18 @@ export default function Organizations() {
                 <p className="text-[14px] sm:text-[16px] md:text-[18px] leading-[1.6] text-black">
                   {text}
                 </p>
-
-              </div>
+              </motion.div>
             ))}
 
           </div>
-        </div>
+        </motion.div>
 
-        {/* 🔷 IMAGE (BOTTOM ON MOBILE, ABSOLUTE ON DESKTOP) */}
-        <div
+        {/* 🔷 IMAGE */}
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
           className="
             w-full
             max-w-[320px] sm:max-w-[380px] md:max-w-[420px]
@@ -90,9 +131,9 @@ export default function Organizations() {
             fill
             className="object-contain"
           />
-        </div>
+        </motion.div>
 
       </div>
-    </section>
+    </motion.section>
   );
 }

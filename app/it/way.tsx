@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 export default function BangmetricWay() {
   const steps = [
     {
@@ -21,14 +23,24 @@ export default function BangmetricWay() {
   ];
 
   return (
-    <section
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
       className="w-full bg-[#F4F4F6] py-8 md:py-12"
       style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
     >
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-10">
+      <div className="max-w-[1100px] mx-auto px-4 sm:px-6 md:px-10">
 
         {/* 🔷 HEADER */}
-        <div className="text-center mb-10 md:mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="text-center mb-10 md:mb-16"
+        >
           <h2 className="text-[26px] sm:text-[32px] md:text-[40px] lg:text-[44px] font-semibold text-black">
             The BANGMETRIC Way
           </h2>
@@ -36,16 +48,41 @@ export default function BangmetricWay() {
           <p className="text-[14px] sm:text-[16px] md:text-[18px] text-black mt-2">
             When ITSM is designed properly, the numbers move
           </p>
-        </div>
+        </motion.div>
 
         {/* 🔷 GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-x-10 md:gap-y-10">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.2,
+              },
+            },
+          }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-x-10 md:gap-y-10"
+        >
 
           {steps.map((step, index) => (
-            <div key={index} className="relative group">
+            <motion.div
+              key={index}
+              variants={{
+                hidden: { opacity: 0, y: 50 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6 }}
+              className="relative group"
+            >
 
               {/* DOT */}
-              <div
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 0.4 }}
+                viewport={{ once: true }}
                 className="
                   absolute
                   left-1/2
@@ -60,7 +97,8 @@ export default function BangmetricWay() {
               />
 
               {/* CARD */}
-              <div
+              <motion.div
+                whileHover={{ scale: 1.03 }}
                 className="
                   flex flex-col sm:flex-row
                   items-start sm:items-center
@@ -87,15 +125,14 @@ export default function BangmetricWay() {
                 <p className="text-[13px] sm:text-[14px] md:text-[15px] leading-[1.5]">
                   {step.desc}
                 </p>
+              </motion.div>
 
-              </div>
-
-            </div>
+            </motion.div>
           ))}
 
-        </div>
+        </motion.div>
 
       </div>
-    </section>
+    </motion.section>
   );
 }

@@ -134,7 +134,7 @@ export function Footer() {
                   </li>
 
                   <li>
-                    <Link href="/offerings" className="hover:text-white transition">
+                    <Link href="/services" className="hover:text-white transition">
                       Our Jumpstart Offerings
                     </Link>
                   </li>

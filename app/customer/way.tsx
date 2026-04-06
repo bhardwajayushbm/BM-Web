@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function BangmetricWay() {
   const steps = [
@@ -23,12 +24,23 @@ export default function BangmetricWay() {
   ];
 
   return (
-    <section className="w-full bg-white py-16 md:py-28 font-helvetica">
-      
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="w-full bg-white py-16 md:py-28 font-helvetica"
+    >
       <div className="max-w-[1100px] mx-auto px-4 sm:px-6 md:px-10 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12">
 
         {/* 🔷 LEFT SIDE */}
-        <div className="w-full max-w-[520px] text-center lg:text-left">
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="w-full max-w-[520px] text-center lg:text-left"
+        >
 
           <h2 className="text-[26px] sm:text-[30px] md:text-[36px] font-normal text-black">
             The BANGMETRIC Way
@@ -39,25 +51,51 @@ export default function BangmetricWay() {
           </p>
 
           {/* IMAGE */}
-          <div className="relative w-full max-w-[320px] sm:max-w-[380px] md:max-w-[450px] h-[250px] sm:h-[300px] md:h-[360px] mt-6 mx-auto lg:mx-0">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="relative w-full max-w-[320px] sm:max-w-[380px] md:max-w-[450px] h-[250px] sm:h-[300px] md:h-[360px] mt-6 mx-auto lg:mx-0"
+          >
             <Image
               src="/glass.png"
               alt="glass"
               fill
               className="object-contain"
             />
-          </div>
+          </motion.div>
 
-        </div>
+        </motion.div>
 
-        {/* 🔷 RIGHT SIDE (CARDS) */}
-        <div className="w-full flex flex-col gap-6">
+        {/* 🔷 RIGHT SIDE */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: { staggerChildren: 0.2 },
+            },
+          }}
+          className="w-full flex flex-col gap-6"
+        >
 
           {steps.map((step, index) => (
-            <div key={index} className="relative flex items-center group">
+            <motion.div
+              key={index}
+              variants={{
+                hidden: { opacity: 0, x: 60 },
+                visible: { opacity: 1, x: 0 },
+              }}
+              transition={{ duration: 0.6 }}
+              className="relative flex items-center group"
+            >
 
               {/* DOT */}
-              <div
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 0.4 }}
+                viewport={{ once: true }}
                 className="
                   absolute
                   -left-2 sm:-left-4
@@ -72,7 +110,8 @@ export default function BangmetricWay() {
               />
 
               {/* CARD */}
-              <div
+              <motion.div
+                whileHover={{ scale: 1.03 }}
                 className="
                   w-full
                   min-h-[90px]
@@ -101,15 +140,14 @@ export default function BangmetricWay() {
                 <p className="text-[13px] sm:text-[14px] leading-[1.5]">
                   {step.desc}
                 </p>
-              </div>
+              </motion.div>
 
-            </div>
+            </motion.div>
           ))}
 
-        </div>
+        </motion.div>
 
       </div>
-
-    </section>
+    </motion.section>
   );
 }

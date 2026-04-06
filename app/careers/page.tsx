@@ -19,13 +19,12 @@ export default function CareersPage() {
         className="w-full max-w-[900px] flex flex-col items-center text-center px-4 sm:px-6"
       >
 
-        {/* ===== IMAGE ===== */}
         <div className="mt-4 sm:mt-6 md:mt-8 mb-1 md:mb-2">
           <Image
             src="/Careers.png"
             alt="Careers"
-            width={240}
-            height={240}
+            width={260}
+            height={260}
             className="
               object-contain
               w-[140px] sm:w-[180px] md:w-[220px] lg:w-[240px]
@@ -35,12 +34,11 @@ export default function CareersPage() {
           />
         </div>
 
-        {/* ===== HEADING ===== */}
         <h1
           className="
             font-helvetica
             font-normal
-            text-[22px] sm:text-[28px] md:text-[36px] lg:text-[48px]
+            text-[22px] sm:text-[44px] md:text-[50px] lg:text-[60px]
             text-black
             leading-tight
           "
@@ -48,7 +46,6 @@ export default function CareersPage() {
           Careers at BANGMETRIC
         </h1>
 
-        {/* ===== TEXT ===== */}
         <p
           className="
             mt-2 sm:mt-3 md:mt-4

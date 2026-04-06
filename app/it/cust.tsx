@@ -1,10 +1,17 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function CustomerServiceBanner() {
   return (
-    <section className="relative w-full h-[260px]">
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="relative w-full h-[260px]"
+    >
       <Image
         src="/Cust.jpg"
         alt="Customer Service Management"
@@ -12,25 +19,56 @@ export default function CustomerServiceBanner() {
         priority
         className="object-cover"
       />
+
       <div className="absolute inset-0 bg-black/60" />
+
       <div className="absolute inset-0 flex items-center px-[82px]">
 
-        <div>
-          <p
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.2,
+              },
+            },
+          }}
+        >
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.5 }}
             className="text-white text-[16px] mb-2"
             style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
           >
             Read Customer Success Stories & News on
-          </p>
+          </motion.p>
 
-          <h2
+          <motion.h2
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.6 }}
             className="text-white text-[40px] leading-[1.2] mb-5"
             style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
           >
             IT Service Management
-          </h2>
+          </motion.h2>
 
-          <button
+          <motion.button
+            variants={{
+              hidden: { opacity: 0, scale: 0.8 },
+              visible: { opacity: 1, scale: 1 },
+            }}
+            transition={{ duration: 0.4 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             className="px-6 py-2 rounded-[6px] text-white text-[14px]"
             style={{
               backgroundColor: "#9562EB",
@@ -38,11 +76,10 @@ export default function CustomerServiceBanner() {
             }}
           >
             Know More
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
 
       </div>
-
-    </section>
+    </motion.section>
   );
 }

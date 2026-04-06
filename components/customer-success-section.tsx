@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -57,7 +58,6 @@ function Card({ title, description, className, image }: any) {
     >
       <div className="relative w-full max-w-[320px] h-[220px] sm:h-[240px] md:h-[250px] rounded-[12px] overflow-hidden shadow-lg">
         
-        {/* IMAGE */}
         <Image
           src={image}
           alt={title}
@@ -65,23 +65,18 @@ function Card({ title, description, className, image }: any) {
           className="object-cover"
         />
 
-        {/* DARK OVERLAY */}
         <div className="absolute inset-0 bg-black/60" />
 
-        {/* CONTENT */}
         <div className="absolute inset-0 p-5 flex flex-col justify-start">
           
-          {/* TITLE */}
           <h3 className="text-white text-[18px] sm:text-[20px] font-semibold leading-[1.4]">
             {title}
           </h3>
 
-          {/* DESCRIPTION */}
           <p className="text-gray-200 text-[12px] sm:text-[13px] leading-[1.5] mt-2 max-w-[260px]">
             {description}
           </p>
 
-          {/* BUTTON */}
           <button className="mt-14 bg-gradient-to-r from-[#9562EB] to-[#7B5CFF] text-white w-[120px] h-[34px] rounded-[6px] text-[12px] sm:text-[13px] font-medium">
             Read More
           </button>
@@ -92,6 +87,8 @@ function Card({ title, description, className, image }: any) {
 }
 
 export function CustomerSuccessSection() {
+  const router = useRouter(); // ✅ added
+
   return (
     <motion.section
       variants={sectionVariants}
@@ -102,7 +99,6 @@ export function CustomerSuccessSection() {
     >
       <div className="max-w-[1100px] mx-auto px-4 sm:px-6">
 
-        {/* HEADER */}
         <motion.div
           variants={headerVariants}
           className="text-center mb-8 sm:mb-10 md:mb-16"
@@ -123,12 +119,15 @@ export function CustomerSuccessSection() {
             stories reflect real-world impact, proven results, and lasting value.
           </p>
 
-          <button className="mt-5 sm:mt-6 bg-[#9562EB] text-white w-[140px] h-[38px] sm:w-[150px] sm:h-[40px] md:w-[160px] md:h-[42px] rounded-[6px]">
+          {/* ✅ BUTTON FIXED */}
+          <button
+            onClick={() => router.push("/resources")}
+            className="mt-5 sm:mt-6 bg-[#9562EB] text-white w-[140px] h-[38px] sm:w-[150px] sm:h-[40px] md:w-[160px] md:h-[42px] rounded-[6px] cursor-pointer"
+          >
             Case Studies
           </button>
         </motion.div>
 
-        {/* CARDS */}
         <motion.div
           variants={containerVariants}
           className="

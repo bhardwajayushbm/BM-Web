@@ -1,14 +1,23 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function CustomerServiceManagementPage() {
   return (
     <div className="w-full bg-white pt-[110px] sm:pt-[120px] md:pt-[110px]">
 
       {/* 🔷 HERO */}
-      <section className="w-full flex justify-center px-4 md:px-8 lg:px-10 pb-0">
-        <div
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="w-full flex justify-center px-4 md:px-8 lg:px-10 pb-0"
+      >
+        <motion.div
+          initial={{ scale: 1.05 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1 }}
           className="
             relative
             w-full
@@ -27,7 +36,12 @@ export default function CustomerServiceManagementPage() {
             className="object-cover object-center"
           />
 
-          <div className="relative z-10 w-full flex items-center justify-center text-center px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.7 }}
+            className="relative z-10 w-full flex items-center justify-center text-center px-4"
+          >
             <h1
               className="
                 font-helvetica font-bold text-white
@@ -39,12 +53,21 @@ export default function CustomerServiceManagementPage() {
               <br />
               Service Management
             </h1>
-          </div>
-        </div>
-      </section>
+          </motion.div>
+        </motion.div>
+      </motion.section>
 
       {/* 🔷 CONTENT */}
-      <section
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: { staggerChildren: 0.2 },
+          },
+        }}
         className="
           w-full
           flex justify-center
@@ -60,15 +83,29 @@ export default function CustomerServiceManagementPage() {
 
           <div className="max-w-[640px] font-helvetica text-black">
 
-            <h1 className="mt-6 md:mt-12 text-[22px] sm:text-[26px] md:text-[34px] lg:text-[36px] leading-[1.2] font-normal mb-5">
+            <motion.h1
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6 }}
+              className="mt-6 md:mt-12 text-[22px] sm:text-[26px] md:text-[34px] lg:text-[36px] leading-[1.2] font-normal mb-5"
+            >
               Designed From the <br />
               Customer Back <br />
               <span className="whitespace-nowrap">
                 Built on <span className="text-[#66E000]">ServiceNow</span>
               </span>
-            </h1>
+            </motion.h1>
 
-            <p className="text-[15px] sm:text-[16px] leading-[1.6] font-normal text-black max-w-[540px]">
+            <motion.p
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6 }}
+              className="text-[15px] sm:text-[16px] leading-[1.6] font-normal text-black max-w-[540px]"
+            >
               Most organizations don’t lack technology, they lack thoughtful
               service design. Automating broken processes only makes poor
               experiences faster.
@@ -79,12 +116,12 @@ export default function CustomerServiceManagementPage() {
               removing friction, and resolving issues, not just closing cases.
               ServiceNow is the platform we use. Experience-led design is the
               value we bring.
-            </p>
+            </motion.p>
 
           </div>
 
         </div>
-      </section>
+      </motion.section>
 
     </div>
   );
